@@ -41,16 +41,6 @@
   
 
   
-<script>
-  var _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?a30844fa2bcbce0a9e001fe06cefeddf";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
-
 
 </head>
 
@@ -343,9 +333,10 @@
   window.YiliaChangyanWrap = function () {
     var appid = "cytjIMMNm";
     var conf = "ed7ebef4b1d52a544acbbdbb42709fe8";
+    var key = "hello-world";
     var width = window.innerWidth || document.documentElement.clientWidth;
     if (width < 960) {
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+      window.document.write('<div id="SOHUCS"  sid=\'+key+\'></div> <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
     } else {
       var loadJs = function (d, a) {
         var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
