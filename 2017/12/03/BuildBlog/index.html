@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>最新最详细的使用 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客 | VSK小天的博客</title>
+  <title>最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="hexo,yilia,畅言,不蒜子">
+  <meta name="description" content="个人博客地址：www.sunjinpeng.cn前提要求 一个GitHub账号 使用过node.js,熟悉相关命令 本地安装Git  主要步骤 GitHub 上创建个人博客并关联GitHub Pages 本地初始化 Hexo 将Hexo 与 GitHub Pages 关联 使用hexo相关主题 集成畅言评论 集成 不蒜子 统计网站访问次数 集成 七牛云 用于存放图片 申请阿里云域名并与GitHub">
+<meta name="keywords" content="hexo,yilia,畅言,不蒜子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最新最详细的使用 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客">
+<meta property="og:title" content="最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客">
 <meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/03/BuildBlog/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
+<meta property="og:description" content="个人博客地址：www.sunjinpeng.cn前提要求 一个GitHub账号 使用过node.js,熟悉相关命令 本地安装Git  主要步骤 GitHub 上创建个人博客并关联GitHub Pages 本地初始化 Hexo 将Hexo 与 GitHub Pages 关联 使用hexo相关主题 集成畅言评论 集成 不蒜子 统计网站访问次数 集成 七牛云 用于存放图片 申请阿里云域名并与GitHub">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/homePage.png">
-<meta property="og:updated_time" content="2017-12-03T15:24:23.346Z">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/createRepo.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/GitHub-Pages.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/settings.png">
+<meta property="og:updated_time" content="2018-01-23T15:43:51.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最新最详细的使用 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客">
-<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/homePage.png">
+<meta name="twitter:title" content="最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客">
+<meta name="twitter:description" content="个人博客地址：www.sunjinpeng.cn前提要求 一个GitHub账号 使用过node.js,熟悉相关命令 本地安装Git  主要步骤 GitHub 上创建个人博客并关联GitHub Pages 本地初始化 Hexo 将Hexo 与 GitHub Pages 关联 使用hexo相关主题 集成畅言评论 集成 不蒜子 统计网站访问次数 集成 七牛云 用于存放图片 申请阿里云域名并与GitHub">
+<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/createRepo.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -179,7 +184,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      最新最详细的使用 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客
+      最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客
     </h1>
   
 
@@ -192,7 +197,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://ozfuaes8n.bkt.clouddn.com/homePage.png" alt="MyBlog"></p>
+        <h5 id="个人博客地址：www-sunjinpeng-cn"><a href="#个人博客地址：www-sunjinpeng-cn" class="headerlink" title="个人博客地址：www.sunjinpeng.cn"></a>个人博客地址：<a href="http://www.sunjinpeng.cn">www.sunjinpeng.cn</a></h5><h4 id="前提要求"><a href="#前提要求" class="headerlink" title="前提要求"></a>前提要求</h4><ul>
+<li>一个GitHub账号</li>
+<li>使用过node.js,熟悉相关命令</li>
+<li>本地安装Git</li>
+</ul>
+<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>GitHub 上创建个人博客并关联GitHub Pages</li>
+<li>本地初始化 Hexo</li>
+<li>将Hexo 与 GitHub Pages 关联</li>
+<li>使用hexo相关主题</li>
+<li>集成畅言评论</li>
+<li>集成 不蒜子 统计网站访问次数</li>
+<li>集成 七牛云 用于存放图片</li>
+<li>申请阿里云域名并与GitHub Pages关联</li>
+</ul>
+<h4 id="详细步骤-以下都以-sunjinpeng-example-github-io-为例"><a href="#详细步骤-以下都以-sunjinpeng-example-github-io-为例" class="headerlink" title="详细步骤(以下都以 sunjinpeng-example.github.io 为例)"></a>详细步骤(以下都以 sunjinpeng-example.github.io 为例)</h4><h5 id="GitHub-上创建个人博客并关联GitHub-Pages"><a href="#GitHub-上创建个人博客并关联GitHub-Pages" class="headerlink" title="GitHub 上创建个人博客并关联GitHub Pages"></a>GitHub 上创建个人博客并关联GitHub Pages</h5><p><img src="http://ozfuaes8n.bkt.clouddn.com/createRepo.png" alt="createRepo"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/GitHub-Pages.png" alt="GitHub-Pages"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/settings.png" alt="settings"><br></p>
+<h5 id="本地初始化-Hexo"><a href="#本地初始化-Hexo" class="headerlink" title="本地初始化 Hexo"></a>本地初始化 Hexo</h5><p> hexo 介绍: <a href="https://hexo.io/zh-cn" target="_blank" rel="external">官方文档</a><br> 执行 <figure class="highlight plain"><figcaption><span>install -g hexo-cli```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> 执行 ```hexo --version``` 查看是否安装成功</span><br><span class="line">![hexo-version](http://ozfuaes8n.bkt.clouddn.com/hexo-version.png) &lt;br&gt;</span><br><span class="line"> 执行 `hexo init sunjinpeng-example.github.io` </span><br><span class="line">将会在当前文件夹下创建 `sunjinpeng-example.github.io` 文件，用于存放以后博客</span><br><span class="line">![create-file](http://ozfuaes8n.bkt.clouddn.com/create-file.png)&lt;br&gt;</span><br><span class="line">![hexo-title](http://ozfuaes8n.bkt.clouddn.com/hexo-title.png)&lt;br&gt;</span><br><span class="line"> 运行 `hexo --help` 查看 `hexo` 相关命令</span><br><span class="line">![hexo-doc](http://ozfuaes8n.bkt.clouddn.com/hexo-doc2.png)&lt;br&gt;</span><br><span class="line"> 运行 `hexo generate` `hexo server` 然后在浏览器输入 `http://localhost:4000`</span><br><span class="line">![hexo-init.png](http://ozfuaes8n.bkt.clouddn.com/hexo-init.png)&lt;br&gt;</span><br><span class="line">至此，`hexo` 在本地初始化完成</span><br><span class="line"></span><br><span class="line">##### 将Hexo 与 GitHub Pages 关联</span><br><span class="line">* 运行 `ssh-keygen -t rsa` 一路回车下去，将会在本地产生一个私钥</span><br><span class="line">* 复制 `C:\Users\38600\.ssh` 文件下的 `id_rsa.pub` 中的内容，粘贴在以下区域</span><br><span class="line">![id_rsa](http://ozfuaes8n.bkt.clouddn.com/id_rsa.png)&lt;br&gt;</span><br><span class="line"> 配置 Git 信息,替换为自己信息</span><br></pre></td></tr></table></figure></p>
+<p>git config –global user.name “sunjinpeng”<br>git config –global user.email “386007796@qq.com”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编辑 `_config.yml` 文件，更改以下信息</span><br></pre></td></tr></table></figure></p>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>  type: git<br>  repo: git@github.com:SunjinPeng2017/sunjinpeng-example.github.io.git<br>  branch: master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">依次运行以下命令</span><br></pre></td></tr></table></figure></p>
+<p>hexo clean<br>hexo generate<br>hexo deploy<br>```</p>
+<ul>
+<li><p>若运行出错，则先执行 <code>npm install hexo-deployer-git --save</code> 再执行 <code>hexo deploy</code></p>
+</li>
+<li><p>访问 <a href="https://sunjinpeng-example.github.io" target="_blank" rel="external">https://sunjinpeng-example.github.io</a> 若出现 <code>hexo</code> 初始化界面，<br>则证明 hexo 已经和 GitHub Pages 关联成功</p>
+</li>
+</ul>
 
       
 
@@ -443,10 +473,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -471,15 +497,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">菜鸟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大神</a>
+                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +534,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">疯狂撸码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">菜鸟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大神</a>
               </li>
             
             <div class="clearfix"></div>
