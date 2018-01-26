@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>Archives: 2017 | VSK小天的博客</title>
+  <title>生产环境离线安装、优化 PostgresSQL-9.6.2 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
-<meta name="keywords" content="前端,js,java,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VSK小天的博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/archives/2017/index.html">
+  <meta name="description" content="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装">
+<meta name="keywords" content="PgSQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生产环境离线安装、优化 PostgresSQL-9.6.2">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/15/InstallPG/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta property="og:description" content="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装">
 <meta property="og:locale" content="Chinese,English">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/pg-files.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/install-error.png">
+<meta property="og:updated_time" content="2018-01-26T15:03:07.568Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSK小天的博客">
-<meta name="twitter:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta name="twitter:title" content="生产环境离线安装、优化 PostgresSQL-9.6.2">
+<meta name="twitter:description" content="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装">
+<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/pg-files.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -172,36 +176,99 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-InstallPG" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/15/InstallPG/" class="archive-article-date">
-  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/15/InstallPG/">生产环境离线安装、优化 PostgresSQL-9.6.2</a>
+    <h1 class="article-title" itemprop="name">
+      生产环境离线安装、优化 PostgresSQL-9.6.2
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/15/InstallPG/" class="archive-article-date">
+  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><br></p>
+<h5 id="转载请说明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><a href="#转载请说明：http-www-sunjinpeng-cn-2017-12-15-InstallPG" class="headerlink" title="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/"></a>转载请说明：<a href="http://www.sunjinpeng.cn/2017/12/03/BuildBlog/">http://www.sunjinpeng.cn/2017/12/15/InstallPG/</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="external">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><p><br></p>
+<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>下载相关文件</li>
+<li>上传文件至生产环境并解压</li>
+<li>编译安装gcc</li>
+<li>编译安装Python</li>
+<li>编译安装Cmake</li>
+<li>创建postgres用户</li>
+<li>配置编译器</li>
+<li>编译安装PostgresSQL-9.6.2</li>
+<li>创建数据库存储目录</li>
+<li>配置postgres的环境变量</li>
+<li>分配文件权限</li>
+<li>初始化数据库</li>
+<li>数据库优化</li>
+<li>安装完成，启动数据库</li>
+<li>更改数据库中postgres 用户密码<br><br><a id="more"></a>
+<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载相关文件"><a href="#下载相关文件" class="headerlink" title="下载相关文件"></a>下载相关文件</h5></li>
+<li>点击该链接下载所有安装包:<a href="http://p3602m0u1.bkt.clouddn.com/install_PG.rar" target="_blank" rel="external">install_PG.rar</a><br><img src="http://ozfuaes8n.bkt.clouddn.com/pg-files.png" alt="pg-files"><br><br></li>
+</ul>
+<h5 id="上传文件至生产环境并解压"><a href="#上传文件至生产环境并解压" class="headerlink" title="上传文件至生产环境并解压"></a>上传文件至生产环境并解压</h5><ul>
+<li>在 <code>Windows</code> 下解压上述下载文件并上传至 Linux</li>
+<li>执行以下命令，解压文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf gcc-6.3.0.tar.bz2</span><br><span class="line">tar -jxvf gmp-4.3.2.tar.bz2</span><br><span class="line">tar -jxvf mpfr-2.4.2.tar.bz2</span><br><span class="line">tar -xzf mpc-0.8.1.tar.gz</span><br><span class="line">tar Jxvf Python-3.5.0.tar.xz</span><br><span class="line">tar -xzf cmake-3.7.2.tar.gz</span><br><span class="line">tar -jxvf  postgresql-9.6.2.tar.bz2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h5 id="编译安装gcc"><a href="#编译安装gcc" class="headerlink" title="编译安装gcc"></a>编译安装gcc</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sudo -s </span><br><span class="line"><span class="comment">#将离线插件移动至gcc目录</span></span><br><span class="line">   mv gmp-4.3.2 gcc-6.3.0/gmp</span><br><span class="line">   mv mpc-0.8.1 gcc-6.3.0/mpc</span><br><span class="line">   mv mpfr-2.4.2 gcc-6.3.0/mpfr</span><br><span class="line"> </span><br><span class="line"><span class="comment">#创建编译文件目录</span></span><br><span class="line">   mkdir /usr/<span class="built_in">local</span>/gcc-build-6.3.0</span><br><span class="line">    </span><br><span class="line"><span class="comment">#创建安装目录</span></span><br><span class="line">   mkdir /usr/<span class="built_in">local</span>/gcc-6.3.0</span><br><span class="line"> </span><br><span class="line"><span class="comment">#开始安装gcc (/usr/local/pgSQLSoftwares/gcc-6.3.0/configure为你解压gcc的目录)</span></span><br><span class="line">   <span class="built_in">cd</span> gcc-build-6.3.0</span><br><span class="line">   /usr/<span class="built_in">local</span>/pgSQLSoftwares/gcc-6.3.0/configure --prefix /usr/<span class="built_in">local</span>/gcc-6.3.0 --<span class="built_in">enable</span>-checking=release --<span class="built_in">enable</span>-languages=c,c++ --<span class="built_in">disable</span>-multilib</span><br><span class="line">   make -j4</span><br><span class="line">   make install</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="编译安装Python"><a href="#编译安装Python" class="headerlink" title="编译安装Python"></a>编译安装Python</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Python-3.5.0</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/python-3.5.0</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="编译安装Cmake"><a href="#编译安装Cmake" class="headerlink" title="编译安装Cmake"></a>编译安装Cmake</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> cmake-3.7.2</span><br><span class="line">./bootstrap --prefix=/usr/<span class="built_in">local</span>/cmake-3.7.2</span><br><span class="line">gmake</span><br><span class="line">gmake install</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="创建postgres用户"><a href="#创建postgres用户" class="headerlink" title="创建postgres用户"></a>创建postgres用户</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useradd postgres</span><br><span class="line">passwd postgres</span><br><span class="line">输入密码:Test123!</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="配置编译器"><a href="#配置编译器" class="headerlink" title="配置编译器"></a>配置编译器</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   vi /etc/ld.so.conf</span><br><span class="line"> </span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line">   /usr/<span class="built_in">local</span>/lib</span><br><span class="line">   /usr/<span class="built_in">local</span>/python-3.5.0/lib</span><br><span class="line">   /usr/<span class="built_in">local</span>/gcc-6.3.0/lib</span><br><span class="line">   /usr/<span class="built_in">local</span>/gcc-6.3.0/lib64</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="编译安装PostgresSQL-9-6-2"><a href="#编译安装PostgresSQL-9-6-2" class="headerlink" title="编译安装PostgresSQL-9.6.2"></a>编译安装PostgresSQL-9.6.2</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/postgresql-9.6.2</span><br><span class="line"><span class="built_in">export</span> USE_NAMED_POSIX_SEMAPHORES=1</span><br><span class="line">LIBS=-lpthread CC=<span class="string">"/usr/local/gcc-6.3.0/bin/gcc"</span> CFLAGS=<span class="string">"-O0 -flto -g -ggdb -fno-omit-frame-pointer"</span> ./configure --prefix=/usr/<span class="built_in">local</span>/pgsql-9.6.2 --<span class="built_in">enable</span>-cassert</span><br><span class="line"><span class="comment"># 开启16个线程安装</span></span><br><span class="line">LIBS=-lpthread CC=<span class="string">"/usr/local/gcc-6.3.0/bin/gcc"</span> CFLAGS=<span class="string">"-O0 -flto -g -ggdb -fno-omit-frame-pointer"</span> make world -j 16</span><br><span class="line"><span class="comment"># make install-world 安装PG自带的所有插件</span></span><br><span class="line">LIBS=-lpthread CC=<span class="string">"/usr/local/gcc-6.3.0/bin/gcc"</span> CFLAGS=<span class="string">"-O0 -flto -g -ggdb -fno-omit-frame-pointer"</span> make install-world</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果这一步报错如下:<br><img src="http://ozfuaes8n.bkt.clouddn.com/install-error.png" alt="install-error"><br></li>
+<li><p>解决方式一:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装缺失的库。</span></span><br><span class="line"><span class="comment"># 1.检查是否有安装 readline包，执行</span></span><br><span class="line">rpm -qa | grep readline</span><br><span class="line"><span class="comment"># 2.搜索readline相关的包，执行</span></span><br><span class="line">yum search readline</span><br><span class="line"><span class="comment"># 3.安装 readline-devel，执行</span></span><br><span class="line">yum -y install -y readline-devel</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解决方式二:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过rpm安装下载的包</span></span><br><span class="line">rpm -ivh ncurses-devel-5.7-4.20090207.el6.x86_64</span><br><span class="line">rpm -ivh readline-devel-6.0-4.el6.x86_64</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h5 id="创建数据库存储目录"><a href="#创建数据库存储目录" class="headerlink" title="创建数据库存储目录"></a>创建数据库存储目录</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注意用 df -hl 查看磁盘空间大小，选择在最大的分区下创建该文件夹</span></span><br><span class="line">   mkdir /home/data/pgsql/data</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="配置postgres的环境变量"><a href="#配置postgres的环境变量" class="headerlink" title="配置postgres的环境变量"></a>配置postgres的环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   su postgres</span><br><span class="line">   <span class="built_in">cd</span> ~</span><br><span class="line">   vi .bashrc</span><br><span class="line"> </span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line">   <span class="built_in">export</span> PGPORT=5432</span><br><span class="line">   <span class="built_in">export</span> PGDATA=/home/data/pgsql/data</span><br><span class="line">   <span class="built_in">export</span> LANG=en_US.utf8</span><br><span class="line">   <span class="built_in">export</span> PGHOME=/usr/<span class="built_in">local</span>/pgsql-9.6.2</span><br><span class="line">   <span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/gcc-6.3.0/lib:/usr/<span class="built_in">local</span>/gcc-6.3.0/lib64:/usr/<span class="built_in">local</span>/python-3.5.0/lib:<span class="variable">$PGHOME</span>/lib:/lib64:/usr/lib64:/usr/<span class="built_in">local</span>/lib64:/lib:/usr/lib:/usr/<span class="built_in">local</span>/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br><span class="line">   <span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/gcc-6.3.0/bin:/usr/<span class="built_in">local</span>/python-3.5.0/bin:/usr/<span class="built_in">local</span>/cmake-3.7.2/bin:/usr/<span class="built_in">local</span>/pgsql-9.6.2/bin:<span class="variable">$PATH</span></span><br><span class="line">   <span class="built_in">export</span> DATE=`date +<span class="string">"%Y%m%d%H%M"</span>`</span><br><span class="line">   <span class="built_in">export</span> MANPATH=<span class="variable">$PGHOME</span>/share/man:<span class="variable">$MANPATH</span></span><br><span class="line">   <span class="built_in">export</span> PGUSER=postgres</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="分配文件权限"><a href="#分配文件权限" class="headerlink" title="分配文件权限"></a>分配文件权限</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R postgres:postgres /home/data/pgsql</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initdb -D /home/data/pgsql/data -E UTF8 --locale=C -U postgres</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h5><ul>
+<li>这里请参考这篇文章的详细介绍：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="external">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></li>
+<li>复制以上文件 pg_hba.conf 和 postgresql.conf ，先备份默认配置文件，再替换 /home/data/pgsql/data 下对应的文件</li>
+<li>并根据当前服务器内存大小更改  postgresql.conf   中的  shared_buffered 参数（如果是数据库服务器，建议设置为总内存的60%~80%）<br><br></li>
+</ul>
+<h5 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su postgres</span><br><span class="line">pg_ctl start -D /home/data/pgsql/data</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="更改数据库中-postgres-用户密码"><a href="#更改数据库中-postgres-用户密码" class="headerlink" title="更改数据库中 postgres 用户密码"></a>更改数据库中 postgres 用户密码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">psql</span><br><span class="line">alter user postgres with password <span class="string">'new password'</span>;</span><br></pre></td></tr></table></figure>
+<p><br><br>至此，数据库已经安装成功，如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -213,7 +280,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -226,318 +293,114 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/15/InstallPG/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/03/BuildBlog/" class="archive-article-date">
-  	<time datetime="2017-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/03/BuildBlog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/03/BuildBlog/">最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">畅言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不蒜子</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/19/photos/" class="archive-article-date">
-  	<time datetime="2017-11-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/19/photos/">相册</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旅途</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自拍</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">美食</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">游玩</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">风景</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">毕业</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">加班</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">疯狂撸码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/photos//" class="article-tag-list-link color2">photos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/17/halfPaper/" class="archive-article-date">
-  	<time datetime="2017-11-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/17/halfPaper/">《半张纸》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">半张纸</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">短篇小说</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">菜鸟</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大神</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/15/firstBlog/" class="archive-article-date">
-  	<time datetime="2017-11-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/15/firstBlog/">第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">第一篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="InstallPG" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytjIMMNm",
+        conf: "ed7ebef4b1d52a544acbbdbb42709fe8"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -568,8 +431,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
