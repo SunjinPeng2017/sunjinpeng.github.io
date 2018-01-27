@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
   <title>生产环境离线安装、优化 PostgresSQL-9.6.2 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装P">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装Po">
 <meta name="keywords" content="PgSQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生产环境离线安装、优化 PostgresSQL-9.6.2">
 <meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/15/InstallPG/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装P">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装Po">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/pg-files.png">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/install-error.png">
-<meta property="og:updated_time" content="2018-01-26T15:21:55.119Z">
+<meta property="og:updated_time" content="2018-01-27T03:04:41.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生产环境离线安装、优化 PostgresSQL-9.6.2">
-<meta name="twitter:description" content="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装P">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md 主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装Po">
 <meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/pg-files.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
@@ -196,7 +196,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请说明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><a href="#转载请说明：http-www-sunjinpeng-cn-2017-12-15-InstallPG" class="headerlink" title="转载请说明：http://www.sunjinpeng.cn/2017/12/15/InstallPG/"></a>转载请说明：<a href="http://www.sunjinpeng.cn/2017/12/03/BuildBlog/">http://www.sunjinpeng.cn/2017/12/15/InstallPG/</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="external">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><p><br></p>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/15/InstallPG">http://www.sunjinpeng.cn/2017/12/15/InstallPG</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="external">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><p><br></p>
 <h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
 <li>下载相关文件</li>
 <li>上传文件至生产环境并解压</li>
@@ -217,7 +217,7 @@
 <li>点击该链接下载所有安装包:<a href="http://p3602m0u1.bkt.clouddn.com/install_PG.rar" target="_blank" rel="external">install_PG.rar</a><br><img src="http://ozfuaes8n.bkt.clouddn.com/pg-files.png" alt="pg-files"><br><br></li>
 </ul>
 <h5 id="上传文件至生产环境并解压"><a href="#上传文件至生产环境并解压" class="headerlink" title="上传文件至生产环境并解压"></a>上传文件至生产环境并解压</h5><ul>
-<li>在 <code>Windows</code> 下解压上述下载文件并上传至 Linux</li>
+<li>在 <code>Windows</code> 下解压上述下载文件并上传至 <code>Linux</code></li>
 <li>执行以下命令，解压文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf gcc-6.3.0.tar.bz2</span><br><span class="line">tar -jxvf gmp-4.3.2.tar.bz2</span><br><span class="line">tar -jxvf mpfr-2.4.2.tar.bz2</span><br><span class="line">tar -xzf mpc-0.8.1.tar.gz</span><br><span class="line">tar Jxvf Python-3.5.0.tar.xz</span><br><span class="line">tar -xzf cmake-3.7.2.tar.gz</span><br><span class="line">tar -jxvf  postgresql-9.6.2.tar.bz2</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -353,6 +353,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/12/20/pg_pathman/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          PostgresSQL插件--高效分区插件pg_pathman
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/03/BuildBlog/" id="article-nav-older" class="article-nav-link-wrap">
@@ -498,6 +507,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -514,19 +527,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,6 +540,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大神</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
               </li>
              
               <li class="article-tag-list-item">
