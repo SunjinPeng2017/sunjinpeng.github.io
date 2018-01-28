@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>Archives: 2017/11 | VSK小天的博客</title>
+  <title>PostgresSQL插件--连接池插件pgbouncer | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
-<meta name="keywords" content="前端,js,java,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VSK小天的博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/archives/2017/11/index.html">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncer pgcluu 简介 pgbouncer 是一个轻量级的PG数据库连接池插件  主要步骤 下载源码 编译安装 配置参数 配置环境变量 使用 pgbouncer">
+<meta name="keywords" content="PgSQL,pgbouncer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgresSQL插件--连接池插件pgbouncer">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/26/pgbouncer/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncer pgcluu 简介 pgbouncer 是一个轻量级的PG数据库连接池插件  主要步骤 下载源码 编译安装 配置参数 配置环境变量 使用 pgbouncer">
 <meta property="og:locale" content="Chinese,English">
+<meta property="og:updated_time" content="2018-01-28T04:39:45.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSK小天的博客">
-<meta name="twitter:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta name="twitter:title" content="PostgresSQL插件--连接池插件pgbouncer">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncer pgcluu 简介 pgbouncer 是一个轻量级的PG数据库连接池插件  主要步骤 下载源码 编译安装 配置参数 配置环境变量 使用 pgbouncer">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -172,190 +173,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-pgbouncer" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PostgresSQL插件--连接池插件pgbouncer
+    </h1>
+  
+
+        
+        <a href="/2017/12/26/pgbouncer/" class="archive-article-date">
+  	<time datetime="2017-12-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/26/pgbouncer">http://www.sunjinpeng.cn/2017/12/26/pgbouncer</a></h5><h5 id="官网：https-github-com-pgbouncer-pgbouncer"><a href="#官网：https-github-com-pgbouncer-pgbouncer" class="headerlink" title="官网：https://github.com/pgbouncer/pgbouncer"></a>官网：<a href="https://github.com/pgbouncer/pgbouncer" target="_blank" rel="external">https://github.com/pgbouncer/pgbouncer</a></h5><p><br></p>
+<h4 id="pgcluu-简介"><a href="#pgcluu-简介" class="headerlink" title="pgcluu 简介"></a>pgcluu 简介</h4><ul>
+<li>pgbouncer 是一个轻量级的PG数据库连接池插件<br><br></li>
+</ul>
+<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>下载源码</li>
+<li>编译安装</li>
+<li>配置参数</li>
+<li>配置环境变量</li>
+<li>使用 pgbouncer<br><br><a id="more"></a>
+<br></li>
+</ul>
+<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载对应安装包</span></span><br><span class="line">https://github.com/pgbouncer/pgbouncer/releases</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压安装包</span></span><br><span class="line">tar -xzf pgbouncer-1.7.2.tar.gz</span><br><span class="line">tar -xzf libevent-2.1.8-stable.tar.gz</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 安装libevent(sudo)</span></span><br><span class="line"><span class="built_in">cd</span> libevent-2.1.8-stable</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/libevent-2.1.8</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 安装pgbouncer(sudo)</span></span><br><span class="line"><span class="built_in">cd</span> pgbouncer-1.7.2</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/pgbouncer-1.7.2/ --with-libevent=/usr/<span class="built_in">local</span>/libevent-2.1.8/</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/pgbouncer-1.7.2</span><br><span class="line">mkdir config</span><br><span class="line"><span class="built_in">cd</span> config</span><br><span class="line">touch pgbouncer.ini</span><br><span class="line">touch user.txt</span><br><span class="line">touch pgbouncer.log</span><br><span class="line"> </span><br><span class="line">vi pgbouncer.ini</span><br><span class="line"><span class="comment"># 添加以下配置</span></span><br><span class="line">[databases]</span><br><span class="line">GEMPILE_DATA = host=127.0.0.1 port=5435 dbname=GEMPILE_DATA user=postgres password=postgres</span><br><span class="line">[pgbouncer]</span><br><span class="line">listen_port = 6543</span><br><span class="line">listen_addr = *</span><br><span class="line">auth_type = md5</span><br><span class="line">auth_file =/usr/<span class="built_in">local</span>/pgbouncer-1.7.2/config/user.txt</span><br><span class="line">logfile =/usr/<span class="built_in">local</span>/pgbouncer-1.7.2/config/pgbouncer.log</span><br><span class="line">pidfile =/usr/<span class="built_in">local</span>/pgbouncer-1.7.2/config/pgbouncer.pid</span><br><span class="line">admin_users = postgres</span><br><span class="line">pool_mode = Transaction</span><br><span class="line">max_client_conn = 1000</span><br><span class="line"> </span><br><span class="line">vi user.txt</span><br><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line"><span class="string">"postgres"</span> <span class="string">"postgres"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将该文件宿主赋予 postgres 账号</span></span><br><span class="line">chown -R postgres:postgres /usr/<span class="built_in">local</span>/pgbouncer-1.7.2</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su postgres</span><br><span class="line">vi ~/.bashrc</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/pgbouncer-1.7.2/bin</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:/usr/<span class="built_in">local</span>/libevent-2.1.8/lib</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="使用-pgbouncer"><a href="#使用-pgbouncer" class="headerlink" title="使用 pgbouncer"></a>使用 pgbouncer</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动命令</span></span><br><span class="line">pgbouncer -d /usr/<span class="built_in">local</span>/pgbouncer-1.7.2/config/pgbouncer.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用连接池连接数据库</span></span><br><span class="line">psql -U postgres -d GEMPILE_DATA -p 6543</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 连接pgbouncer本身的数据库</span></span><br><span class="line">psql -U postgres -d pgbouncer -p 6543</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="更多详细内容请参考：http-pgbouncer-github-io-usage-html"><a href="#更多详细内容请参考：http-pgbouncer-github-io-usage-html" class="headerlink" title="更多详细内容请参考：http://pgbouncer.github.io/usage.html"></a>更多详细内容请参考：<a href="http://pgbouncer.github.io/usage.html" target="_blank" rel="external">http://pgbouncer.github.io/usage.html</a></h5><p><br><br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/19/photos/" class="archive-article-date">
-  	<time datetime="2017-11-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/19/photos/">相册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旅途</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自拍</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">美食</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">游玩</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">风景</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">毕业</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">加班</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">疯狂撸码</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">pgbouncer</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/photos//" class="article-tag-list-link color2">photos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/17/halfPaper/" class="archive-article-date">
-  	<time datetime="2017-11-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/17/halfPaper/">《半张纸》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">半张纸</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">短篇小说</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">菜鸟</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大神</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -368,66 +252,114 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/26/pgbouncer/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/15/firstBlog/" class="archive-article-date">
-  	<time datetime="2017-11-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/25/pgcluu/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PostgresSQL插件--集群性能监测和审计插件pgcluu</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/15/firstBlog/">第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">第一篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="pgbouncer" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytjIMMNm",
+        conf: "ed7ebef4b1d52a544acbbdbb42709fe8"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -458,8 +390,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
