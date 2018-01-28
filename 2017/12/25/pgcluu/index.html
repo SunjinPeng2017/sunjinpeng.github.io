@@ -17,7 +17,7 @@
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluupgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的统">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/pgcluu.png">
-<meta property="og:updated_time" content="2018-01-28T14:50:19.959Z">
+<meta property="og:updated_time" content="2018-01-28T15:37:00.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--集群性能监测和审计插件pgcluu">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluupgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的统">
@@ -218,7 +218,7 @@
 <h5 id="使用pgcluu"><a href="#使用pgcluu" class="headerlink" title="使用pgcluu"></a>使用pgcluu</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">su postgres </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 创建临时文件</span></span><br><span class="line">mkdir /tmp/stat_db1</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 开始统计数据</span></span><br><span class="line"><span class="comment"># -D 后台运行   -i 多久统计一次数据(秒) -W 数据库连接密码</span></span><br><span class="line">pgcluu_collectd -D -i 5 /tmp/stat_db1/ -h localhost -U postgres -d databaseName -W postgres</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 结束统计数据</span></span><br><span class="line">pgcluu_collectd -k</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 保存数据</span></span><br><span class="line"><span class="comment"># 创建要保存的目录，每次都要重新创建一个新的</span></span><br><span class="line">mkdir /tmp/report_db2/   </span><br><span class="line"><span class="comment">#把统计数据复制过来</span></span><br><span class="line">pgcluu -o /tmp/report_db2/ /tmp/stat_db1/   </span><br><span class="line"> </span><br><span class="line"><span class="comment">#把该文件复制到本地，用浏览器打开index.html就可以查看统计结果</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h5 id="参数介绍"><a href="#参数介绍" class="headerlink" title="参数介绍"></a>参数介绍</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">-B, --<span class="built_in">enable</span>-buffercache <span class="built_in">enable</span> buffercache statistics <span class="keyword">if</span> pg_buffercache</span><br><span class="line">                               extension is installed.</span><br><span class="line">-c, --capture            create a snapshot of the PostgreSQL installation</span><br><span class="line">                               into tmp/pgcluu_capture.tar.gz.</span><br><span class="line">-C, --end-counter=NUM    terminate program after NUM reports.</span><br><span class="line">-d, --dbname=DATABASE    database name to connect to. Default to current user.</span><br><span class="line">-D, --daemonize          detach from console and enter <span class="keyword">in</span> daemon mode.</span><br><span class="line">-E, --end-after=SECOND   self terminate program after a given number of seconds.</span><br><span class="line">                               Can be written: 7200 or 120M or 2H, <span class="keyword">for</span> days use 7D <span class="keyword">for</span></span><br><span class="line">                               example to stop collecting data after seven days. </span><br><span class="line">-f, --pid-file=FILE      path to pid file. Default: /tmp/pgcluu_collectd.pid.</span><br><span class="line">-h, --host=HOSTNAME      database server host or socket directory</span><br><span class="line">-i, --interval=NUM       time to <span class="built_in">wait</span> between runs</span><br><span class="line">-k, --<span class="built_in">kill</span>               stop current pgcluu_collectd running daemon.</span><br><span class="line">-m, --metric=METRIC      <span class="built_in">set</span> a coma separated list of metrics to perform.</span><br><span class="line">-M, --max-size=SIZE      self terminate program when the size of the output dir</span><br><span class="line">                               exceed a given size. Can be written: 2GB or 2000MB. </span><br><span class="line">-p, --port=PORT          database port(s) to connect to. Defaults to 5432.</span><br><span class="line">-P, --psql=BIN           path to the psql <span class="built_in">command</span>. Default: psql.</span><br><span class="line">-Q, --no-statement       <span class="keyword">do</span> not collect queries statistics from pg_stat_statements.</span><br><span class="line">-r, --rotate-daily       force the daily rotation of data files.</span><br><span class="line">-R, --rotate-hourly      force the hourly rotation of data files.</span><br><span class="line">-s, --sar=BIN            path to sar sysstat <span class="built_in">command</span>. Default: sar.</span><br><span class="line">-S, --<span class="built_in">disable</span>-sar        <span class="built_in">disable</span> collect of system statistics with sar.</span><br><span class="line">-T, --notablespace       <span class="built_in">disable</span> lookup at tablespace when the connect user</span><br><span class="line">                               is not superuser to avoid printing an error message.</span><br><span class="line">-U, --dbuser=USERNAME    database user to connect as. Default to current user.</span><br><span class="line">-v, --verbose            Print out debug informations.</span><br><span class="line">-V, --version            Show pgcluu_collectd version and <span class="built_in">exit</span>.</span><br><span class="line">-W, --password=pass      database password.</span><br><span class="line">-z, --compress           force compression of rotated data files.</span><br><span class="line">--included-db=DATABASE   collect statistics only <span class="keyword">for</span> those databases present</span><br><span class="line">                               <span class="keyword">in</span> a comma separated list of database names.</span><br><span class="line">--list-metric            list available metrics actions that can be performed.</span><br><span class="line">--sysinfo                get operating system information and <span class="built_in">exit</span> (sysinfo.txt).</span><br><span class="line">--no-sysinfo             <span class="keyword">do</span> not collect operating system information at all. </span><br><span class="line">--no-database            <span class="keyword">do</span> not collect database statistics at all. </span><br><span class="line">--pgbouncer-args=OPTIONS Option to used to connect to the pgbouncer system</span><br><span class="line">                               database. Ex: -p 6432 -U postgres -h 192.168.1.100</span><br><span class="line">                               You must at least give one parameter to <span class="built_in">enable</span></span><br><span class="line">                               pgbouncer monitoring.</span><br><span class="line">--sar-file=FILE          path to sar output data file <span class="keyword">for</span> sysstat stats</span><br><span class="line">                               Default to output_dir/sar_stats.dat.</span><br><span class="line">--<span class="built_in">stat</span>-type all|user     Set stats tables to <span class="built_in">read</span>. Values: <span class="string">'all'</span> or <span class="string">'user'</span> to</span><br><span class="line">                               look at pg_stat_(all|user) tables. Default: user.</span><br><span class="line">--pgversion X.Y          force the PostgreSQL version to the given value.</span><br><span class="line">--pgservice NAME         Name of service inside of the pg_service.conf file.</span><br><span class="line">--exclude-time RANGE     exclude a laps of time by giving the start and end</span><br><span class="line">                               hours.</span><br><span class="line">--<span class="built_in">help</span>                   <span class="built_in">print</span> usage</span><br></pre></td></tr></table></figure>
-<p><br><br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+<p><br><br>至此，<code>pgcluu</code>已经安装完成，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
 
       
 
@@ -483,6 +483,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -499,14 +503,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -515,11 +511,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,10 +536,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大神</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,6 +580,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">疯狂撸码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">powa</a>
               </li>
             
             <div class="clearfix"></div>
