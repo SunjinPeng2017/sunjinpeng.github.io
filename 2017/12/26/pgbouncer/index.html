@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
   <title>PostgresSQL插件--连接池插件pgbouncer | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncer pgcluu 简介 pgbouncer 是一个轻量级的PG数据库连接池插件  主要步骤 下载源码 编译安装 配置参数 配置环境变量 使用 pgbouncer">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncerpgbouncer 简介 pgbouncer 是一个轻量级的PG数据库连接池插件">
 <meta name="keywords" content="PgSQL,pgbouncer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgresSQL插件--连接池插件pgbouncer">
 <meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/26/pgbouncer/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncer pgcluu 简介 pgbouncer 是一个轻量级的PG数据库连接池插件  主要步骤 下载源码 编译安装 配置参数 配置环境变量 使用 pgbouncer">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncerpgbouncer 简介 pgbouncer 是一个轻量级的PG数据库连接池插件">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-01-28T04:50:17.518Z">
+<meta property="og:updated_time" content="2018-01-28T14:50:19.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--连接池插件pgbouncer">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncer pgcluu 简介 pgbouncer 是一个轻量级的PG数据库连接池插件  主要步骤 下载源码 编译安装 配置参数 配置环境变量 使用 pgbouncer">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncerpgbouncer 简介 pgbouncer 是一个轻量级的PG数据库连接池插件">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -193,17 +193,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/26/pgbouncer">http://www.sunjinpeng.cn/2017/12/26/pgbouncer</a></h5><h5 id="官网：https-github-com-pgbouncer-pgbouncer"><a href="#官网：https-github-com-pgbouncer-pgbouncer" class="headerlink" title="官网：https://github.com/pgbouncer/pgbouncer"></a>官网：<a href="https://github.com/pgbouncer/pgbouncer" target="_blank" rel="external">https://github.com/pgbouncer/pgbouncer</a></h5><p><br></p>
-<h4 id="pgcluu-简介"><a href="#pgcluu-简介" class="headerlink" title="pgcluu 简介"></a>pgcluu 简介</h4><ul>
-<li>pgbouncer 是一个轻量级的PG数据库连接池插件<br><br></li>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/26/pgbouncer">http://www.sunjinpeng.cn/2017/12/26/pgbouncer</a></h5><h5 id="官网：https-github-com-pgbouncer-pgbouncer"><a href="#官网：https-github-com-pgbouncer-pgbouncer" class="headerlink" title="官网：https://github.com/pgbouncer/pgbouncer"></a>官网：<a href="https://github.com/pgbouncer/pgbouncer" target="_blank" rel="external">https://github.com/pgbouncer/pgbouncer</a></h5><h4 id="pgbouncer-简介"><a href="#pgbouncer-简介" class="headerlink" title="pgbouncer 简介"></a>pgbouncer 简介</h4><ul>
+<li>pgbouncer 是一个轻量级的PG数据库连接池插件<br><br><a id="more"></a>
+</li>
 </ul>
 <h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
 <li>下载源码</li>
 <li>编译安装</li>
 <li>配置参数</li>
 <li>配置环境变量</li>
-<li>使用 pgbouncer<br><br><a id="more"></a>
-<br></li>
+<li>使用 pgbouncer<br><br></li>
 </ul>
 <h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载对应安装包</span></span><br><span class="line">https://github.com/pgbouncer/pgbouncer/releases</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -314,6 +313,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/12/27/InstallPiP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux 离线安装Python、pip
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/12/25/pgcluu/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">PostgresSQL插件--集群性能监测和审计插件pgcluu</div>
@@ -343,7 +351,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-github-com-pgbouncer-pgbouncer"><span class="toc-number">2.</span> <span class="toc-text">官网：https://github.com/pgbouncer/pgbouncer</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pgcluu-简介"><span class="toc-number"></span> <span class="toc-text">pgcluu 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">2.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置参数"><span class="toc-number">3.</span> <span class="toc-text">配置参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置环境变量"><span class="toc-number">4.</span> <span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用-pgbouncer"><span class="toc-number">5.</span> <span class="toc-text">使用 pgbouncer</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更多详细内容请参考：http-pgbouncer-github-io-usage-html"><span class="toc-number">6.</span> <span class="toc-text">更多详细内容请参考：http://pgbouncer.github.io/usage.html</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-github-com-pgbouncer-pgbouncer"><span class="toc-number">2.</span> <span class="toc-text">官网：https://github.com/pgbouncer/pgbouncer</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pgbouncer-简介"><span class="toc-number"></span> <span class="toc-text">pgbouncer 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">2.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置参数"><span class="toc-number">3.</span> <span class="toc-text">配置参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置环境变量"><span class="toc-number">4.</span> <span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用-pgbouncer"><span class="toc-number">5.</span> <span class="toc-text">使用 pgbouncer</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更多详细内容请参考：http-pgbouncer-github-io-usage-html"><span class="toc-number">6.</span> <span class="toc-text">更多详细内容请参考：http://pgbouncer.github.io/usage.html</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -492,6 +500,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
               <li class="article-tag-list-item">

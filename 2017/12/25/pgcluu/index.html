@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
   <title>PostgresSQL插件--集群性能监测和审计插件pgcluu | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluu pgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluupgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的统">
 <meta name="keywords" content="PgSQL,pgcluu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgresSQL插件--集群性能监测和审计插件pgcluu">
 <meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/25/pgcluu/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluu pgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluupgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的统">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/pgcluu.png">
-<meta property="og:updated_time" content="2018-01-28T03:18:47.171Z">
+<meta property="og:updated_time" content="2018-01-28T14:50:19.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--集群性能监测和审计插件pgcluu">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluu pgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu官网：https://github.com/darold/pgcluupgcluu 简介 pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。 它分为两部分： collector ，用来抓取PostgreSQL集群上的统">
 <meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/pgcluu.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
@@ -195,8 +195,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-25-pgcluu"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-25-pgcluu" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/25/pgcluu">http://www.sunjinpeng.cn/2017/12/25/pgcluu</a></h5><h5 id="官网：https-github-com-darold-pgcluu"><a href="#官网：https-github-com-darold-pgcluu" class="headerlink" title="官网：https://github.com/darold/pgcluu"></a>官网：<a href="https://github.com/darold/pgcluu" target="_blank" rel="external">https://github.com/darold/pgcluu</a></h5><p><br></p>
-<h4 id="pgcluu-简介"><a href="#pgcluu-简介" class="headerlink" title="pgcluu 简介"></a>pgcluu 简介</h4><ul>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-25-pgcluu"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-25-pgcluu" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/25/pgcluu"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/25/pgcluu">http://www.sunjinpeng.cn/2017/12/25/pgcluu</a></h5><h5 id="官网：https-github-com-darold-pgcluu"><a href="#官网：https-github-com-darold-pgcluu" class="headerlink" title="官网：https://github.com/darold/pgcluu"></a>官网：<a href="https://github.com/darold/pgcluu" target="_blank" rel="external">https://github.com/darold/pgcluu</a></h5><h4 id="pgcluu-简介"><a href="#pgcluu-简介" class="headerlink" title="pgcluu 简介"></a>pgcluu 简介</h4><ul>
 <li>pgCluu是一个PostgreSQL性能监视和审计工具。这是一个Perl程序，用于对PostgreSQL进行完整的审计集群和系统性能。</li>
 <li>它分为两部分：<ul>
 <li>collector ，用来抓取PostgreSQL集群上的统计信息, psql命令行实用程序和sar从sysstat包。</li>
@@ -505,6 +504,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
               <li class="article-tag-list-item">

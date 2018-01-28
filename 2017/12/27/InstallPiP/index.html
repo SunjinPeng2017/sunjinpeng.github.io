@@ -6,37 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客 | VSK小天的博客</title>
+  <title>Linux 离线安装Python、pip | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客地址：www.sunjinpeng.cn前提要求 一个GitHub账号 使用过node.js,熟悉相关命令 本地安装Git  主要步骤 GitHub 上创建个人博客并关联GitHub Pages 本地初始化 Hexo 将Hexo 与 GitHub Pages 关联 使用hexo相关主题 集成畅言评论 集成 不蒜子 统计网站访问次数 集成 七牛云 用于存放图片 申请阿里云域名并与GitHub">
-<meta name="keywords" content="hexo,yilia,畅言,不蒜子">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/27/InstallPiP主要步骤 下载相关包 安装Python 安装setuptools 安装pip pip 离线安装软件">
+<meta name="keywords" content="Python,pip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/03/BuildBlog/index.html">
+<meta property="og:title" content="Linux 离线安装Python、pip">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/27/InstallPiP/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="个人博客地址：www.sunjinpeng.cn前提要求 一个GitHub账号 使用过node.js,熟悉相关命令 本地安装Git  主要步骤 GitHub 上创建个人博客并关联GitHub Pages 本地初始化 Hexo 将Hexo 与 GitHub Pages 关联 使用hexo相关主题 集成畅言评论 集成 不蒜子 统计网站访问次数 集成 七牛云 用于存放图片 申请阿里云域名并与GitHub">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/27/InstallPiP主要步骤 下载相关包 安装Python 安装setuptools 安装pip pip 离线安装软件">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/createRepo.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/settings.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/GitHub-Pages.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/hexo-version.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/create-file.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/hexo-title.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/hexo-doc2.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/hexo-init.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/id_rsa.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/hexo-theme.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/wesite-info.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/busuanzi.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/qiniu1.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/qiniu2.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/qiniu3.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/aliyun.png">
-<meta property="og:updated_time" content="2018-01-28T14:50:20.012Z">
+<meta property="og:updated_time" content="2018-01-28T14:50:19.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客">
-<meta name="twitter:description" content="个人博客地址：www.sunjinpeng.cn前提要求 一个GitHub账号 使用过node.js,熟悉相关命令 本地安装Git  主要步骤 GitHub 上创建个人博客并关联GitHub Pages 本地初始化 Hexo 将Hexo 与 GitHub Pages 关联 使用hexo相关主题 集成畅言评论 集成 不蒜子 统计网站访问次数 集成 七牛云 用于存放图片 申请阿里云域名并与GitHub">
-<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/createRepo.png">
+<meta name="twitter:title" content="Linux 离线安装Python、pip">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/27/InstallPiP主要步骤 下载相关包 安装Python 安装setuptools 安装pip pip 离线安装软件">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -190,114 +173,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BuildBlog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-InstallPiP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客
+      Linux 离线安装Python、pip
     </h1>
   
 
         
-        <a href="/2017/12/03/BuildBlog/" class="archive-article-date">
-  	<time datetime="2017-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
+        <a href="/2017/12/27/InstallPiP/" class="archive-article-date">
+  	<time datetime="2017-12-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="个人博客地址：www-sunjinpeng-cn"><a href="#个人博客地址：www-sunjinpeng-cn" class="headerlink" title="个人博客地址：www.sunjinpeng.cn"></a>个人博客地址：<a href="http://www.sunjinpeng.cn">www.sunjinpeng.cn</a></h5><h4 id="前提要求"><a href="#前提要求" class="headerlink" title="前提要求"></a>前提要求</h4><ul>
-<li>一个GitHub账号</li>
-<li>使用过node.js,熟悉相关命令</li>
-<li>本地安装Git<br><br></li>
-</ul>
-<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
-<li>GitHub 上创建个人博客并关联GitHub Pages</li>
-<li>本地初始化 Hexo</li>
-<li>将Hexo 与 GitHub Pages 关联</li>
-<li>使用hexo相关主题</li>
-<li>集成畅言评论</li>
-<li>集成 不蒜子 统计网站访问次数</li>
-<li>集成 七牛云 用于存放图片</li>
-<li>申请阿里云域名并与GitHub Pages关联<br><br><a id="more"></a>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-27-InstallPiP"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-27-InstallPiP" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/27/InstallPiP"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/27/InstallPiP">http://www.sunjinpeng.cn/2017/12/27/InstallPiP</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>下载相关包</li>
+<li>安装<code>Python</code></li>
+<li>安装<code>setuptools</code></li>
+<li>安装<code>pip</code></li>
+<li><code>pip</code> 离线安装软件<br><br><a id="more"></a>
 </li>
 </ul>
-<h4 id="详细步骤-以下都以-sunjinpeng-example-github-io-为例"><a href="#详细步骤-以下都以-sunjinpeng-example-github-io-为例" class="headerlink" title="详细步骤(以下都以 sunjinpeng-example.github.io 为例)"></a>详细步骤(以下都以 sunjinpeng-example.github.io 为例)</h4><h5 id="GitHub-上创建个人博客并关联GitHub-Pages"><a href="#GitHub-上创建个人博客并关联GitHub-Pages" class="headerlink" title="GitHub 上创建个人博客并关联GitHub Pages"></a>GitHub 上创建个人博客并关联GitHub Pages</h5><p><img src="http://ozfuaes8n.bkt.clouddn.com/createRepo.png" alt="createRepo"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/settings.png" alt="settings"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/GitHub-Pages.png" alt="GitHub-Pages"><br><br><br></p>
-<h5 id="本地初始化-Hexo"><a href="#本地初始化-Hexo" class="headerlink" title="本地初始化 Hexo"></a>本地初始化 Hexo</h5><ul>
-<li>hexo 介绍: <a href="https://hexo.io/zh-cn" target="_blank" rel="external">官方文档</a> </li>
-<li>执行 <code>npm install -g hexo-cli</code></li>
-<li>执行 <code>hexo --version</code> 查看是否安装成功<br><img src="http://ozfuaes8n.bkt.clouddn.com/hexo-version.png" alt="hexo-version"> <br></li>
-<li>执行 <code>hexo init sunjinpeng-example.github.io</code> 将会在当前文件夹下创建 <code>sunjinpeng-example.github.io</code> 文件，用于存放以后博客<br><img src="http://ozfuaes8n.bkt.clouddn.com/create-file.png" alt="create-file"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/hexo-title.png" alt="hexo-title"><br></li>
-<li>运行 <code>hexo --help</code> 查看 <code>hexo</code> 相关命令<br><img src="http://ozfuaes8n.bkt.clouddn.com/hexo-doc2.png" alt="hexo-doc"><br></li>
-<li>运行 <code>hexo generate</code> <code>hexo server</code> 然后在浏览器输入 <code>http://localhost:4000</code><br><img src="http://ozfuaes8n.bkt.clouddn.com/hexo-init.png" alt="hexo-init.png"><br></li>
-<li>至此，<code>hexo</code> 在本地初始化完成<br><br></li>
-</ul>
-<h5 id="将Hexo-与-GitHub-Pages-关联"><a href="#将Hexo-与-GitHub-Pages-关联" class="headerlink" title="将Hexo 与 GitHub Pages 关联"></a>将Hexo 与 GitHub Pages 关联</h5><ul>
-<li>运行 <code>ssh-keygen -t rsa</code> 一路回车下去，将会在本地产生一个私钥</li>
-<li>复制 <code>C:\Users\38600\.ssh</code> 文件下的 <code>id_rsa.pub</code> 中的内容，粘贴在以下区域<br><img src="http://ozfuaes8n.bkt.clouddn.com/id_rsa.png" alt="id_rsa"><br></li>
-<li><p>配置 Git 信息,替换为自己信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"sunjinpeng"</span></span><br><span class="line">git config --global user.email <span class="string">"386007796@qq.com"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑 <code>_config.yml</code> 文件，更改以下信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:SunjinPeng2017/sunjinpeng-example.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>依次运行以下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>若运行出错，则先执行 <code>npm install hexo-deployer-git --save</code> 再执行 <code>hexo deploy</code></p>
-</li>
-<li><p>访问 <a href="https://sunjinpeng-example.github.io" target="_blank" rel="external">https://sunjinpeng-example.github.io</a> 若出现 <code>hexo</code> 初始化界面，<br>则证明 hexo 已经和 GitHub Pages 关联成功<br><br></p>
-</li>
-</ul>
-<h5 id="使用hexo相关主题"><a href="#使用hexo相关主题" class="headerlink" title="使用hexo相关主题"></a>使用hexo相关主题</h5><ul>
-<li>大家去 GitHub 仓库里搜索比较出名的<br><img src="http://ozfuaes8n.bkt.clouddn.com/hexo-theme.png" alt="hexo-theme"><br></li>
-<li>这里推荐 <code>yilia</code> 主题，移动端支持的很好，很漂亮</li>
-<li>一般将文件复制到 <code>themes/</code> 即可使用，按照官方文档指引更改 <code>_config.yml</code> 配置文件</li>
-</ul>
-<h5 id="集成畅言评论"><a href="#集成畅言评论" class="headerlink" title="集成畅言评论"></a>集成畅言评论</h5><ul>
-<li>由于国家对评论系统管理更加严格，其他评论系统基本都已被封杀，只有畅言仍然健在</li>
-<li>但是畅言审核比较严格，这里教大家一个 <code>投机取巧</code>的方法，随便找一个已经备案的网站，填写它的备案号，<br>  但在 <code>域名白名单</code> 地方填上自己的网站域名，然后等审核通过就可以正常使用啦！哈哈哈~<br><img src="http://ozfuaes8n.bkt.clouddn.com/wesite-info.png" alt="wesite-info"><br></li>
-<li>在博客中添加畅言，只需在 <code>_config.yml</code> 添加自己的密钥就可以啦<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#畅言</span><br><span class="line">changyan_appid: &apos;xxxxxxxxxxxxx&apos;</span><br><span class="line">changyan_conf: &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载相关包"><a href="#下载相关包" class="headerlink" title="下载相关包"></a>下载相关包</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载Python安装包</span></span><br><span class="line">https://www.python.org/downloads/release</span><br><span class="line"><span class="comment"># 下载 setuptools</span></span><br><span class="line">https://pypi.python.org/pypi/setuptools</span><br><span class="line"><span class="comment"># 下载 pip</span></span><br><span class="line">https://pypi.python.org/pypi/pip</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h5 id="集成-不蒜子-统计网站访问次数"><a href="#集成-不蒜子-统计网站访问次数" class="headerlink" title="集成 不蒜子 统计网站访问次数"></a>集成 <code>不蒜子</code> 统计网站访问次数</h5><ul>
-<li>效果如下<br><img src="http://ozfuaes8n.bkt.clouddn.com/busuanzi.png" alt="busuanzi"><br></li>
-<li>使用: 编辑 <code>footer.ejs</code> ，如下<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;footer id="footer"&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div class="outer"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div id="footer-info"&gt;</span></span><br><span class="line"><span class="regexp">      本站总访问量&lt;b&gt;&lt;span id="busuanzi_value_site_pv" style="font-size: 13px"&gt;&lt;/</span>span&gt;&lt;/b&gt;次</span><br><span class="line">      本文总阅读量&lt;b&gt;&lt;span id="busuanzi_value_page_pv" style="font-size: 13px"&gt;&lt;/span&gt;&lt;/b&gt;次</span><br><span class="line">    	&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"footer-left"</span>&gt;</span><br><span class="line">    		&amp;copy; &lt;%= date(new Date(), 'YYYY') %&gt; &lt;%= config.author || config.title %&gt; All rights reserved.</span><br><span class="line">    	&lt;/div&gt;</span><br><span class="line">      	&lt;!--&lt;div class="footer-right"&gt;--&gt;</span><br><span class="line">      		&lt;!--&lt;a href="http://hexo.io/" target="_blank"&gt;Hexo&lt;/a&gt;  Theme &lt;a href="https://github.com/litten/hexo-theme-yilia" target="_blank"&gt;Yilia&lt;/a&gt; by Litten--&gt;</span><br><span class="line">      	&lt;!--&lt;/div&gt;--&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/footer&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<h5 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压下载的Python压缩包</span></span><br><span class="line"><span class="built_in">cd</span> Python-3.5.0</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/python-3.5.0</span><br><span class="line">make &amp;&amp; sudo make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置Python环境变量</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vi .bash_profile</span><br><span class="line"><span class="comment"># 添加以下配置 ，请确保 $PATH 配置在 Python后面，这样就不会使用系统自带的Python</span></span><br><span class="line">PYTHON_HOME=/usr/<span class="built_in">local</span>/python-3.5.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PYTHON_HOME</span>/bin:<span class="variable">$HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可使用 python --version 检查环境变量是否配置成功</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h5 id="集成-七牛云-用于存放图片"><a href="#集成-七牛云-用于存放图片" class="headerlink" title="集成 七牛云 用于存放图片"></a>集成 <code>七牛云</code> 用于存放图片</h5><ul>
-<li>由于 GitHub 上一个项目最大为200M，如果博客中图片太多，肯定会超过容量，所以使用 <code>七牛云</code> 存放图片就很关键了，而且使用起来也很方便，只需复制一个链接就可以了。</li>
-<li>使用方式很简单，注册一个账号就可以了<br><img src="http://ozfuaes8n.bkt.clouddn.com/qiniu1.png" alt="qiniu1"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/qiniu2.png" alt="qiniu2"><br><br><img src="http://ozfuaes8n.bkt.clouddn.com/qiniu3.png" alt="qiniu3"><br><br><br></li>
-</ul>
-<h5 id="申请阿里云域名并与GitHub-Pages关联"><a href="#申请阿里云域名并与GitHub-Pages关联" class="headerlink" title="申请阿里云域名并与GitHub Pages关联"></a>申请阿里云域名并与GitHub Pages关联</h5><ul>
-<li>现在的域名虽然可以使用，但是一看就是 GitHub 下的一个域名，我们可以在 <a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.538.153ffa83b0Nl1g" target="_blank" rel="external">阿里云</a> 上购买一个域名</li>
-<li>域名买好以后，还需购买一个域名解析器。</li>
-<li><p>下面就开始填写解析域名的一些配置了</p>
-</li>
-<li><p>在 GitHub 仓库的根目录下建立一个 CNAME 的文本文件(注意：没有扩展名)，文件里面只能输入一个你的域名，不能加http://</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.sunjinpeng.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在域名解析中添加以下配置<br>注: 记录值为你 ping 该项目的ip地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping sunjinpeng-example.github.io</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://ozfuaes8n.bkt.clouddn.com/aliyun.png" alt="aliyun"><br></p>
-<ul>
-<li>过几分钟之后，该域名就会被重定向到你的 GitHub 主页<br><br></li>
-</ul>
-<h5 id="至此，一个完整的博客就已经搭建好了，是不是很开心呢！下面我就说一下写博客的一般步骤"><a href="#至此，一个完整的博客就已经搭建好了，是不是很开心呢！下面我就说一下写博客的一般步骤" class="headerlink" title="至此，一个完整的博客就已经搭建好了，是不是很开心呢！下面我就说一下写博客的一般步骤"></a>至此，一个完整的博客就已经搭建好了，是不是很开心呢！下面我就说一下写博客的一般步骤</h5><ul>
-<li>首先在 <code>source/_posts/</code> 文件下新建一个 <code>.md</code> 结尾的文件</li>
-<li>使用 <code>MarkDown</code> 编辑器编写博客，这里我推荐使用   <a href="https://www.typora.io/" target="_blank" rel="external">typora</a>,<br>  但是我一般使用 <a href="http://www.jetbrains.com/webstorm/" target="_blank" rel="external">webstorm</a>比较多，也是可以的。</li>
-<li>编写玩之后，分别运行以下:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先清除以前的文件</span></span><br><span class="line">hexo clean </span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译文件</span></span><br><span class="line">hexo generate </span><br><span class="line"></span><br><span class="line"><span class="comment"># 现在本地预览，支持实时更新，可很方便调试</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果觉得没问题了，部署到 GitHub 上</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><br><br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+<h5 id="安装setuptools"><a href="#安装setuptools" class="headerlink" title="安装setuptools"></a>安装setuptools</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line"><span class="comment"># 解压下载的setuptools压缩包</span></span><br><span class="line"><span class="built_in">cd</span> setuptools-38.4.0</span><br><span class="line"><span class="comment"># 请确认使用的是自己安装Python 而不是系统自带的Python，</span></span><br><span class="line"><span class="comment"># 也可通过指定文件安装: /usr/local/python-3.5.0/bin/python3 setup.py install</span></span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a>安装pip</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line"><span class="comment"># 解压下载的pip压缩包</span></span><br><span class="line"><span class="built_in">cd</span> pip-9.0.1</span><br><span class="line"><span class="comment"># 请确认使用的是自己安装Python 而不是系统自带的Python，</span></span><br><span class="line"><span class="comment"># 也可指定文件安装: /usr/local/python-3.5.0/bin/python3 setup.py install</span></span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="pip-离线安装软件"><a href="#pip-离线安装软件" class="headerlink" title="pip 离线安装软件"></a>pip 离线安装软件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先下载指定的包到指定文件夹</span></span><br><span class="line">pip install --download d:\python27\packs pandas（-r requirements.txt）</span><br><span class="line"><span class="comment"># 将下好的包复制到生产环境，离线安装</span></span><br><span class="line">pip install --no-index --find-links=d:\python27\packs\ pandas （-r requirements.txt）</span><br></pre></td></tr></table></figure>
+<p><br><br>这样就可以在没网的环境下离线使用<code>pip</code>了。<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
 
       
 
@@ -311,19 +224,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">畅言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不蒜子</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pip</a>
         		</li>
       		
 		</ul>
@@ -390,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/03/BuildBlog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/27/InstallPiP/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -404,18 +309,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/15/InstallPG/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          生产环境离线安装、优化 PostgresSQL-9.6.2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/19/photos/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">相册</div>
+    <a href="/2017/12/26/pgbouncer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PostgresSQL插件--连接池插件pgbouncer</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -442,7 +338,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#个人博客地址：www-sunjinpeng-cn"><span class="toc-number">1.</span> <span class="toc-text">个人博客地址：www.sunjinpeng.cn</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前提要求"><span class="toc-number"></span> <span class="toc-text">前提要求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤-以下都以-sunjinpeng-example-github-io-为例"><span class="toc-number"></span> <span class="toc-text">详细步骤(以下都以 sunjinpeng-example.github.io 为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#GitHub-上创建个人博客并关联GitHub-Pages"><span class="toc-number">1.</span> <span class="toc-text">GitHub 上创建个人博客并关联GitHub Pages</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#本地初始化-Hexo"><span class="toc-number">2.</span> <span class="toc-text">本地初始化 Hexo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#将Hexo-与-GitHub-Pages-关联"><span class="toc-number">3.</span> <span class="toc-text">将Hexo 与 GitHub Pages 关联</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用hexo相关主题"><span class="toc-number">4.</span> <span class="toc-text">使用hexo相关主题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集成畅言评论"><span class="toc-number">5.</span> <span class="toc-text">集成畅言评论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集成-不蒜子-统计网站访问次数"><span class="toc-number">6.</span> <span class="toc-text">集成 不蒜子 统计网站访问次数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集成-七牛云-用于存放图片"><span class="toc-number">7.</span> <span class="toc-text">集成 七牛云 用于存放图片</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#申请阿里云域名并与GitHub-Pages关联"><span class="toc-number">8.</span> <span class="toc-text">申请阿里云域名并与GitHub Pages关联</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#至此，一个完整的博客就已经搭建好了，是不是很开心呢！下面我就说一下写博客的一般步骤"><span class="toc-number">9.</span> <span class="toc-text">至此，一个完整的博客就已经搭建好了，是不是很开心呢！下面我就说一下写博客的一般步骤</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-27-InstallPiP"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/27/InstallPiP</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载相关包"><span class="toc-number">1.</span> <span class="toc-text">下载相关包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Python"><span class="toc-number">2.</span> <span class="toc-text">安装Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装setuptools"><span class="toc-number">3.</span> <span class="toc-text">安装setuptools</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装pip"><span class="toc-number">4.</span> <span class="toc-text">安装pip</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#pip-离线安装软件"><span class="toc-number">5.</span> <span class="toc-text">pip 离线安装软件</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -458,7 +354,7 @@
   
 
   
-  <div id="SOHUCS" sid="BuildBlog" ></div> 
+  <div id="SOHUCS" sid="InstallPiP" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
