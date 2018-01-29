@@ -6,19 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>Category: techArticle | VSK小天的博客</title>
+  <title>IntelliJ IDEA -- 输出test case coverage | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
-<meta name="keywords" content="前端,js,java,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VSK小天的博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/categories/techArticle/page/2/index.html">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/31/idea-test主要步骤 配置jvm参数 运行 TestCase 更改相关设置 导出 coverage report">
+<meta name="keywords" content="IDEA,JavaDoc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IntelliJ IDEA -- 输出test case coverage">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/31/idea-test/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/31/idea-test主要步骤 配置jvm参数 运行 TestCase 更改相关设置 导出 coverage report">
 <meta property="og:locale" content="Chinese,English">
+<meta property="og:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-1.png">
+<meta property="og:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-2.png">
+<meta property="og:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-3.png">
+<meta property="og:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-4.png">
+<meta property="og:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-5.png">
+<meta property="og:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-6.png">
+<meta property="og:updated_time" content="2018-01-29T15:14:56.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSK小天的博客">
-<meta name="twitter:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta name="twitter:title" content="IntelliJ IDEA -- 输出test case coverage">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/31/idea-test主要步骤 配置jvm参数 运行 TestCase 更改相关设置 导出 coverage report">
+<meta name="twitter:image" content="http://p3602m0u1.bkt.clouddn.com/idea-test-1.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -172,52 +180,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-idea-test" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IntelliJ IDEA -- 输出test case coverage
+    </h1>
+  
+
+        
+        <a href="/2017/12/31/idea-test/" class="archive-article-date">
+  	<time datetime="2017-12-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-31-idea-test"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-31-idea-test" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/31/idea-test"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/31/idea-test">http://www.sunjinpeng.cn/2017/12/31/idea-test</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>配置jvm参数</li>
+<li>运行 <code>TestCase</code></li>
+<li>更改相关设置</li>
+<li>导出 <code>coverage report</code><br><br><a id="more"></a>
+<br></li>
+</ul>
+<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="配置jvm参数"><a href="#配置jvm参数" class="headerlink" title="配置jvm参数"></a>配置jvm参数</h5><ul>
+<li>找到安装目录 <code>&lt;your installation path&gt;\JetBrains\IntelliJ IDEA 2016.3\bin\</code>下  <code>idea.exe.vmoptions(idea64.exe.vmoptions)</code>文件，添加jvm参数<code>-Djava.io.tmpdir=D:\idea temp</code>，这个文件夹必须事先创建，并且需要读写权限（不要定义在管理员权限的目录下）。<br><br></li>
+</ul>
+<h5 id="运行-TestCase"><a href="#运行-TestCase" class="headerlink" title="运行 TestCase"></a>运行 <code>TestCase</code></h5><ul>
+<li>点击 <code>Run * with coverage</code> 或者右键已经定义为<code>test source的package</code>选择<br><img src="http://p3602m0u1.bkt.clouddn.com/idea-test-1.png" alt="idea-test-1"><br><br></li>
+</ul>
+<h5 id="更改相关设置"><a href="#更改相关设置" class="headerlink" title="更改相关设置"></a>更改相关设置</h5><ul>
+<li>等待test结束后出现coverage窗口双击可以查阅相关信息<br><img src="http://p3602m0u1.bkt.clouddn.com/idea-test-2.png" alt="idea-test-2"><br></li>
+<li>代码覆盖的高亮样式默认是没有背景颜色的，具体设置为点击行号旁边的色块，在弹出的<code>toolbar</code>中选择 <code>Edit coverage colors</code><br><img src="http://p3602m0u1.bkt.clouddn.com/idea-test-3.png" alt="idea-test-3"><br></li>
+<li>在弹出的设置窗口中，<code>scheme</code>为当前你选择的代码样式风格，在下方的选项树中找到<code>Line coverage</code>，可以分别设置覆盖情况为Full/Partial/Uncovered的样式，推荐勾选<code>Background</code>取消<code>Foregroud</code>，根据自己已经设置的<code>scheme</code>设置颜色<br><img src="http://p3602m0u1.bkt.clouddn.com/idea-test-4.png" alt="idea-test-4"><br></li>
+</ul>
+<h5 id="导出-coverage-report"><a href="#导出-coverage-report" class="headerlink" title="导出 coverage report"></a>导出 <code>coverage report</code></h5><ul>
+<li>idea 提供了导出coverage report到本地的功能（推荐新建一个专门的文件夹），并可以直接打开<br><img src="http://p3602m0u1.bkt.clouddn.com/idea-test-5.png" alt="idea-test-5"><br><br><img src="http://p3602m0u1.bkt.clouddn.com/idea-test-6.png" alt="idea-test-6"><br><br><br><br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/26/pgbouncer/" class="archive-article-date">
-  	<time datetime="2017-12-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/26/pgbouncer/">PostgresSQL插件--连接池插件pgbouncer</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">pgbouncer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaDoc</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -230,293 +257,135 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/31/idea-test/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/pgcluu/" class="archive-article-date">
-  	<time datetime="2017-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/01/05/idea-copyright/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          IntelliJ IDEA -- 配置 CopyRight
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/30/idea-javaDoc/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IntelliJ IDEA -- 中生成指定模板的JavaDoc</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/pgcluu/">PostgresSQL插件--集群性能监测和审计插件pgcluu</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pgcluu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-31-idea-test"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/31/idea-test</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#配置jvm参数"><span class="toc-number">1.</span> <span class="toc-text">配置jvm参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#运行-TestCase"><span class="toc-number">2.</span> <span class="toc-text">运行 TestCase</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改相关设置"><span class="toc-number">3.</span> <span class="toc-text">更改相关设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#导出-coverage-report"><span class="toc-number">4.</span> <span class="toc-text">导出 coverage report</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/20/pg_pathman/" class="archive-article-date">
-  	<time datetime="2017-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/20/pg_pathman/">PostgresSQL插件--高效分区插件pg_pathman</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">pg_pathman</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/15/InstallPG/" class="archive-article-date">
-  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/15/InstallPG/">生产环境离线安装、优化 PostgresSQL-9.6.2</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/03/BuildBlog/" class="archive-article-date">
-  	<time datetime="2017-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/03/BuildBlog/">最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">畅言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不蒜子</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">菜鸟</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大神</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/categories/techArticle/">&laquo; Prev</a><a class="page-number" href="/categories/techArticle/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+  <div id="SOHUCS" sid="idea-test" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytjIMMNm",
+        conf: "ed7ebef4b1d52a544acbbdbb42709fe8"
+    });
+</script>
+</script>
+  
+
+  
+
   
 
 
@@ -548,10 +417,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
