@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>Archives | VSK小天的博客</title>
+  <title>IntelliJ IDEA -- 中生成指定模板的JavaDoc | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
-<meta name="keywords" content="前端,js,java,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VSK小天的博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/archives/index.html">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc主要步骤 安装 JavaDoc 插件 配置 JavaDoc 插件 加入自定义 JavaDoc 生成 JavaDoc">
+<meta name="keywords" content="IDEA,JavaDoc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IntelliJ IDEA -- 中生成指定模板的JavaDoc">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc主要步骤 安装 JavaDoc 插件 配置 JavaDoc 插件 加入自定义 JavaDoc 生成 JavaDoc">
 <meta property="og:locale" content="Chinese,English">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-1.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-2.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-3.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-4.png">
+<meta property="og:updated_time" content="2018-01-29T14:56:00.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSK小天的博客">
-<meta name="twitter:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta name="twitter:title" content="IntelliJ IDEA -- 中生成指定模板的JavaDoc">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc主要步骤 安装 JavaDoc 插件 配置 JavaDoc 插件 加入自定义 JavaDoc 生成 JavaDoc">
+<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-1.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -172,36 +178,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-idea-javaDoc" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/30/idea-javaDoc/" class="archive-article-date">
-  	<time datetime="2017-12-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/30/idea-javaDoc/">IntelliJ IDEA -- 中生成指定模板的JavaDoc</a>
+    <h1 class="article-title" itemprop="name">
+      IntelliJ IDEA -- 中生成指定模板的JavaDoc
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/30/idea-javaDoc/" class="archive-article-date">
+  	<time datetime="2017-12-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-30-idea-javaDoc"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-30-idea-javaDoc" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc">http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>安装 <code>JavaDoc</code> 插件</li>
+<li>配置 <code>JavaDoc</code> 插件</li>
+<li>加入自定义 <code>JavaDoc</code></li>
+<li>生成 <code>JavaDoc</code><br><br><a id="more"></a>
+<br></li>
+</ul>
+<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="安装-JavaDoc-插件"><a href="#安装-JavaDoc-插件" class="headerlink" title="安装 JavaDoc 插件"></a>安装 <code>JavaDoc</code> 插件</h5><ul>
+<li>由于该插件已经很久没更新，会导致javadoc插件的配置页面丢失，请下载  <a href="http://p3602m0u1.bkt.clouddn.com/intellij-javadocs.zip" target="_blank" rel="external">修复版</a></li>
+<li>在plugin管理页面，使用本地安装方式导入该zip文件即可，无需解压<br><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-1.png" alt="idea-javaDoc-1"><br><br></li>
+</ul>
+<h5 id="配置-JavaDoc-插件"><a href="#配置-JavaDoc-插件" class="headerlink" title="配置 JavaDoc 插件"></a>配置 <code>JavaDoc</code> 插件</h5><p><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-2.png" alt="idea-javaDoc-2"><br><br></p>
+<h5 id="加入自定义-JavaDoc"><a href="#加入自定义-JavaDoc" class="headerlink" title="加入自定义 JavaDoc"></a>加入自定义 <code>JavaDoc</code></h5><ul>
+<li>编辑自定义的<code>JavaDoc</code>，在每个Template之中加入<code>* @since ${PROJECT_NAME} project_version</code><br><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-3.png" alt="idea-javaDoc-3"><br><br></li>
+</ul>
+<h5 id="生成-JavaDoc"><a href="#生成-JavaDoc" class="headerlink" title="生成 JavaDoc"></a>生成 <code>JavaDoc</code></h5><p><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-4.png" alt="idea-javaDoc-4"><br><br><br><br><br>至此，<code>JavaDoc</code>已成功在 <code>IDEA</code> 中配置，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -217,7 +237,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -230,685 +250,127 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/29/pgRoleManagement/" class="archive-article-date">
-  	<time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/29/pgRoleManagement/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PostgresSQL 用户组权限管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/29/pgRoleManagement/">PostgresSQL 用户组权限管理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pgRole</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-30-idea-javaDoc"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装-JavaDoc-插件"><span class="toc-number">1.</span> <span class="toc-text">安装 JavaDoc 插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置-JavaDoc-插件"><span class="toc-number">2.</span> <span class="toc-text">配置 JavaDoc 插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加入自定义-JavaDoc"><span class="toc-number">3.</span> <span class="toc-text">加入自定义 JavaDoc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生成-JavaDoc"><span class="toc-number">4.</span> <span class="toc-text">生成 JavaDoc</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/28/powa/" class="archive-article-date">
-  	<time datetime="2017-12-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/28/powa/">PostgresSQL插件--性能监控插件powa</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">powa</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/27/InstallPiP/" class="archive-article-date">
-  	<time datetime="2017-12-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/27/InstallPiP/">Linux 离线安装Python、pip</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pip</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/26/pgbouncer/" class="archive-article-date">
-  	<time datetime="2017-12-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/26/pgbouncer/">PostgresSQL插件--连接池插件pgbouncer</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">pgbouncer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/pgcluu/" class="archive-article-date">
-  	<time datetime="2017-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/pgcluu/">PostgresSQL插件--集群性能监测和审计插件pgcluu</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pgcluu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/20/pg_pathman/" class="archive-article-date">
-  	<time datetime="2017-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/20/pg_pathman/">PostgresSQL插件--高效分区插件pg_pathman</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">pg_pathman</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/15/InstallPG/" class="archive-article-date">
-  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/15/InstallPG/">生产环境离线安装、优化 PostgresSQL-9.6.2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/03/BuildBlog/" class="archive-article-date">
-  	<time datetime="2017-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/03/BuildBlog/">最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">畅言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不蒜子</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/19/photos/" class="archive-article-date">
-  	<time datetime="2017-11-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/19/photos/">相册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">旅途</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自拍</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">美食</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">游玩</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">风景</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">毕业</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">加班</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">疯狂撸码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/photos//" class="article-tag-list-link color2">photos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/17/halfPaper/" class="archive-article-date">
-  	<time datetime="2017-11-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/17/halfPaper/">《半张纸》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">半张纸</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">短篇小说</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">菜鸟</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大神</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/15/firstBlog/" class="archive-article-date">
-  	<time datetime="2017-11-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/15/firstBlog/">第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">第一篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="idea-javaDoc" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytjIMMNm",
+        conf: "ed7ebef4b1d52a544acbbdbb42709fe8"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -939,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
