@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>Archives: 2017/12 | VSK小天的博客</title>
+  <title>PostgresSQL 用户组权限管理 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
-<meta name="keywords" content="前端,js,java,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VSK小天的博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/archives/2017/12/index.html">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement原文参考：http://mysql.taobao.org/monthly/2015/11/03背景介绍 PG 的 superuser 拥有几乎全部的数据库权限，甚至可以直接修改系统表，潜在风险相当大 对于用户而言，PG 的普通用户权限是完全够用的 但是没有了超级用户，普通用户无法管理">
+<meta name="keywords" content="PgSQL,pgRole">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgresSQL 用户组权限管理">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement原文参考：http://mysql.taobao.org/monthly/2015/11/03背景介绍 PG 的 superuser 拥有几乎全部的数据库权限，甚至可以直接修改系统表，潜在风险相当大 对于用户而言，PG 的普通用户权限是完全够用的 但是没有了超级用户，普通用户无法管理">
 <meta property="og:locale" content="Chinese,English">
+<meta property="og:updated_time" content="2018-01-29T14:25:55.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSK小天的博客">
-<meta name="twitter:description" content="毕业于长江大学2013级，就职于广州一家大数据公司，熟悉前后端，Linux，MySQL及PgSQL。。。程序猿一枚。--格言：这个世界相对还是公平的，你所得到的，一定和你付出的一样多，只是人们往往只看到你所得到的，而只有你自己才能看到你所付出的。">
+<meta name="twitter:title" content="PostgresSQL 用户组权限管理">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement原文参考：http://mysql.taobao.org/monthly/2015/11/03背景介绍 PG 的 superuser 拥有几乎全部的数据库权限，甚至可以直接修改系统表，潜在风险相当大 对于用户而言，PG 的普通用户权限是完全够用的 但是没有了超级用户，普通用户无法管理">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -172,36 +173,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-pgRoleManagement" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/29/pgRoleManagement/" class="archive-article-date">
-  	<time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/29/pgRoleManagement/">PostgresSQL 用户组权限管理</a>
+    <h1 class="article-title" itemprop="name">
+      PostgresSQL 用户组权限管理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/29/pgRoleManagement/" class="archive-article-date">
+  	<time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-29-pgRoleManagement"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-29-pgRoleManagement" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement">http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement</a></h5><h5 id="原文参考：http-mysql-taobao-org-monthly-2015-11-03"><a href="#原文参考：http-mysql-taobao-org-monthly-2015-11-03" class="headerlink" title="原文参考：http://mysql.taobao.org/monthly/2015/11/03"></a>原文参考：<a href="http://mysql.taobao.org/monthly/2015/11/03" target="_blank" rel="external">http://mysql.taobao.org/monthly/2015/11/03</a></h5><h4 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h4><ul>
+<li><code>PG</code> 的 <code>superuser</code> 拥有几乎全部的数据库权限，甚至可以直接修改系统表，潜在风险相当大</li>
+<li>对于用户而言，<code>PG</code> 的<code>普通用户</code>权限是完全够用的</li>
+<li>但是没有了<code>超级用户</code>，<code>普通用户</code>无法管理其他<code>普通用户</code>创建的对象，经常出现操作对象无权限的问题<br><br><a id="more"></a>
+<br></li>
+</ul>
+<h5 id="解决方法-–-使用-PG-的用户组和继承特性，做到使用一个普通用户管理多个其他用户"><a href="#解决方法-–-使用-PG-的用户组和继承特性，做到使用一个普通用户管理多个其他用户" class="headerlink" title="解决方法 – 使用 PG 的用户组和继承特性，做到使用一个普通用户管理多个其他用户"></a>解决方法 – 使用 PG 的用户组和继承特性，做到使用一个普通用户管理多个其他用户</h5><ul>
+<li>使用<code>superuser</code>创建一个用于管理数据库和用户的<code>管理员</code>账号，他具有创建用户和创建 <code>DB</code> 的权限<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">postgres=# create user admin createdb createrole login password 'pgsql';</span><br><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">ROLE</span></span><br><span class="line"> postgres=# \du</span><br><span class="line">                               <span class="keyword">List</span> <span class="keyword">of</span> <span class="keyword">roles</span></span><br><span class="line">   <span class="keyword">Role</span> <span class="keyword">name</span>  |                   <span class="keyword">Attributes</span>                   | <span class="keyword">Member</span> <span class="keyword">of</span> </span><br><span class="line"> <span class="comment">-------------+------------------------------------------------+-----------</span></span><br><span class="line">  <span class="keyword">admin</span>       | <span class="keyword">Create</span> <span class="keyword">role</span>, <span class="keyword">Create</span> DB                         | &#123;&#125;</span><br><span class="line">  <span class="keyword">test</span>        | Superuser                                      | &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>使用这个 <code>admin</code> 登陆 <code>postgres</code>数据库，创建用于存放数据的<code>DB</code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">postgres=&gt; create database dbadmin;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>创建子账户<code>subuser1</code>和<code>subuser2</code>，并把他们的权限给<code>admin</code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dbadmin=&gt; create user subuser1 ;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">ROLE</span></span><br><span class="line">dbadmin=&gt; <span class="keyword">create</span> <span class="keyword">user</span> subuser2 ;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">ROLE</span></span><br><span class="line">dbadmin=&gt; <span class="keyword">grant</span> subuser1 <span class="keyword">to</span> <span class="keyword">admin</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ROLE</span></span><br><span class="line">dbadmin=&gt; <span class="keyword">grant</span> subuser2 <span class="keyword">to</span> <span class="keyword">admin</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ROLE</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>我们看到<code>admin</code>用户组管理了下列2个用户，也就是<code>admin</code>拥有 <code>subuser1</code>，<code>subuser2</code> 的所有权限<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dbadmin=&gt; \du</span><br><span class="line">                                    List of roles</span><br><span class="line">  Role name  |                   Attributes                   |      Member of</span><br><span class="line"><span class="comment">-------------+------------------------------------------------+---------------------</span></span><br><span class="line">admin       | <span class="keyword">Create</span> <span class="keyword">role</span>, <span class="keyword">Create</span> DB                         | &#123;subuser1,subuser2&#125;</span><br><span class="line">subuser1    |                                                | &#123;&#125;</span><br><span class="line">subuser2    |                                                | &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>使用 <code>subuser1</code> 或 <code>subuser2</code> 登陆数据库 <code>dbadmin</code>，public schema上创建 owner 是自己的表对象和其他对象。分别用3个用户创建3张表a b c用作测试，另外也可以使用 <code>admin</code> 用户创建分别属于 <code>subuser1</code> 和 <code>subuser2</code> 的 schema ，再创建 table<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dbadmin=&gt; \d</span><br><span class="line">            List of relations</span><br><span class="line">Schema |    Name    | Type  |  Owner</span><br><span class="line"><span class="comment">--------+------------+-------+----------</span></span><br><span class="line">public | t_admin    | table | admin</span><br><span class="line">public | t_subuser1 | table | subuser1</span><br><span class="line">public | t_subuser2 | table | subuser2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>使用 <code>admin</code> 用户，可以对这3张表做管理<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dbadmin=&gt; select user;</span><br><span class="line">  current_user</span><br><span class="line"><span class="comment">--------------</span></span><br><span class="line"> admin</span><br><span class="line">(1 row)</span><br><span class="line">dbadmin=&gt; drop table t_admin,t_subuser1,t_subuser2;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>但是 <code>subuser1</code> 无法删除 t_admin 和 t_subuser2，同理 <code>subuser2</code> 也无法删除 t_admin 和 t_subuser1<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dbadmin=&gt; select user;</span><br><span class="line"> current_user</span><br><span class="line"><span class="comment">--------------</span></span><br><span class="line"> subuser1</span><br><span class="line">(1 row)</span><br><span class="line">dbadmin=&gt; drop table t_admin;</span><br><span class="line">ERROR:  must be owner of relation t_admin</span><br><span class="line">dbadmin=&gt; drop table t_subuser1;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span></span><br><span class="line">dbadmin=&gt; <span class="keyword">drop</span> <span class="keyword">table</span> t_subuser2;</span><br><span class="line">ERROR:  must be owner of relation t_subuser2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>同理，可以使用 <code>admin</code> 用户，重置这3张表的 owner 到3个用户中的一个，而使用 <code>subuser1</code> 和 <code>subuser2</code> 则没有权限操作<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">dbadmin=&gt; select user;</span><br><span class="line"> current_user</span><br><span class="line"><span class="comment">--------------</span></span><br><span class="line"> admin</span><br><span class="line">(1 row)</span><br><span class="line">dbadmin=&gt; alter table t_admin owner to subuser1;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span></span><br><span class="line">dbadmin=&gt; <span class="keyword">alter</span> <span class="keyword">table</span> t_subuser2 owner <span class="keyword">to</span> subuser1;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span></span><br><span class="line">dbadmin=&gt; <span class="keyword">alter</span> <span class="keyword">table</span> t_subuser1 owner <span class="keyword">to</span> subuser2;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dbadmin=&gt; <span class="keyword">select</span> <span class="keyword">user</span>;</span><br><span class="line"> current_user</span><br><span class="line"><span class="comment">--------------</span></span><br><span class="line"> subuser1</span><br><span class="line">(1 row)</span><br><span class="line">dbadmin=&gt; \d</span><br><span class="line">           List of relations</span><br><span class="line"> Schema |    Name    | Type  |  Owner</span><br><span class="line"><span class="comment">--------+------------+-------+----------</span></span><br><span class="line"> public | t_admin    | table | subuser1</span><br><span class="line"> public | t_subuser1 | table | subuser2</span><br><span class="line"> public | t_subuser2 | table | subuser1</span><br><span class="line">(3 rows)</span><br><span class="line">dbadmin=&gt; alter table t_admin owner to admin;</span><br><span class="line">ERROR:  must be member of role "admin"</span><br><span class="line">dbadmin=&gt; alter table t_subuser1 owner to subuser1;</span><br><span class="line">ERROR:  must be owner of relation t_subuser1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>使用 <code>PG用户组</code>可以做到使用一个 <code>PG用户组</code>管理所在组内的所有其他<code>普通用户</code>和他们的对象。<code>RDS</code>用户设置一个用户组，既可以管理多个用户的对象，又可以实现一定程度上的权限隔离，同时权限又不会过大。</li>
+<li>如果要实现更加细粒度的权限控制，则需要使用 <code>grant</code> 和 <code>revoke</code> 语句。<br><br><br>至此，<code>PG用户组</code> 已介绍完，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -217,7 +266,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -230,392 +279,127 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/28/powa/" class="archive-article-date">
-  	<time datetime="2017-12-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/28/powa/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PostgresSQL插件--性能监控插件powa</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/28/powa/">PostgresSQL插件--性能监控插件powa</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">powa</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-29-pgRoleManagement"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#原文参考：http-mysql-taobao-org-monthly-2015-11-03"><span class="toc-number">2.</span> <span class="toc-text">原文参考：http://mysql.taobao.org/monthly/2015/11/03</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#背景介绍"><span class="toc-number"></span> <span class="toc-text">背景介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#解决方法-–-使用-PG-的用户组和继承特性，做到使用一个普通用户管理多个其他用户"><span class="toc-number">1.</span> <span class="toc-text">解决方法 – 使用 PG 的用户组和继承特性，做到使用一个普通用户管理多个其他用户</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/27/InstallPiP/" class="archive-article-date">
-  	<time datetime="2017-12-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/27/InstallPiP/">Linux 离线安装Python、pip</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pip</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/26/pgbouncer/" class="archive-article-date">
-  	<time datetime="2017-12-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/26/pgbouncer/">PostgresSQL插件--连接池插件pgbouncer</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">pgbouncer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/pgcluu/" class="archive-article-date">
-  	<time datetime="2017-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/pgcluu/">PostgresSQL插件--集群性能监测和审计插件pgcluu</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pgcluu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/20/pg_pathman/" class="archive-article-date">
-  	<time datetime="2017-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/20/pg_pathman/">PostgresSQL插件--高效分区插件pg_pathman</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">pg_pathman</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/15/InstallPG/" class="archive-article-date">
-  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/15/InstallPG/">生产环境离线安装、优化 PostgresSQL-9.6.2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/03/BuildBlog/" class="archive-article-date">
-  	<time datetime="2017-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/03/BuildBlog/">最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">畅言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不蒜子</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="pgRoleManagement" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytjIMMNm",
+        conf: "ed7ebef4b1d52a544acbbdbb42709fe8"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -646,8 +430,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
