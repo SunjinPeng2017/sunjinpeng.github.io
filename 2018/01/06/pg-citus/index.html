@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/citus-2.png">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/citus-3.png">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/citus-4.png">
-<meta property="og:updated_time" content="2018-01-30T16:57:04.852Z">
+<meta property="og:updated_time" content="2018-01-30T17:01:47.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--搭建集群插件citus">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
@@ -207,7 +207,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/01/06/pg-citus">http://www.sunjinpeng.cn/2018/01/06/pg-citus</a></h5><h5 id="官网：https-www-citusdata-com"><a href="#官网：https-www-citusdata-com" class="headerlink" title="官网：https://www.citusdata.com"></a>官网：<a href="https://www.citusdata.com" target="_blank" rel="external">https://www.citusdata.com</a></h5><h4 id="citus-简介"><a href="#citus-简介" class="headerlink" title="citus 简介"></a>citus 简介</h4><p>What is Citus?<br>Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its query engine parallelizes incoming SQL queries across these servers to enable human real-time (less than a second) responses on large datasets.<br>Citus extends the underlying database rather than forking it, which gives developers and enterprises the power and familiarity of a traditional relational database. As an extension, Citus supports new PostgreSQL releases, allowing users to benefit from new features while maintaining compatibility with existing PostgreSQL tools.</p>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/06/pg-citus">http://www.sunjinpeng.cn/2018/01/06/pg-citus</a></h5><h5 id="官网：https-www-citusdata-com"><a href="#官网：https-www-citusdata-com" class="headerlink" title="官网：https://www.citusdata.com"></a>官网：<a href="https://www.citusdata.com" target="_blank" rel="external">https://www.citusdata.com</a></h5><h4 id="citus-简介"><a href="#citus-简介" class="headerlink" title="citus 简介"></a>citus 简介</h4><p>What is Citus?<br>Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its query engine parallelizes incoming SQL queries across these servers to enable human real-time (less than a second) responses on large datasets.<br>Citus extends the underlying database rather than forking it, which gives developers and enterprises the power and familiarity of a traditional relational database. As an extension, Citus supports new PostgreSQL releases, allowing users to benefit from new features while maintaining compatibility with existing PostgreSQL tools.</p>
 <p>谷歌翻译:<br>Citus使用分片和复制将PostgreSQL横向扩展到多台机器上。 它的查询引擎将传入的SQL查询并行化到这些服务器上，以便在大型数据集上实现人类实时（不到一秒）的响应。<br>Citus扩展了底层数据库，而不是分叉，这给了开发人员和企业传统关系数据库的力量和熟悉。 作为一个扩展，Citus支持新的PostgreSQL版本，允许用户在保持与现有PostgreSQL工具兼容性的同时从新功能中受益。<br><br><br><a id="more"></a></p>
 <h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
 <li>下载源码</li>
@@ -231,9 +231,9 @@
 <h5 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h5 id="更改配置"><a href="#更改配置" class="headerlink" title="更改配置"></a>更改配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $PGDATA 代表PG的数据目录</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$PGDATA</span></span><br><span class="line">vi postgresql.conf</span><br><span class="line"><span class="comment"># 在 shared_preload_libraries 参数中添加 'citus' 并放在第一个</span></span><br><span class="line">shared_preload_libraries = <span class="string">'citus,pg_stat_statements,pg_pathman'</span></span><br><span class="line"> </span><br><span class="line">vi pg_hba.conf</span><br><span class="line"><span class="comment"># 添加以下免密配置,使 master - worker 节点之间可免密连接</span></span><br><span class="line"><span class="comment"># "local" is for Unix domain socket connections only</span></span><br><span class="line"><span class="built_in">local</span>        all               all                                  trust</span><br><span class="line"><span class="comment"># IPv4 local connections:</span></span><br><span class="line">host         all               all             0.0.0.0/0            trust</span><br><span class="line"><span class="comment"># IPv6 local connections:</span></span><br><span class="line">host         all               all             ::1/128              trust</span><br><span class="line"><span class="comment"># Allow replication connections from localhost, by a user with the</span></span><br><span class="line"><span class="comment"># replication privilege.</span></span><br><span class="line"><span class="comment">#local    replication          postgres                             trust</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://ozfuaes8n.bkt.clouddn.com/citus-7.png" alt="citus-7"><br><br><br></p>
+<p><img src="http://ozfuaes8n.bkt.clouddn.com/citus-7.png" alt="citus-7"><br></p>
 <h5 id="测试插件"><a href="#测试插件" class="headerlink" title="测试插件"></a>测试插件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su postgres</span><br><span class="line">psql</span><br><span class="line">create extension citus;</span><br><span class="line"><span class="comment"># 如无报错提示 'CREATE EXTENSION' ，并出现 'citus' schema（如下图所示）,证明该插件已经安装成功</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://ozfuaes8n.bkt.clouddn.com/citus-11.png" alt="citus-11"><br><br><br></p>
+<p><img src="http://ozfuaes8n.bkt.clouddn.com/citus-11.png" alt="citus-11"><br></p>
 <h5 id="使用citus"><a href="#使用citus" class="headerlink" title="使用citus"></a>使用<code>citus</code></h5><ul>
 <li><code>citus</code> 常用的两种模式,以下将以 <code>Real-Time</code> 为例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Multi-Tenant Database</span><br><span class="line">    Most B2B applications already have the notion of a tenant, customer, or account built into their data model. In this model, the database serves many tenants, each of whose data is separate from other tenants.</span><br><span class="line">    Citus provides full SQL coverage for this workload, and enables scaling out your relational database to 100K+ tenants. Citus also adds new features for multi-tenancy. For example, Citus supports tenant isolation to provide performance guarantees for large tenants, and has the concept of reference tables to reduce data duplication across tenants.</span><br><span class="line">These capabilities allow you to scale out your tenants’ data across many machines, and easily add more CPU, memory, and disk resources. Further, sharing the same database schema across multiple tenants makes efficient use of hardware resources and simplifies database management.</span><br><span class="line"> </span><br><span class="line">Real-Time Analytics</span><br><span class="line">    Citus supports real-time queries over large datasets. Commonly these queries occur in rapidly growing event systems or systems with time series data. Example use cases include:</span><br><span class="line">        1. Analytic dashboards with subsecond response times</span><br><span class="line">        2. Exploratory queries on unfolding events</span><br><span class="line">        3. Large dataset archival and reporting</span><br><span class="line">        4. Analyzing sessions with funnel, segmentation, and cohort queries</span><br><span class="line"> </span><br><span class="line">notes：</span><br><span class="line">    Citus extends PostgreSQL with distributed functionality, but it is not a drop-in replacement that scales out all workloads. A performant Citus cluster involves thinking about the data model, tooling, and choice of SQL features used.</span><br></pre></td></tr></table></figure>
 </li>
@@ -243,10 +243,10 @@
 <li><code>citus</code> 常用三种表类型<br>&nbsp;&nbsp;&nbsp;1. <code>Distributed Tables</code> 多节点分配表，也是最常用的类型<br> <img src="http://ozfuaes8n.bkt.clouddn.com/citus-12.png" alt="citus-12"><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.建立需要分集群的表(注意:表中除了集群使用字段以外，其他字段不能有 unique key , primary key ,exclude 等约束条件)</span></span><br><span class="line">  <span class="comment">-- 经过测试，citus 并不支持先用 pg_pathman 分表，再对每个子表建立集群表</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 2.提前建立相关索引</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 3.新增worker节点(那么执行该sql的数据库即为master节点)，多个worker节点，多次调用该方法即可</span></span><br><span class="line">  <span class="comment">--param1: worker节点IP</span></span><br><span class="line">  <span class="comment">--param2: worker节点PG端口</span></span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">from</span> master_add_node(<span class="string">'xxx.xx.xxx.xxx'</span>, <span class="number">5432</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 4.设置 shared 数量，官方建议设置为worker节点总CPU数的2倍或者4倍</span></span><br><span class="line">  <span class="comment">--查询CPU核数：cat /proc/cpuinfo| grep "cpu cores"| uniq</span></span><br><span class="line">  <span class="keyword">set</span> citus.shard_count=workers * nuclears * <span class="number">2</span>(<span class="number">4</span>)</span><br><span class="line">  </span><br><span class="line"><span class="comment">-- 5.创建该表的集群</span></span><br><span class="line">  <span class="comment">--param1: 表名</span></span><br><span class="line">  <span class="comment">--param2: 依据字段</span></span><br><span class="line">  <span class="keyword">SELECT</span> create_distributed_table(<span class="string">'public.tableName'</span>, <span class="string">'column_name'</span>);</span><br><span class="line"><span class="comment">-- 执行完以上方法后，相应worker节点中会自动创建该表的子表，以此验证是否执行成功</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://ozfuaes8n.bkt.clouddn.com/citus-8.png" alt="citus-8"><br><br><br></p>
-<p>&nbsp;&nbsp;&nbsp;2. <code>Reference Tables</code>  引用表，一般用于配置表<br>    <img src="http://ozfuaes8n.bkt.clouddn.com/citus-5.png" alt="citus-5"><br><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建 reference table，在master上创建后，每个worker节点都会自动备份一个相同表，当 master 节点中该表的数据更新后，</span></span><br><span class="line">  <span class="comment">-- worker节点的数据会自动更新，对表的结构(primary key,check)没有限制</span></span><br><span class="line">  <span class="comment">-- 适用于配置表，当master出现故障后，不至于丢失配置数据</span></span><br><span class="line">  <span class="keyword">SELECT</span> create_reference_table(<span class="string">'public.table_name'</span>);</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://ozfuaes8n.bkt.clouddn.com/citus-8.png" alt="citus-8"><br><br></p>
+<p>&nbsp;&nbsp;&nbsp;2. <code>Reference Tables</code>  引用表，一般用于配置表<br>    <img src="http://ozfuaes8n.bkt.clouddn.com/citus-5.png" alt="citus-5"><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建 reference table，在master上创建后，每个worker节点都会自动备份一个相同表，当 master 节点中该表的数据更新后，</span></span><br><span class="line">  <span class="comment">-- worker节点的数据会自动更新，对表的结构(primary key,check)没有限制</span></span><br><span class="line">  <span class="comment">-- 适用于配置表，当master出现故障后，不至于丢失配置数据</span></span><br><span class="line">  <span class="keyword">SELECT</span> create_reference_table(<span class="string">'public.table_name'</span>);</span><br></pre></td></tr></table></figure></p>
 <p><br></p>
-<p>&nbsp;&nbsp;&nbsp;3. <code>Local Tables</code> 默认表，不进行任何操作<br>    <img src="http://ozfuaes8n.bkt.clouddn.com/citus-6.png" alt="citus-6"><br><br><br></p>
+<p>&nbsp;&nbsp;&nbsp;3. <code>Local Tables</code> 默认表，不进行任何操作<br>    <img src="http://ozfuaes8n.bkt.clouddn.com/citus-6.png" alt="citus-6"><br><br></p>
 <h5 id="新增节点"><a href="#新增节点" class="headerlink" title="新增节点"></a>新增节点</h5><ul>
 <li>社区版新增节点会比较麻烦，暂未找到相关方法,只能采取先备份数据，删除该表，再添加节点，重新建立集群表的方式</li>
 <li>企业版可以调用 <code>SELECT rebalance_table_shards(&#39;companies&#39;);</code>  很轻松的增加节点<br><br></li>
@@ -519,10 +519,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -539,6 +535,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -551,14 +551,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
@@ -568,6 +560,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大神</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
               </li>
              
               <li class="article-tag-list-item">
