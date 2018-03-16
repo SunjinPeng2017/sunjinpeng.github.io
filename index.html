@@ -23,7 +23,7 @@
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/assets/img/logo.png">
+    <link rel="icon" href="/assets/img/logo2.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -195,7 +195,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-08-java-sepTable"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-08-java-sepTable" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/08/java-sepTable"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/08/java-sepTable">http://www.sunjinpeng.cn/2018/01/08/java-sepTable</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>当应用数据量过大时，我们就不得不考虑通过分库、分表来分担数据库压力，减少前端查询时间，但这时后端如何加入这些新的数据库节点呢？<br>本文介绍了一种通过 <code>工厂模式</code> 在 <code>jdbcTemplate</code> 层通过不同的表名获取到不同的数据库连接，来达到分库、分表的目的。当然这种方法也<br>有一些局限性和弊端，比如不支持关联查询，每个表都需配置连接信息，如果表过多，将会很繁琐。<br><br>不过，你也可以参考我另外的两篇文章实现分库、分表:</p>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-08-java-sepTable"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-08-java-sepTable" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/08/java-sepTable"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/08/java-sepTable">http://www.sunjinpeng.cn/2018/01/08/java-sepTable</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>当应用数据量过大时，我们就不得不考虑通过分库、分表来分担数据库压力，减少前端查询时间，但这时后端如何加入这些新的数据库节点呢？本文介绍了一种通过 <code>工厂模式</code> 在 <code>jdbcTemplate</code> 层通过不同的表名获取到不同的数据库连接，来达到分库、分表的目的。当然这种方法也有一些局限性和弊端，比如不支持关联查询，每个表都需配置连接信息，如果表过多，将会很繁琐。<br><br>不过，你也可以参考我另外的两篇文章实现分库、分表:</p>
 <ul>
 <li><a href="http://www.sunjinpeng.cn/2017/12/20/pg_pathman">http://www.sunjinpeng.cn/2017/12/20/pg_pathman</a></li>
 <li><a href="http://www.sunjinpeng.cn/2018/01/06/pg-citus">http://www.sunjinpeng.cn/2018/01/06/pg-citus</a><br><br>
