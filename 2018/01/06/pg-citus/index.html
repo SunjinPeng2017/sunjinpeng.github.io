@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/citus-4.png">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/citus-13.png">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/citus-14.png">
-<meta property="og:updated_time" content="2018-03-15T11:14:45.340Z">
+<meta property="og:updated_time" content="2018-03-16T07:45:47.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--搭建集群插件citus">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
@@ -102,8 +102,6 @@
 				
 					<a class="github" target="_blank" href="https://github.com/SunjinPeng2017" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/dannyzhu-40/activities" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
 					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
@@ -150,8 +148,6 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/SunjinPeng2017" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/dannyzhu-40/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
@@ -272,6 +268,7 @@
 <li><p>从查询结果可以看出，使用 <code>citus</code> 集群明显提升了查询性能，而且并不是简单的是机器数量倍数的提升，对测试结果比较满意。<br><br></p>
 </li>
 </ul>
+<h5 id="苏宁-citus-集群搭建参考"><a href="#苏宁-citus-集群搭建参考" class="headerlink" title="苏宁 citus 集群搭建参考"></a>苏宁 <code>citus</code> 集群搭建参考</h5><p><a href="http://ozfuaes8n.bkt.clouddn.com/%E8%8B%8F%E5%AE%81citus%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5_%E9%99%88%E5%8D%8E%E5%86%9B.pdf" target="_blank" rel="external">苏宁citus分布式数据库应用实践_陈华军</a></p>
 <p>至此，本文已经详细介绍了<code>citus</code>的安装及使用，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
 
       
@@ -409,7 +406,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-www-citusdata-com"><span class="toc-number">2.</span> <span class="toc-text">官网：https://www.citusdata.com</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#citus-简介"><span class="toc-number"></span> <span class="toc-text">citus 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍"><span class="toc-number"></span> <span class="toc-text">在介绍使用前，我强烈建议先去阅读官方文档 几遍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加PG-CONFIG-和CC-的环境变量"><span class="toc-number">2.</span> <span class="toc-text">添加PG_CONFIG 和CC 的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">3.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改配置"><span class="toc-number">4.</span> <span class="toc-text">更改配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试插件"><span class="toc-number">5.</span> <span class="toc-text">测试插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用citus"><span class="toc-number">6.</span> <span class="toc-text">使用citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新增节点"><span class="toc-number">7.</span> <span class="toc-text">新增节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新citus版本"><span class="toc-number">8.</span> <span class="toc-text">更新citus版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus工作流程"><span class="toc-number">9.</span> <span class="toc-text">citus工作流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus性能调优"><span class="toc-number">10.</span> <span class="toc-text">citus性能调优</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试"><span class="toc-number">1.</span> <span class="toc-text">性能测试</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-www-citusdata-com"><span class="toc-number">2.</span> <span class="toc-text">官网：https://www.citusdata.com</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#citus-简介"><span class="toc-number"></span> <span class="toc-text">citus 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍"><span class="toc-number"></span> <span class="toc-text">在介绍使用前，我强烈建议先去阅读官方文档 几遍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加PG-CONFIG-和CC-的环境变量"><span class="toc-number">2.</span> <span class="toc-text">添加PG_CONFIG 和CC 的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">3.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改配置"><span class="toc-number">4.</span> <span class="toc-text">更改配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试插件"><span class="toc-number">5.</span> <span class="toc-text">测试插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用citus"><span class="toc-number">6.</span> <span class="toc-text">使用citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新增节点"><span class="toc-number">7.</span> <span class="toc-text">新增节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新citus版本"><span class="toc-number">8.</span> <span class="toc-text">更新citus版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus工作流程"><span class="toc-number">9.</span> <span class="toc-text">citus工作流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus性能调优"><span class="toc-number">10.</span> <span class="toc-text">citus性能调优</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试"><span class="toc-number">1.</span> <span class="toc-text">性能测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#苏宁-citus-集群搭建参考"><span class="toc-number">2.</span> <span class="toc-text">苏宁 citus 集群搭建参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -536,6 +533,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -552,10 +553,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -564,11 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,6 +662,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">powa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springBoot</a>
               </li>
             
             <div class="clearfix"></div>
