@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="VSK小天的博客">
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/07/git-commit前言不知道大家有没有观察过那些在Github上Star数位居前列的项目，它们无一例外的都拥有完善的文档体系和高覆盖的测试用例。要做到完善没有规范肯定是不行的，代码要有代码的规范，协作要有协作的规范。我们今天要说的主题就是关于Git中记录Commit Message的参考规范。">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/git-commit-1.png">
+<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/git-commit-1.jpg">
 <meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/git-commit-2.png">
-<meta property="og:updated_time" content="2018-03-16T02:20:52.100Z">
+<meta property="og:updated_time" content="2018-03-16T04:10:52.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 教你如何在Commit时有话可说">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/07/git-commit前言不知道大家有没有观察过那些在Github上Star数位居前列的项目，它们无一例外的都拥有完善的文档体系和高覆盖的测试用例。要做到完善没有规范肯定是不行的，代码要有代码的规范，协作要有协作的规范。我们今天要说的主题就是关于Git中记录Commit Message的参考规范。">
-<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/git-commit-1.png">
+<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/git-commit-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -198,12 +198,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-07-git-commit"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-07-git-commit" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/07/git-commit"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/07/git-commit">http://www.sunjinpeng.cn/2018/01/07/git-commit</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>不知道大家有没有观察过那些在Github上Star数位居前列的项目，它们无一例外的都拥有完善的文档体系和高覆盖的测试用例。要做到完善没有规范肯定是不行的，代码要有代码的规范，协作要有协作的规范。我们今天要说的主题就是关于Git中记录Commit Message的参考规范。<br><br><br><a id="more"></a></p>
-<h3 id="我们先看两张图"><a href="#我们先看两张图" class="headerlink" title="我们先看两张图"></a>我们先看两张图</h3><ul>
-<li>国际知名项目AngularJS<br><img src="http://ozfuaes8n.bkt.clouddn.com/git-commit-1.png" alt="国际知名项目AngularJS"><br></li>
+<h4 id="我们先看两张图"><a href="#我们先看两张图" class="headerlink" title="我们先看两张图"></a>我们先看两张图</h4><ul>
+<li>国际知名项目AngularJS<br><img src="http://ozfuaes8n.bkt.clouddn.com/git-commit-1.jpg" alt="国际知名项目AngularJS"><br></li>
 <li>国内知名项目MingGeJS<br><img src="http://ozfuaes8n.bkt.clouddn.com/git-commit-2.png" alt="国际知名项目AngularJS"><br></li>
 <li>从上面两张图中，我想你已经能看出一些端倪来了吧，相较而言哪种更加能促进开发不言自明。当然，我举这个国内知名项目比较极端，不过整体而言都普遍存在Commit Message比较随意的现象。<br><br></li>
 </ul>
-<h3 id="commit规范"><a href="#commit规范" class="headerlink" title="commit规范"></a>commit规范</h3><ul>
+<h4 id="commit规范"><a href="#commit规范" class="headerlink" title="commit规范"></a>commit规范</h4><ul>
 <li><p>Commit Message 格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt; </span><br><span class="line">&lt;空行&gt; </span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;空行&gt; </span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -236,6 +236,7 @@
 </ul>
 </li>
 </ul>
+<p><br><br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
 
       
 
@@ -330,6 +331,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/01/08/java-sepTable/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java在后端使用jdbcTemplate实现分库，分表
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/01/06/pg-citus/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">PostgresSQL插件--搭建集群插件citus</div>
@@ -359,7 +369,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-07-git-commit"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/07/git-commit</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们先看两张图"><span class="toc-number"></span> <span class="toc-text">我们先看两张图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#commit规范"><span class="toc-number"></span> <span class="toc-text">commit规范</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-07-git-commit"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/07/git-commit</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#我们先看两张图"><span class="toc-number"></span> <span class="toc-text">我们先看两张图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#commit规范"><span class="toc-number"></span> <span class="toc-text">commit规范</span></a>
                     </div>
                 </span>
             </div>
@@ -486,10 +496,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -506,6 +512,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -514,11 +524,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,18 +537,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaDoc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,11 +552,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">citus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pgRole</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,10 +625,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">powa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
               </li>
             
             <div class="clearfix"></div>
