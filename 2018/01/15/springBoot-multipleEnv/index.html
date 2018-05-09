@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="VSK小天的博客">
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnvspringBoot官网：https://projects.spring.io/spring-boot/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在实际的开发中，我们可能会将项目打包部署到不同的环境，比如说：开发环境，测试环境，正式生产环境，该篇文章将详细讲解如">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-05-09T10:29:21.451Z">
+<meta property="og:updated_time" content="2018-05-09T11:09:57.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springBoot配置多环境">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnvspringBoot官网：https://projects.spring.io/spring-boot/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在实际的开发中，我们可能会将项目打包部署到不同的环境，比如说：开发环境，测试环境，正式生产环境，该篇文章将详细讲解如">
@@ -244,7 +244,7 @@
 </ul>
 <p><br></p>
 <ul>
-<li>将 <code>pom.xml</code> 中的 <code>&lt;packaging&gt;jar&lt;/packaging&gt;</code> 改为 <code>&lt;packaging&gt;war&lt;/packaging&gt;</code>,另外还需以下依赖<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>将 <code>pom.xml</code> 中的 <code>&lt;packaging&gt;jar&lt;/packaging&gt;</code> 改为 <code>&lt;packaging&gt;war&lt;/packaging&gt;</code>,另外还需以下依赖<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><br></p>
@@ -534,10 +534,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -547,6 +543,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,6 +562,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
@@ -571,14 +579,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大神</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,19 +594,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pgRole</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">pgbouncer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">citus</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pgRole</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pgbouncer</a>
               </li>
              
               <li class="article-tag-list-item">
