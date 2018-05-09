@@ -6,25 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>IntelliJ IDEA -- 中生成指定模板的JavaDoc | VSK小天的博客</title>
+  <title>springBoot配置多环境 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc主要步骤 安装 JavaDoc 插件 配置 JavaDoc 插件 加入自定义 JavaDoc 生成 JavaDoc">
-<meta name="keywords" content="IDEA,JavaDoc">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnvspringBoot官网：https://projects.spring.io/spring-boot/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在实际的开发中，我们可能会将项目打包部署到不同的环境，比如说：开发环境，测试环境，正式生产环境，该篇文章将详细讲解如">
+<meta name="keywords" content="java,springBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IntelliJ IDEA -- 中生成指定模板的JavaDoc">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc/index.html">
+<meta property="og:title" content="springBoot配置多环境">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc主要步骤 安装 JavaDoc 插件 配置 JavaDoc 插件 加入自定义 JavaDoc 生成 JavaDoc">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnvspringBoot官网：https://projects.spring.io/spring-boot/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在实际的开发中，我们可能会将项目打包部署到不同的环境，比如说：开发环境，测试环境，正式生产环境，该篇文章将详细讲解如">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-1.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-2.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-3.png">
-<meta property="og:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-4.png">
-<meta property="og:updated_time" content="2018-01-29T14:56:00.132Z">
+<meta property="og:updated_time" content="2018-05-09T09:25:14.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IntelliJ IDEA -- 中生成指定模板的JavaDoc">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc主要步骤 安装 JavaDoc 插件 配置 JavaDoc 插件 加入自定义 JavaDoc 生成 JavaDoc">
-<meta name="twitter:image" content="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-1.png">
+<meta name="twitter:title" content="springBoot配置多环境">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnvspringBoot官网：https://projects.spring.io/spring-boot/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在实际的开发中，我们可能会将项目打包部署到不同的环境，比如说：开发环境，测试环境，正式生产环境，该篇文章将详细讲解如">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -175,42 +170,91 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-idea-javaDoc" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-springBoot-multipleEnv" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      IntelliJ IDEA -- 中生成指定模板的JavaDoc
+      springBoot配置多环境
     </h1>
   
 
         
-        <a href="/2017/12/30/idea-javaDoc/" class="archive-article-date">
-  	<time datetime="2017-12-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
+        <a href="/2018/01/15/springBoot-multipleEnv/" class="archive-article-date">
+  	<time datetime="2018-01-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-30-idea-javaDoc"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-30-idea-javaDoc" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc">http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
-<li>安装 <code>JavaDoc</code> 插件</li>
-<li>配置 <code>JavaDoc</code> 插件</li>
-<li>加入自定义 <code>JavaDoc</code></li>
-<li>生成 <code>JavaDoc</code><br><br><a id="more"></a>
-<br></li>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-15-springBoot-multipleEnv"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-15-springBoot-multipleEnv" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv">http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv</a></h5><h5 id="springBoot官网：https-projects-spring-io-spring-boot"><a href="#springBoot官网：https-projects-spring-io-spring-boot" class="headerlink" title="springBoot官网：https://projects.spring.io/spring-boot/"></a>springBoot官网：<a href="https://projects.spring.io/spring-boot/" target="_blank" rel="external">https://projects.spring.io/spring-boot/</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;在实际的开发中，我们可能会将项目打包部署到不同的环境，比如说：开发环境，测试环境，正式生产环境，该篇文章将详细讲解如何在 SpringBoot 中配置多环境。<br><br><br><a id="more"></a></p>
+<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+<li>添加不同环境的数据库连接信息</li>
+<li>在maven中集成多环境</li>
+<li>测试配置</li>
+<li>springBoot打成 war 包</li>
+<li>总结<br><br></li>
 </ul>
-<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="安装-JavaDoc-插件"><a href="#安装-JavaDoc-插件" class="headerlink" title="安装 JavaDoc 插件"></a>安装 <code>JavaDoc</code> 插件</h5><ul>
-<li>由于该插件已经很久没更新，会导致javadoc插件的配置页面丢失，请下载  <a href="http://p3602m0u1.bkt.clouddn.com/intellij-javadocs.zip" target="_blank" rel="external">修复版</a></li>
-<li>在plugin管理页面，使用本地安装方式导入该zip文件即可，无需解压<br><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-1.png" alt="idea-javaDoc-1"><br><br></li>
+<h3 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h3><h4 id="添加不同环境的数据库连接信息"><a href="#添加不同环境的数据库连接信息" class="headerlink" title="添加不同环境的数据库连接信息"></a>添加不同环境的数据库连接信息</h4><ul>
+<li>我们继续在<a href="http://www.sunjinpeng.cn/2018/01/09/springBoot-init">上篇文章</a>的基础上开发</li>
+<li>首先建立开发环境的配置文件 <code>application-dev.properties</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=test-dev</span><br><span class="line">spring.datasource.username=test-dev</span><br><span class="line">spring.datasource.password=test-dev</span><br><span class="line">spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h5 id="配置-JavaDoc-插件"><a href="#配置-JavaDoc-插件" class="headerlink" title="配置 JavaDoc 插件"></a>配置 <code>JavaDoc</code> 插件</h5><p><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-2.png" alt="idea-javaDoc-2"><br><br></p>
-<h5 id="加入自定义-JavaDoc"><a href="#加入自定义-JavaDoc" class="headerlink" title="加入自定义 JavaDoc"></a>加入自定义 <code>JavaDoc</code></h5><ul>
-<li>编辑自定义的<code>JavaDoc</code>，在每个Template之中加入<code>* @since ${PROJECT_NAME} project_version</code><br><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-3.png" alt="idea-javaDoc-3"><br><br></li>
+<p><br></p>
+<ul>
+<li>再建立正式环境的配置文件 <code>application-prod.properties</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=test-prod</span><br><span class="line">spring.datasource.username=test-prod</span><br><span class="line">spring.datasource.password=test-prod</span><br><span class="line">spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h5 id="生成-JavaDoc"><a href="#生成-JavaDoc" class="headerlink" title="生成 JavaDoc"></a>生成 <code>JavaDoc</code></h5><p><img src="http://ozfuaes8n.bkt.clouddn.com/idea-javaDoc-4.png" alt="idea-javaDoc-4"><br><br><br><br><br>至此，<code>JavaDoc</code>已成功在 <code>IDEA</code> 中配置，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+<p><br></p>
+<ul>
+<li>如有其他环境，配置类似文件即可。注意命名应符合 <code>application-xxx.properties</code><br><br></li>
+</ul>
+<h4 id="在maven中集成多环境"><a href="#在maven中集成多环境" class="headerlink" title="在maven中集成多环境"></a>在maven中集成多环境</h4><ul>
+<li>修改 <code>pom.xml</code> 文件<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 配置多环境资源 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">id</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">activatedProperties</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">activatedProperties</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 默认环境 --&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">id</span>&gt;</span>prod<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">activatedProperties</span>&gt;</span>prod<span class="tag">&lt;/<span class="name">activatedProperties</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>修改 <code>application.properties</code> 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.profiles.active=@activatedProperties@</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h4 id="测试配置"><a href="#测试配置" class="headerlink" title="测试配置"></a>测试配置</h4><ul>
+<li>我们写一个测试接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/v1.0"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The Env.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;spring.datasource.url&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String env;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Test response entity.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the response entity</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/test"</span>,method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;?&gt; test()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(env, HttpStatus.OK);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>开发环境打包 <code>mvn clean package -Dmaven.test.skip -Pdev</code></p>
+</li>
+<li><p>正式环境打包 <code>mvn clean package -Dmaven.test.skip -Pprod</code></p>
+</li>
+<li><p>运行该 <code>jar</code> 包 <code>java -jar demo-0.0.1-SNAPSHOT.jar</code>, 访问 <code>http://localhost:8080/v1.0/test</code><br>分别返回 <code>test-dev</code> 和 <code>test-prod</code> ，则证明配置已经生效。</p>
+</li>
+</ul>
+<h4 id="springBoot打成-war-包"><a href="#springBoot打成-war-包" class="headerlink" title="springBoot打成 war 包"></a>springBoot打成 war 包</h4><ul>
+<li><p>大多数情况下，我们的项目都是部署到 <code>Tomcat</code> 中运行，其实 springBoot 也是打包成 <code>war</code> 包的。</p>
+</li>
+<li><p><code>DemoApplication</code> 继承 <code>SpringBootServletInitializer</code> 并重写 <code>configure</code> 方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span>  <span class="keyword">extends</span> <span class="title">SpringBootServletInitializer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> application application</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> SpringApplicationBuilder</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> SpringApplicationBuilder <span class="title">configure</span><span class="params">(SpringApplicationBuilder application)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> application.sources(DemoApplication.class);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>将 <code>pom.xml</code> 中的 <code>&lt;packaging&gt;jar&lt;/packaging&gt;</code> 改为 <code>&lt;packaging&gt;war&lt;/packaging&gt;</code>,另外还需以下依赖<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>我们可以复制 <code>pom.xml</code> 为 <code>pom-war.xml</code> 只有 <code>&lt;packaging&gt;</code> 不同，使用 <code>mvn clean package -f pom-war.xml</code> 即可打包成<code>war</code>包</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>我已把该项目放在<code>GitHub</code>上:<a href="https://github.com/SunjinPeng2017/springBoot-test" target="_blank" rel="external">https://github.com/SunjinPeng2017/springBoot-test</a>，欢迎各位同学 clone 参考</li>
+</ul>
+<p>至此，<code>springBoot</code> 已经集成了多环境。。<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
 
       
 
@@ -224,11 +268,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaDoc</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springBoot</a>
         		</li>
       		
 		</ul>
@@ -295,7 +339,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,18 +353,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/31/idea-test/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          IntelliJ IDEA -- 输出test case coverage
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/29/pgRoleManagement/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PostgresSQL 用户组权限管理</div>
+    <a href="/2018/01/09/springBoot-init/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springBoot搭建与集成swagger、mybatis</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -347,7 +382,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-30-idea-javaDoc"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/30/idea-javaDoc</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装-JavaDoc-插件"><span class="toc-number">1.</span> <span class="toc-text">安装 JavaDoc 插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置-JavaDoc-插件"><span class="toc-number">2.</span> <span class="toc-text">配置 JavaDoc 插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加入自定义-JavaDoc"><span class="toc-number">3.</span> <span class="toc-text">加入自定义 JavaDoc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#生成-JavaDoc"><span class="toc-number">4.</span> <span class="toc-text">生成 JavaDoc</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-15-springBoot-multipleEnv"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#springBoot官网：https-projects-spring-io-spring-boot"><span class="toc-number">2.</span> <span class="toc-text">springBoot官网：https://projects.spring.io/spring-boot/</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加不同环境的数据库连接信息"><span class="toc-number"></span> <span class="toc-text">添加不同环境的数据库连接信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在maven中集成多环境"><span class="toc-number"></span> <span class="toc-text">在maven中集成多环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试配置"><span class="toc-number"></span> <span class="toc-text">测试配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#springBoot打成-war-包"><span class="toc-number"></span> <span class="toc-text">springBoot打成 war 包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
                     </div>
                 </span>
             </div>
@@ -363,7 +398,7 @@
   
 
   
-  <div id="SOHUCS" sid="idea-javaDoc" ></div> 
+  <div id="SOHUCS" sid="springBoot-multipleEnv" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
