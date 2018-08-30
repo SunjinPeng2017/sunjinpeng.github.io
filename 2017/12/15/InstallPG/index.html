@@ -193,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/15/InstallPG">http://www.sunjinpeng.cn/2017/12/15/InstallPG</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="external">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/15/InstallPG">http://www.sunjinpeng.cn/2017/12/15/InstallPG</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="noopener">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
 <li>下载相关文件</li>
 <li>上传文件至生产环境并解压</li>
 <li>编译安装gcc</li>
@@ -210,7 +210,7 @@
 <li>安装完成，启动数据库</li>
 <li>更改数据库中postgres 用户密码<br><br><a id="more"></a>
 <h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载相关文件"><a href="#下载相关文件" class="headerlink" title="下载相关文件"></a>下载相关文件</h5></li>
-<li>点击该链接下载所有安装包:<a href="http://p3602m0u1.bkt.clouddn.com/install_PG.rar" target="_blank" rel="external">install_PG.rar</a><br><img src="http://ozfuaes8n.bkt.clouddn.com/pg-files.png" alt="pg-files"><br><br></li>
+<li>点击该链接下载所有安装包:<a href="http://p3602m0u1.bkt.clouddn.com/install_PG.rar" target="_blank" rel="noopener">install_PG.rar</a><br><img src="http://ozfuaes8n.bkt.clouddn.com/pg-files.png" alt="pg-files"><br><br></li>
 </ul>
 <h5 id="上传文件至生产环境并解压"><a href="#上传文件至生产环境并解压" class="headerlink" title="上传文件至生产环境并解压"></a>上传文件至生产环境并解压</h5><ul>
 <li>在 <code>Windows</code> 下解压上述下载文件并上传至 <code>Linux</code></li>
@@ -248,7 +248,7 @@
 <h5 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initdb -D /home/data/pgsql/data -E UTF8 --locale=C -U postgres</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h5 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h5><ul>
-<li>这里请参考这篇文章的详细介绍：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="external">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></li>
+<li>这里请参考这篇文章的详细介绍：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="noopener">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></li>
 <li>复制以上文件 pg_hba.conf 和 postgresql.conf ，先备份默认配置文件，再替换 /home/data/pgsql/data 下对应的文件</li>
 <li>并根据当前服务器内存大小更改  postgresql.conf   中的  shared_buffered 参数（如果是数据库服务器，建议设置为总内存的60%~80%）<br><br></li>
 </ul>
@@ -531,6 +531,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -540,10 +544,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,14 +559,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
@@ -576,6 +568,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大神</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,5 +776,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200,"vOffset":-50},"mobile":{"show":true},"react":{"opacityDefault":0.9}});</script></body>
 </html>

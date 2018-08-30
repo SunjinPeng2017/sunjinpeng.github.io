@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="VSK小天的博客">
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncerpgbouncer 简介 pgbouncer 是一个轻量级的PG数据库连接池插件">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-01-28T15:37:00.120Z">
+<meta property="og:updated_time" content="2018-01-28T15:37:00.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--连接池插件pgbouncer">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer官网：https://github.com/pgbouncer/pgbouncerpgbouncer 简介 pgbouncer 是一个轻量级的PG数据库连接池插件">
@@ -190,7 +190,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/26/pgbouncer">http://www.sunjinpeng.cn/2017/12/26/pgbouncer</a></h5><h5 id="官网：https-github-com-pgbouncer-pgbouncer"><a href="#官网：https-github-com-pgbouncer-pgbouncer" class="headerlink" title="官网：https://github.com/pgbouncer/pgbouncer"></a>官网：<a href="https://github.com/pgbouncer/pgbouncer" target="_blank" rel="external">https://github.com/pgbouncer/pgbouncer</a></h5><h4 id="pgbouncer-简介"><a href="#pgbouncer-简介" class="headerlink" title="pgbouncer 简介"></a>pgbouncer 简介</h4><ul>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-26-pgbouncer" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/26/pgbouncer"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/26/pgbouncer">http://www.sunjinpeng.cn/2017/12/26/pgbouncer</a></h5><h5 id="官网：https-github-com-pgbouncer-pgbouncer"><a href="#官网：https-github-com-pgbouncer-pgbouncer" class="headerlink" title="官网：https://github.com/pgbouncer/pgbouncer"></a>官网：<a href="https://github.com/pgbouncer/pgbouncer" target="_blank" rel="noopener">https://github.com/pgbouncer/pgbouncer</a></h5><h4 id="pgbouncer-简介"><a href="#pgbouncer-简介" class="headerlink" title="pgbouncer 简介"></a>pgbouncer 简介</h4><ul>
 <li>pgbouncer 是一个轻量级的PG数据库连接池插件<br><br><a id="more"></a>
 </li>
 </ul>
@@ -211,7 +211,7 @@
 <p><br></p>
 <h5 id="使用-pgbouncer"><a href="#使用-pgbouncer" class="headerlink" title="使用 pgbouncer"></a>使用 pgbouncer</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动命令</span></span><br><span class="line">pgbouncer -d /usr/<span class="built_in">local</span>/pgbouncer-1.7.2/config/pgbouncer.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用连接池连接数据库</span></span><br><span class="line">psql -U postgres -d GEMPILE_DATA -p 6543</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 连接pgbouncer本身的数据库</span></span><br><span class="line">psql -U postgres -d pgbouncer -p 6543</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h5 id="更多详细内容请参考：http-pgbouncer-github-io-usage-html"><a href="#更多详细内容请参考：http-pgbouncer-github-io-usage-html" class="headerlink" title="更多详细内容请参考：http://pgbouncer.github.io/usage.html"></a>更多详细内容请参考：<a href="http://pgbouncer.github.io/usage.html" target="_blank" rel="external">http://pgbouncer.github.io/usage.html</a></h5><p><br><br>至此，<code>pgbouncer</code>已经安装完成，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+<h5 id="更多详细内容请参考：http-pgbouncer-github-io-usage-html"><a href="#更多详细内容请参考：http-pgbouncer-github-io-usage-html" class="headerlink" title="更多详细内容请参考：http://pgbouncer.github.io/usage.html"></a>更多详细内容请参考：<a href="http://pgbouncer.github.io/usage.html" target="_blank" rel="noopener">http://pgbouncer.github.io/usage.html</a></h5><p><br><br>至此，<code>pgbouncer</code>已经安装完成，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
 
       
 
@@ -491,6 +491,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -500,10 +504,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,14 +519,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
@@ -536,6 +528,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大神</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,5 +736,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200,"vOffset":-50},"mobile":{"show":true},"react":{"opacityDefault":0.9}});</script></body>
 </html>
