@@ -171,6 +171,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java-sepTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/08/java-sepTable/">java在后端使用jdbcTemplate实现分库，分表</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/08/java-sepTable/" class="archive-article-date">
+  	<time datetime="2018-01-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-08-java-sepTable"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-08-java-sepTable" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/08/java-sepTable"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/08/java-sepTable">http://www.sunjinpeng.cn/2018/01/08/java-sepTable</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>当应用数据量过大时，我们就不得不考虑通过分库、分表来分担数据库压力，减少前端查询时间，但这时后端如何加入这些新的数据库节点呢？本文介绍了一种通过 <code>工厂模式</code> 在 <code>jdbcTemplate</code> 层通过不同的表名获取到不同的数据库连接，来达到分库、分表的目的。当然这种方法也有一些局限性和弊端，比如不支持关联查询，每个表都需配置连接信息，如果表过多，将会很繁琐。<br><br>不过，你也可以参考我另外的两篇文章实现分库、分表:</p>
+<ul>
+<li><a href="http://www.sunjinpeng.cn/2017/12/20/pg_pathman">http://www.sunjinpeng.cn/2017/12/20/pg_pathman</a></li>
+<li><a href="http://www.sunjinpeng.cn/2018/01/06/pg-citus">http://www.sunjinpeng.cn/2018/01/06/pg-citus</a><br><br>
+        
+          <a class="article-more-a" href="/2018/01/08/java-sepTable/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/08/java-sepTable/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git-commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -634,100 +724,6 @@
 
 
   
-    <article id="post-pgRoleManagement" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/29/pgRoleManagement/">PostgresSQL 用户组权限管理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/29/pgRoleManagement/" class="archive-article-date">
-  	<time datetime="2017-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-29-pgRoleManagement"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-29-pgRoleManagement" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement">http://www.sunjinpeng.cn/2017/12/29/pgRoleManagement</a></h5><h5 id="原文参考：http-mysql-taobao-org-monthly-2015-11-03"><a href="#原文参考：http-mysql-taobao-org-monthly-2015-11-03" class="headerlink" title="原文参考：http://mysql.taobao.org/monthly/2015/11/03"></a>原文参考：<a href="http://mysql.taobao.org/monthly/2015/11/03" target="_blank" rel="noopener">http://mysql.taobao.org/monthly/2015/11/03</a></h5><h4 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h4><ul>
-<li><code>PG</code> 的 <code>superuser</code> 拥有几乎全部的数据库权限，甚至可以直接修改系统表，潜在风险相当大</li>
-<li>对于用户而言，<code>PG</code> 的<code>普通用户</code>权限是完全够用的</li>
-<li>但是没有了<code>超级用户</code>，<code>普通用户</code>无法管理其他<code>普通用户</code>创建的对象，经常出现操作对象无权限的问题<br><br>
-        
-          <a class="article-more-a" href="/2017/12/29/pgRoleManagement/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pgRole</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/29/pgRoleManagement/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -846,15 +842,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,6 +851,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -890,6 +886,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaDoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
               </li>
              
@@ -902,19 +902,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaDoc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">citus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pgRole</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,6 +951,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">疯狂撸码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
               </li>
              
               <li class="article-tag-list-item">
