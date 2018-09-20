@@ -9,14 +9,14 @@
   <title>maven配置Tomcat自动化部署 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
-<meta name="keywords" content="java,maven">
+<meta name="keywords" content="原创,后端,maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="maven配置Tomcat自动化部署">
 <meta property="og:url" content="http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-05-09T10:29:21.467Z">
+<meta property="og:updated_time" content="2018-09-20T09:44:21.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven配置Tomcat自动化部署">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
@@ -233,7 +233,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -487,15 +491,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">畅言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">不蒜子</a>
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,11 +499,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,11 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,47 +531,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">菜鸟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大神</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaDoc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">citus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pgRole</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">pgbouncer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pgcluu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,19 +571,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">疯狂撸码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
+                <a href="javascript:void(0)" class="js-tag color3">撸码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">powa</a>
               </li>
             
             <div class="clearfix"></div>

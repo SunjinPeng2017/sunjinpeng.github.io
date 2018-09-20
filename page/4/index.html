@@ -171,6 +171,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-pg_pathman" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/20/pg_pathman/">PostgresSQL插件--高效分区插件pg_pathman</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/20/pg_pathman/" class="archive-article-date">
+  	<time datetime="2017-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-20-pg-pathman"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-20-pg-pathman" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/20/pg_pathman"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/20/pg_pathman">http://www.sunjinpeng.cn/2017/12/20/pg_pathman</a></h5><h5 id="官网：https-github-com-postgrespro-pg-pathman"><a href="#官网：https-github-com-postgrespro-pg-pathman" class="headerlink" title="官网：https://github.com/postgrespro/pg_pathman"></a>官网：<a href="https://github.com/postgrespro/pg_pathman" target="_blank" rel="noopener">https://github.com/postgrespro/pg_pathman</a></h5><h5 id="部分参考：https-yq-aliyun-com-articles-62314"><a href="#部分参考：https-yq-aliyun-com-articles-62314" class="headerlink" title="部分参考：https://yq.aliyun.com/articles/62314"></a>部分参考：<a href="https://yq.aliyun.com/articles/62314" target="_blank" rel="noopener">https://yq.aliyun.com/articles/62314</a></h5><h4 id="pg-pathman-简介"><a href="#pg-pathman-简介" class="headerlink" title="pg_pathman 简介"></a>pg_pathman 简介</h4><ul>
+<li>背景<br>PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constraint_exclusion=partition)，执行select/delete/update时执行计划根据约束和查询条件排除不需要查询的分区表。<br>调用COPY或插入数据时使用触发器或规则，将数据插入对应的分区表。<br>传统的做法，无论是查询还是插入，对性能的影响都较大。<br><br></li>
+<li>pg_pathman 为什么高效</li>
+</ul>
+<ol>
+<li>插入优化，使用PartitionFilter替换relation，代替触发器的方式。效率提升非常明显。</li>
+<li>查询优化，分区定义加载在内存中，使用binary search和hash search对应range与hash分区表，使用RuntimeAppend &amp; RuntimeMergeAppend custom plan nodes to pick partitions at runtime;</li>
+<li>相比查询时通过约束过滤更加高效。 同时runtime过滤，支持子查询。传统的约束法不支持子查询过滤。<br><br>
+        
+          <a class="article-more-a" href="/2017/12/20/pg_pathman/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/20/pg_pathman/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-InstallPG" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -222,7 +324,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		
 		</ul>
@@ -326,15 +436,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">畅言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不蒜子</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
         		</li>
       		
 		</ul>
@@ -405,7 +507,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="2017-11-19-床上撸码。。。"><a href="#2017-11-19-床上撸码。。。" class="headerlink" title="2017-11-19 床上撸码。。。"></a>2017-11-19 床上撸码。。。</h4><p><img src="http://ozfuaes8n.bkt.clouddn.com/2017-11-19.JPG" alt="2017-11-19"></p>
+        <h4 id="2017-11-19-撸码。。。"><a href="#2017-11-19-撸码。。。" class="headerlink" title="2017-11-19 撸码。。。"></a>2017-11-19 撸码。。。</h4><p><img src="http://ozfuaes8n.bkt.clouddn.com/2017-11-19.JPG" alt="2017-11-19"></p>
 <h4 id="2017-11-7-来晚的灯展会。。。"><a href="#2017-11-7-来晚的灯展会。。。" class="headerlink" title="2017-11-7 来晚的灯展会。。。"></a>2017-11-7 来晚的灯展会。。。</h4><p><img src="http://ozfuaes8n.bkt.clouddn.com/2017-11-7-1.jpg" alt="2017-11-7-1"><img src="http://ozfuaes8n.bkt.clouddn.com/2017-11-7-2.jpg" alt="2017-11-7-2"><br>
         
           <a class="article-more-a" href="/2017/11/19/photos/#more">more >></a>
@@ -454,7 +556,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">疯狂撸码</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">撸码</a>
         		</li>
       		
 		</ul>
@@ -543,7 +645,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">半张纸</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -637,15 +739,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">菜鸟</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大神</a>
         		</li>
       		
 		</ul>
@@ -696,101 +798,9 @@
 
 
   
-    <article id="post-firstBlog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/15/firstBlog/">第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/15/firstBlog/" class="archive-article-date">
-  	<time datetime="2017-11-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://ozfuaes8n.bkt.clouddn.com/firstBlog.png" alt="firstBlog"></p>
-<h4 id="这是我的第一篇博客，其实三个月之前就想开始了，硬是被我拖到现在才完成，说到底还是：作为一个LOLer-周末的召唤师峡谷对我诱惑太大了，每次都和同学开黑去了。。。这几天终于下定决心把这个网站做起来。既然是第一篇博客，那么我们就来聊一下为什么写博客"><a href="#这是我的第一篇博客，其实三个月之前就想开始了，硬是被我拖到现在才完成，说到底还是：作为一个LOLer-周末的召唤师峡谷对我诱惑太大了，每次都和同学开黑去了。。。这几天终于下定决心把这个网站做起来。既然是第一篇博客，那么我们就来聊一下为什么写博客" class="headerlink" title="这是我的第一篇博客，其实三个月之前就想开始了，硬是被我拖到现在才完成，说到底还是：作为一个LOLer,周末的召唤师峡谷对我诱惑太大了，每次都和同学开黑去了。。。这几天终于下定决心把这个网站做起来。既然是第一篇博客，那么我们就来聊一下为什么写博客"></a>这是我的第一篇博客，其实三个月之前就想开始了，硬是被我拖到现在才完成，说到底还是：作为一个LOLer,周末的召唤师峡谷对我诱惑太大了，每次都和同学开黑去了。。。这几天终于下定决心把这个网站做起来。既然是第一篇博客，那么我们就来聊一下为什么写博客</h4><p><img src="http://ozfuaes8n.bkt.clouddn.com/firstBlog-1.jpg" alt="firstBlog-1"></p>
-<h5 id="为什么要写博客？"><a href="#为什么要写博客？" class="headerlink" title="为什么要写博客？"></a>为什么要写博客？</h5><ul>
-<li><p>积累更多的知识<br>写并不是单纯的写。例如你写着写着，你突然忘记了一个概念，于是上网找，找回来这个概念的时候，你重温这个概念，可能还会顺便看了一下这个概念的其他东西。然后你把这个知识点记下来，下次再遇到了，马上就能想到。<br>寻找信息来源本身就是一个知识积累的过程，同时，你慢慢也学会了鉴别知识。</p>
-</li>
-<li><p>提高将事情讲清楚的能力<br>很多东西你以为懂了，但当你在写下来的时候，你就觉得无从下手了。<br>如果一件事情你不能讲清楚，十有八九你还没有完全理解。<br>将事情写下来，慢慢就可以提高你的逻辑思维能力，分析能力，写会迫使你在你脑中搭建一个有条理的框架。例如我写这篇文章一样，我就将值得写博客的原因一点一点地罗列出来，事情就更加清晰，你也可以更好的思考问题。</p>
-        
-          <a class="article-more-a" href="/2017/11/15/firstBlog/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">第一篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/dailyArticle//" class="article-tag-list-link color3">dailyArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/15/firstBlog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -894,15 +904,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">畅言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">不蒜子</a>
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -910,11 +912,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -922,11 +932,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">第一篇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">半张纸</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,47 +944,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">菜鸟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大神</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaDoc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CopyRight</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">citus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pgRole</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">pgbouncer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pgcluu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1014,19 +984,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">疯狂撸码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pg_pathman</a>
+                <a href="javascript:void(0)" class="js-tag color3">撸码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">powa</a>
               </li>
             
             <div class="clearfix"></div>
