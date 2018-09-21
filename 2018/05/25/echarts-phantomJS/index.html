@@ -9,14 +9,14 @@
   <title>利用PhantomJS生成echarts图片 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/05/25/echarts-phantomJSPhantomJS官网：http://phantomjs.org/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在日常开发中，有时我们可能需要一些报表的图片，比如word,ppt…虽然有其他一些数据可视化工具可以生成类似的图片，但大部分图片质量不高，而且不是很美观，这时，我们">
-<meta name="keywords" content="前端,后端,原创">
+<meta name="keywords" content="原创,前端,后端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用PhantomJS生成echarts图片">
 <meta property="og:url" content="http://www.sunjinpeng.cn/2018/05/25/echarts-phantomJS/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/05/25/echarts-phantomJSPhantomJS官网：http://phantomjs.org/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在日常开发中，有时我们可能需要一些报表的图片，比如word,ppt…虽然有其他一些数据可视化工具可以生成类似的图片，但大部分图片质量不高，而且不是很美观，这时，我们">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-09-20T10:09:43.727Z">
+<meta property="og:updated_time" content="2018-09-21T03:56:59.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用PhantomJS生成echarts图片">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/05/25/echarts-phantomJSPhantomJS官网：http://phantomjs.org/前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在日常开发中，有时我们可能需要一些报表的图片，比如word,ppt…虽然有其他一些数据可视化工具可以生成类似的图片，但大部分图片质量不高，而且不是很美观，这时，我们">
@@ -201,7 +201,41 @@
 <li>删除临时文件</li>
 <li>(可选)定时清理图片<br><br></li>
 </ul>
-<h3 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h3><h4 id="安装-PhantomJS"><a href="#安装-PhantomJS" class="headerlink" title="安装 PhantomJS"></a>安装 <code>PhantomJS</code></h4>
+<h3 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h3><h4 id="安装-PhantomJS"><a href="#安装-PhantomJS" class="headerlink" title="安装 PhantomJS"></a>安装 <code>PhantomJS</code></h4><ul>
+<li>Windows<br>在<a href="https://bitbucket.org/ariya/phantomjs/downloads/" target="_blank" rel="noopener">https://bitbucket.org/ariya/phantomjs/downloads/</a>选择对应版本下载，解压后运行exe文件进入REPL界面。随后把 <code>phantomjs.exe</code> 所在目录添加到环境变量PATH中即可<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> D:\Program Files\phantomjs-1.9.8-windows</span><br><span class="line">λ phantomjs -v</span><br><span class="line">1.9.8</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Centos<br>由于当时(2018-02-13)根据官方文档<a href="http://phantomjs.org/download.html" target="_blank" rel="noopener">http://phantomjs.org/download.html</a>在centos6安装2.1.3版本会出现问题，参考了github上的意见，改为安装1.9.8版本。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2</span><br><span class="line">tar -xvf phantomjs-1.9.8-linux-x86_64.tar.bz2</span><br><span class="line"><span class="built_in">cd</span> ./phantomjs-1.9.8-linux-x86_64/bin</span><br><span class="line">./phantomjs -v</span><br><span class="line">1.9.8</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h4 id="准备-echarts-模板文件"><a href="#准备-echarts-模板文件" class="headerlink" title="准备 echarts 模板文件"></a>准备 <code>echarts</code> 模板文件</h4><ul>
+<li><code>PhantomJS</code> 执行所需配置文件<code>echarts_load.js</code>和模板文件请点击该链接下载<a href="http://p3602m0u1.bkt.clouddn.com/htmlFile.zip" target="_blank" rel="noopener">htmlFile.zip</a><br><br></li>
+</ul>
+<h4 id="restful-接口及整体流程"><a href="#restful-接口及整体流程" class="headerlink" title="restful 接口及整体流程"></a><code>restful</code> 接口及整体流程</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Gets image.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> jsonData  the json data</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> modelType the model type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> chartType the chart type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the image</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> echarts-image-generator 1.0.0</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/getEchartsImg"</span>, method = RequestMethod.POST, produces = <span class="string">"image/png;charset=UTF-8"</span>)</span><br><span class="line">    <span class="meta">@ApiOperation</span>(value = <span class="string">"直接返回echarts图片"</span>, notes = <span class="string">"Get echarts image!"</span>)</span><br><span class="line">    <span class="meta">@ApiResponses</span>(value = &#123;</span><br><span class="line">            <span class="meta">@ApiResponse</span>(code = <span class="number">200</span>, message = <span class="string">"successful query"</span>),</span><br><span class="line">            <span class="meta">@ApiResponse</span>(code = <span class="number">500</span>, message = <span class="string">"internal server error"</span>)&#125;)</span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;?&gt; getImage(</span><br><span class="line">            <span class="meta">@ApiParam</span>(value = <span class="string">"json数据，不需要带上属性名"</span>) <span class="meta">@RequestBody</span> String jsonData,</span><br><span class="line">            <span class="meta">@ApiParam</span>(value = <span class="string">"对象对应类名，可选参数: BarChartSeries,PieChartSeries,LineCombineBarChart,OneDimensionalTable,OneDimensionalTable-Ratio,TwoDimensionalTable"</span>) <span class="meta">@RequestParam</span>(value = <span class="string">"modelType"</span>) String modelType,</span><br><span class="line">            <span class="meta">@ApiParam</span>(value = <span class="string">"生成图片类型，可选参数；bar,line,pie,bar-line,table,table-ratio"</span>) <span class="meta">@RequestParam</span>(value = <span class="string">"chartType"</span>) String chartType) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取图表类型</span></span><br><span class="line">            String type = getChartType(chartType);</span><br><span class="line">            <span class="comment">// 解析 json 数据</span></span><br><span class="line">            String data = getJsonByModelType(modelType, jsonData);</span><br><span class="line">            LOG.info(<span class="string">"传入数据："</span> + jsonData);</span><br><span class="line">            LOG.info(<span class="string">"解析后数据："</span> + data);</span><br><span class="line">            <span class="keyword">if</span> (StringUtils.isBlank(type) || StringUtils.isBlank(data)) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> ServiceException(<span class="string">"对象类型或者图表类型不匹配。modelType= "</span> + modelType</span><br><span class="line">                        + <span class="string">" , chartType= "</span> + chartType);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 复制模板到临时文件</span></span><br><span class="line">            String tmpChartFilePath = FileOperateUtil.copySourceFile(homeFilePath, type);</span><br><span class="line">            <span class="comment">// HTML JS  默认使用 index 命名</span></span><br><span class="line">            String htmlFilePath = tmpChartFilePath + File.separator + <span class="string">"index.html"</span>;</span><br><span class="line">            String jsFilePath = tmpChartFilePath + File.separator + <span class="string">"index.js"</span>;</span><br><span class="line">            <span class="comment">// 将数据替换 JS 中的占位符</span></span><br><span class="line">            FileOperateUtil.replaceData(<span class="string">"&#123;&#123;dataset&#125;&#125;"</span>, data, jsFilePath);</span><br><span class="line">            <span class="comment">// 返回图片存放路径</span></span><br><span class="line">            String pngFilePath = spiderService.downloadImage(htmlFilePath);</span><br><span class="line">            <span class="comment">// 删除临时文件</span></span><br><span class="line">            <span class="keyword">if</span> (FileOperateUtil.deleteDir(<span class="keyword">new</span> File(tmpChartFilePath))) &#123;</span><br><span class="line">                LOG.info(<span class="string">"文件删除成功! path ="</span> + tmpChartFilePath);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                LOG.info(<span class="string">"文件删除失败! path ="</span> + tmpChartFilePath);</span><br><span class="line">            &#125;</span><br><span class="line">            BufferedImage image = ImageIO.read(<span class="keyword">new</span> FileInputStream(pngFilePath));</span><br><span class="line">            ByteArrayOutputStream stream = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">            ImageIO.write(image, <span class="string">"png"</span>, stream);</span><br><span class="line">            <span class="keyword">byte</span>[] result = stream.toByteArray();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// modify header of response</span></span><br><span class="line">            HttpHeaders header = <span class="keyword">new</span> HttpHeaders();</span><br><span class="line">            header.setContentType(MediaType.IMAGE_PNG);</span><br><span class="line">            header.setCacheControl(<span class="string">"no-store, no-cache"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(result, header, HttpStatus.OK);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable t) &#123;</span><br><span class="line">            LOG.error(<span class="string">"Failed to Get image"</span>, t);</span><br><span class="line">            <span class="keyword">return</span> CommonUtil.newResponseEntity(t);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Gets json by com.richstonedt.commons.echarts.image.generator.model type.</span></span><br><span class="line"><span class="comment">     * 根据不同 model 类型解析为前端展示 echarts 所需 json 数据</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dataType the data type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> jsonData the json data</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the json by com.richstonedt.commons.echarts.image.generator.model type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> echarts-image-generator 1.0.0</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getJsonByModelType</span><span class="params">(String dataType, String jsonData)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (dataType.trim()) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"BarChartSeries"</span>:</span><br><span class="line">                <span class="keyword">return</span> JsonParsedUtil.parseToBarOrLineChart(jsonData);</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"PieChartSeries"</span>:</span><br><span class="line">                <span class="keyword">return</span> JsonParsedUtil.parseToPieChart(jsonData);</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"LineCombineBarChart"</span>:</span><br><span class="line">                <span class="keyword">return</span> JsonParsedUtil.parseToBarAndLineChart(jsonData);</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"OneDimensionalTable"</span>:</span><br><span class="line">                <span class="keyword">return</span> JsonParsedUtil.parseToOneDimensionTable(jsonData);</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"OneDimensionalTable-Ratio"</span>:</span><br><span class="line">                <span class="keyword">return</span> jsonData;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"TwoDimensionalTable"</span>:</span><br><span class="line">                <span class="keyword">return</span> JsonParsedUtil.parseToTwoDimensionTable(jsonData);</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LOG.error(<span class="string">"未匹配到对象: "</span> + dataType);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Gets chart tpye.</span></span><br><span class="line"><span class="comment">     * 返回图表类型</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type the type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the chart tpye</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> echarts-image-generator 1.0.0</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getChartType</span><span class="params">(String type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (type.trim().toUpperCase()) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"BAR"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"bar"</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"LINE"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"line"</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"PIE"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"pie"</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"BAR-LINE"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"bar-line"</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"TABLE"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"table"</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"TABLE-RATIO"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"table-ratio"</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LOG.error(<span class="string">"未匹配到图表类型: "</span> + type);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="其他-utils-工具类"><a href="#其他-utils-工具类" class="headerlink" title="其他 utils 工具类"></a>其他 <code>utils</code> 工具类</h4><ul>
+<li>文件操作类，点击下载 <a href="http://p3602m0u1.bkt.clouddn.com/FileOperateUtil.java" target="_blank" rel="noopener">FileOperateUtil.java</a></li>
+<li><code>json</code> 操作类，点击下载 <a href="http://p3602m0u1.bkt.clouddn.com/JsonParsedUtil.java" target="_blank" rel="noopener">JsonParsedUtil.java</a></li>
+<li><code>PhantomJS</code> 操作类，点击下载 <a href="http://p3602m0u1.bkt.clouddn.com/SpiderService.java" target="_blank" rel="noopener">SpiderService.java</a><br><br></li>
+</ul>
+<h4 id="model-相关类下载"><a href="#model-相关类下载" class="headerlink" title="model 相关类下载"></a><code>model</code> 相关类下载</h4><p>点击下载 <a href="http://p3602m0u1.bkt.clouddn.com/echarts-image-generator-model.zip" target="_blank" rel="noopener">echarts-image-generator-model.zip</a><br><br></p>
+<h4 id="定时任务类文件"><a href="#定时任务类文件" class="headerlink" title="定时任务类文件"></a>定时任务类文件</h4><p>点击下载<a href="http://p3602m0u1.bkt.clouddn.com/DropImgTask.java" target="_blank" rel="noopener">DropImgTask.java</a><br><br></p>
+<h4 id="原理及参数说明"><a href="#原理及参数说明" class="headerlink" title="原理及参数说明"></a>原理及参数说明</h4><p>1.调用 <code>获取图片接口</code> 传入指定类型参数和json数据①<br>2.将json数据解析为前端所需的数据模型<br>3.复制临时模板文件夹<br>4.用转化后的json数据替换<code>js</code>②中的指定占位符<br>5.<code>PhantomJS</code> 渲染页面<br>6.<code>PhantomJS</code> 延时截图③，并将保存路径打印到控制台<br>7.后端拿到图片，返回给调用方<br>8.删除临时模板文件<br>9.定时任务每天凌晨3点删除图片，如需修改，请修改 <code>DropImgTask.class</code> </p>
+<p>① 参数设置:   </p>
+<ul>
+<li>柱状图: <code>modelType=BarChartSeries , chartType=bar</code></li>
+<li>折线图: <code>modelType=BarChartSeries , chartType=line</code></li>
+<li>饼  图: <code>modelType=PieChartSeries , chartType=pie</code></li>
+<li>柱状-折线联合图: <code>modelType=LineCombineBarChart , chartType=bar-line</code></li>
+<li>一维数据表格: <code>modelType=OneDimensionalTable , chartType=table</code></li>
+<li>一维占比表格: <code>modelType=OneDimensionalTable-Ratio , chartType=table-ratio</code></li>
+</ul>
+<p>② <code>html</code>和<code>js</code>文件默认命名为<code>index</code>,<code>js</code> 中的占位符默认使用<code>dataset</code>,<code>js</code>不能使用<code>ES6</code>语法<br>③ 默认5秒后截图，可自定义时间  </p>
+<p><b>由于代码版权由公司所有，所以没法上传到 <code>GitHub</code> 上，在这抱歉。。。</b></p>
+
       
 
       
@@ -214,15 +248,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
         		</li>
       		
 		</ul>
@@ -332,7 +366,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-05-25-echarts-phantomJS"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/05/25/echarts-phantomJS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PhantomJS官网：http-phantomjs-org"><span class="toc-number">2.</span> <span class="toc-text">PhantomJS官网：http://phantomjs.org/</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-PhantomJS"><span class="toc-number"></span> <span class="toc-text">安装 PhantomJS</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-05-25-echarts-phantomJS"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/05/25/echarts-phantomJS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PhantomJS官网：http-phantomjs-org"><span class="toc-number">2.</span> <span class="toc-text">PhantomJS官网：http://phantomjs.org/</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-PhantomJS"><span class="toc-number"></span> <span class="toc-text">安装 PhantomJS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#准备-echarts-模板文件"><span class="toc-number"></span> <span class="toc-text">准备 echarts 模板文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#restful-接口及整体流程"><span class="toc-number"></span> <span class="toc-text">restful 接口及整体流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他-utils-工具类"><span class="toc-number"></span> <span class="toc-text">其他 utils 工具类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#model-相关类下载"><span class="toc-number"></span> <span class="toc-text">model 相关类下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定时任务类文件"><span class="toc-number"></span> <span class="toc-text">定时任务类文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及参数说明"><span class="toc-number"></span> <span class="toc-text">原理及参数说明</span></a>
                     </div>
                 </span>
             </div>
@@ -459,19 +493,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原创</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,7 +513,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,11 +529,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,10 +542,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,6 +578,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">撸码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springBoot</a>
               </li>
             
             <div class="clearfix"></div>
