@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/shizuku.gif">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/hibiki.gif">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/QQ20181015-164629.png">
-<meta property="og:updated_time" content="2018-11-14T14:45:39.656Z">
+<meta property="og:updated_time" content="2018-11-17T05:37:24.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo加入二次元板娘动画">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/06/10/hexo-live2d插件GitHub网址：https://github.com/EYHN/hexo-helper-live2d前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;也许大家已经注意到我博客的右下角有一只会随着鼠标摆头的猫，其实是使用了 hexo 的一个插件-hexo-helper-live2d,这样">
@@ -109,9 +109,11 @@ var _hmt = _hmt || [];
     			
             
     			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">膜拜大神</a>
     			
             
 		</nav>
@@ -243,8 +245,9 @@ var _hmt = _hmt || [];
 </ul>
 <h4 id="配置动画"><a href="#配置动画" class="headerlink" title="配置动画"></a>配置动画</h4><ul>
 <li>在博客根目录下的 <code>_config.yml</code> 中加入配置参数（虽然在官方说 <code>themes</code> 下的 <code>_config.yml</code> 中配置也行，但还是建议在根目录下配置）</li>
+<li>我只配置了在博客首页显示，博客正文中不显示。方法：将 <code>tagMode</code> 设置为 <code>true</code>，并在 <code>category.ejs</code> <code>index.ejs</code> <code>page.ejs</code> 或者你想显示的博客中加入 <code>&lt;%- live2d() %&gt;</code> 标签</li>
 <li><p>下面依然以我的配置为例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  log: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 100</span><br><span class="line">    height: 200</span><br><span class="line">    vOffset: -70</span><br><span class="line">    hOffset: 20</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br><span class="line">    scale: 0.1</span><br><span class="line">    motion: true</span><br><span class="line">  react:</span><br><span class="line">    opacityDefault: 0.9</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: true</span><br><span class="line">  log: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 100</span><br><span class="line">    height: 200</span><br><span class="line">    vOffset: -70</span><br><span class="line">    hOffset: 20</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br><span class="line">    scale: 0.1</span><br><span class="line">    motion: true</span><br><span class="line">  react:</span><br><span class="line">    opacityDefault: 0.9</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注意 <code>model.use</code> 参数，要使用自己选择的动画完整名称；如果不想在移动端显示，可以把 <code>mobile.show</code> 设置为 <code>false</code></p>
 </li>
@@ -478,6 +481,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -489,13 +494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">膜拜大神</a></li>
       
         
     </ul>
@@ -524,7 +531,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,19 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,6 +625,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://www.ruanyifeng.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.yinwang.org" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>王  银</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
@@ -698,5 +721,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
 <script src="https://files-1258052515.cos.ap-beijing.myqcloud.com/bgm.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200,"vOffset":-70,"hOffset":20},"mobile":{"show":true,"scale":0.1,"motion":true},"react":{"opacityDefault":0.9}});</script></body>
+</body>
 </html>
