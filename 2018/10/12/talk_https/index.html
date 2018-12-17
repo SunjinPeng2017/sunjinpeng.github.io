@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>Category: techArticle | VSK小天的博客</title>
+  <title>聊聊对称/非对称加密在HTTPS中的应用 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2017年毕业于长江大学软件工程，就职于北京一家金融公司，熟悉JAVA、WEB前后端，Linux、MySQL及PgSQL，程序猿一枚。。。">
-<meta name="keywords" content="前端,js,java,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VSK小天的博客">
-<meta property="og:url" content="http://www.sunjinpeng.cn/categories/techArticle/page/4/index.html">
+  <meta name="description" content="转载自：聊聊对称/非对称加密在HTTPS中的应用前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近在项目中使用到了非对称性加密算法，于是上网了解一下，发现这篇文章讲得挺好的，就记录下来。">
+<meta name="keywords" content="转载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊对称&#x2F;非对称加密在HTTPS中的应用">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2018/10/12/talk_https/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="2017年毕业于长江大学软件工程，就职于北京一家金融公司，熟悉JAVA、WEB前后端，Linux、MySQL及PgSQL，程序猿一枚。。。">
+<meta property="og:description" content="转载自：聊聊对称/非对称加密在HTTPS中的应用前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近在项目中使用到了非对称性加密算法，于是上网了解一下，发现这篇文章讲得挺好的，就记录下来。">
 <meta property="og:locale" content="Chinese,English">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/talk_https1.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/talk_https2.jpg">
+<meta property="og:updated_time" content="2018-12-17T15:18:22.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSK小天的博客">
-<meta name="twitter:description" content="2017年毕业于长江大学软件工程，就职于北京一家金融公司，熟悉JAVA、WEB前后端，Linux、MySQL及PgSQL，程序猿一枚。。。">
+<meta name="twitter:title" content="聊聊对称&#x2F;非对称加密在HTTPS中的应用">
+<meta name="twitter:description" content="转载自：聊聊对称/非对称加密在HTTPS中的应用前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近在项目中使用到了非对称性加密算法，于是上网了解一下，发现这篇文章讲得挺好的，就记录下来。">
+<meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/talk_https1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -195,280 +199,112 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-talk_https" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      聊聊对称/非对称加密在HTTPS中的应用
+    </h1>
+  
+
+        
+        <a href="/2018/10/12/talk_https/" class="archive-article-date">
+  	<time datetime="2018-10-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-12</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="转载自：聊聊对称-非对称加密在HTTPS中的应用"><a href="#转载自：聊聊对称-非对称加密在HTTPS中的应用" class="headerlink" title="转载自：聊聊对称/非对称加密在HTTPS中的应用"></a>转载自：<a href="https://zhuanlan.zhihu.com/p/34732244" target="_blank" rel="noopener">聊聊对称/非对称加密在HTTPS中的应用</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/talk_https1.jpg" alt="talk_https1.jpg"><br></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;最近在项目中使用到了非对称性加密算法，于是上网了解一下，发现这篇文章讲得挺好的，就记录下来。<br><br><br><a id="more"></a></p>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ul>
+<li>对称加密算法</li>
+<li>非对称加密算法</li>
+<li>消息摘要算法</li>
+<li>对称/非对称加密算法在HTTPS协议中的应用<br><br></li>
+</ul>
+<h4 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h4><ul>
+<li>发送方和接收方需要持有同一把密钥，发送消息和接收消息均使用该密钥。</li>
+<li>相对于非对称加密，对称加密具有更高的加解密速度，但双方都需要事先知道密钥，密钥在传输过程中可能会被窃取，因此安全性没有非对称加密高。<br><br></li>
+</ul>
+<h4 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h4><ul>
+<li>接收方在发送消息前需要事先生成公钥和私钥，然后将公钥发送给发送方。发送放收到公钥后，将待发送数据用公钥加密，发送给接收方。接收到收到数据后，用私钥解密。</li>
+<li>在这个过程中，公钥负责加密，私钥负责解密，数据在传输过程中即使被截获，攻击者由于没有私钥，因此也无法破解。</li>
+<li>非对称加密算法的加解密速度低于对称加密算法，但是安全性更高。<br><br></li>
+</ul>
+<h4 id="消息摘要算法"><a href="#消息摘要算法" class="headerlink" title="消息摘要算法"></a>消息摘要算法</h4><ul>
+<li>消息摘要算法可以验证信息是否被篡改。</li>
+<li>在数据发送前，首先使用消息摘要算法生成该数据的签名，然后签名和数据一同发送给接收者。接收者收到数据后，对收到的数据采用消息摘要算法获得签名，最后比较签名是否一致，以此来判断数据在传输过程中是否发生修改。</li>
+<li>无论输入的消息有多长，计算出来的消息摘要的长度总是固定的。</li>
+<li>只要输入的消息不同，对其进行摘要以后产生的摘要消息也必不相同；但相同的输入必会产生相同的输出。</li>
+<li>消息摘要是单向、不可逆的。只能进行正向的信息摘要，而无法从摘要中恢复出任何的原始消息，甚至根本就找不到任何与原信息相关的信息。当然，可以采用强力攻击的方法，即尝试每一个可能的信息，计算其摘要，看看是否与已有的摘要相同，如果这样做，最终肯定会恢复出摘要的消息。但实际上，要得到的信息可能是无穷个消息之一，所以这种强力攻击几乎是无效的。</li>
+<li>消息摘要算法包括三大类，MD、SHA和MAC算法，<ul>
+<li>MD算法： Message Digest Algorithm ，目前主流的是MD5算法，为第五版算法，之前有MD2、MD3、MD4算法。</li>
+<li>SHA算法：安全哈希算法（Secure Hash Algorithm）主要适用于数字签名标准（Digital Signature Standard DSS）里面定义的数字签名算法（Digital Signature Algorithm DSA）。</li>
+<li>MAC算法：带有密码信息的信息摘要算法，是对MD和SHA算法的演变和改进，包括HmacMD2、HmacMD4、HmacMD5、HmacSHA-256等。<br><br></li>
+</ul>
+</li>
+</ul>
+<h4 id="对称-非对称加密算法在HTTPS协议中的应用"><a href="#对称-非对称加密算法在HTTPS协议中的应用" class="headerlink" title="对称/非对称加密算法在HTTPS协议中的应用"></a>对称/非对称加密算法在HTTPS协议中的应用</h4><ul>
+<li>HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看下图。<br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/talk_https2.jpg" alt="talk_https2.jpg"><br></li>
+<li>客户端发起HTTPS请求<ul>
+<li>这个没什么好说的，就是用户在浏览器里输入一个https网址，然后连接到server的443端口。</li>
+</ul>
+</li>
+<li>服务端的配置<ul>
+<li>采用HTTPS协议的服务器必须要有一套数字证书，可以自己制作，也可以向组织申请。区别就是自己颁发的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面(startssl就是个不错的选择，有1年的免费服务)。这套证书其实就是一对公钥和私钥。如果对公钥和私钥不太理解，可以想象成一把钥匙和一个锁头，只是全世界只有你一个人有这把钥匙，你可以把锁头给别人，别人可以用这个锁把重要的东西锁起来，然后发给你，因为只有你一个人有这把钥匙，所以只有你才能看到被这把锁锁起来的东西。</li>
+</ul>
+</li>
+<li>传送证书<ul>
+<li>这个证书其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等。</li>
+</ul>
+</li>
+<li>客户端解析证书<ul>
+<li>这部分工作是有客户端的TLS来完成的，首先会验证公钥是否有效，比如颁发机构，过期时间等等，如果发现异常，则会弹出一个警告框，提示证书存在问题。如果证书没有问题，那么就生成一个随即值。然后用证书对该随机值进行加密。就好像上面说的，把随机值用锁头锁起来，这样除非有钥匙，不然看不到被锁住的内容。</li>
+</ul>
+</li>
+<li>传送加密信息<ul>
+<li>这部分传送的是用证书加密后的随机值，目的就是让服务端得到这个随机值，以后客户端和服务端的通信就可以通过这个随机值来进行加密解密了。</li>
+</ul>
+</li>
+<li>服务段解密信息<ul>
+<li>服务端用私钥解密后，得到了客户端传过来的随机值(私钥)，然后把内容通过该值进行对称加密。所谓对称加密就是，将信息和私钥通过某种算法混合在一起，这样除非知道私钥，不然无法获取内容，而正好客户端和服务端都知道这个私钥，所以只要加密算法够彪悍，私钥够复杂，数据就够安全。</li>
+</ul>
+</li>
+<li>传输加密后的信息<ul>
+<li>这部分信息是服务段用私钥加密后的信息，可以在客户端被还原</li>
+</ul>
+</li>
+<li>客户端解密信息<ul>
+<li>客户端用之前生成的私钥解密服务段传过来的信息，于是获取了解密后的内容。整个过程第三方即使监听到了数据，也束手无策。<br><br>  </li>
+</ul>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>非对称加密算法的性能是非常低的，原因在于寻找大素数、大数计算、数据分割需要耗费很多的CPU周期，所以一般的HTTPS连接只在第一次握手时使用非对称加密，通过握手交换对称加密密钥，在之后的通信走对称加密。 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/pgcluu/" class="archive-article-date">
-  	<time datetime="2017-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/pgcluu/">PostgresSQL插件--集群性能监测和审计插件pgcluu</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/20/pg_pathman/" class="archive-article-date">
-  	<time datetime="2017-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/20/pg_pathman/">PostgresSQL插件--高效分区插件pg_pathman</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/15/InstallPG/" class="archive-article-date">
-  	<time datetime="2017-12-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/15/InstallPG/">生产环境离线安装、优化 PostgresSQL-9.6.2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/03/BuildBlog/" class="archive-article-date">
-  	<time datetime="2017-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/03/BuildBlog/">最新最详细的 GitHub+Hexo+yilia+阿里云域名+畅言+不蒜子 搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -481,24 +317,137 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/10/12/talk_https/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/10/22/myMather-isFool/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          我娘是个疯子
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/09/28/myTeacher/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的初中音乐老师</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载自：聊聊对称-非对称加密在HTTPS中的应用"><span class="toc-number">1.</span> <span class="toc-text">转载自：聊聊对称/非对称加密在HTTPS中的应用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目录"><span class="toc-number"></span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对称加密算法"><span class="toc-number"></span> <span class="toc-text">对称加密算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非对称加密算法"><span class="toc-number"></span> <span class="toc-text">非对称加密算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#消息摘要算法"><span class="toc-number"></span> <span class="toc-text">消息摘要算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对称-非对称加密算法在HTTPS协议中的应用"><span class="toc-number"></span> <span class="toc-text">对称/非对称加密算法在HTTPS协议中的应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/categories/techArticle/page/3/">&laquo; Prev</a><a class="page-number" href="/categories/techArticle/">1</a><a class="page-number" href="/categories/techArticle/page/2/">2</a><a class="page-number" href="/categories/techArticle/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+  <div id="SOHUCS" sid="talk_https" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytjIMMNm",
+        conf: "ed7ebef4b1d52a544acbbdbb42709fe8"
+    });
+</script>
+</script>
   
 
+  
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"log":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200,"vOffset":-70,"hOffset":20},"mobile":{"show":true,"scale":0.1,"motion":true},"react":{"opacityDefault":0.9}});</script>
+  
+
 
           </div>
         </div>
@@ -530,10 +479,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
