@@ -6,42 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>相册 | VSK小天的博客</title>
+  <title>记一次 Jedis 采坑经历... | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2018-12-25 北海公园">
-<meta name="keywords" content="相册">
+  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
+<meta name="keywords" content="原创,redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2018/01/01/photos_2018/index.html">
+<meta property="og:title" content="记一次 Jedis 采坑经历...">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2018/11/13/redis1/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="2018-12-25 北海公园">
+<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/e1c6497f63fe9eb273e8b9e7373f3169.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/8fd168c661f3f8821b460305831538bd.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/264ccd7fa229ad009487647ddbd042dd.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/IMG_1237.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/IMG_1249.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6611019653672075790.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6611019999043650061.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6601382258798494221.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6601382311244071437.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427089832903182.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427178567598605.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427629849543181.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427494331597325.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG4.jpeg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6573434987033395725.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6566773003776950798.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6566772813649150477.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6566772765372711437.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6545345290335945229.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6543751334275858957.jpg">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/6543751498868720142.jpg">
-<meta property="og:updated_time" content="2018-12-11T16:16:19.405Z">
+<meta property="og:updated_time" content="2018-12-27T15:29:50.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="2018-12-25 北海公园">
-<meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/e1c6497f63fe9eb273e8b9e7373f3169.jpg">
+<meta name="twitter:title" content="记一次 Jedis 采坑经历...">
+<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -218,37 +196,61 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos_2018" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-redis1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      记一次 Jedis 采坑经历...
     </h1>
   
 
         
-        <a href="/2018/01/01/photos_2018/" class="archive-article-date">
-  	<time datetime="2017-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
+        <a href="/2018/11/13/redis1/" class="archive-article-date">
+  	<time datetime="2018-11-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="2018-12-25-北海公园"><a href="#2018-12-25-北海公园" class="headerlink" title="2018-12-25 北海公园"></a>2018-12-25 北海公园</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/e1c6497f63fe9eb273e8b9e7373f3169.jpg" alt="e1c6497f63fe9eb273e8b9e7373f3169"><br><a id="more"></a><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/8fd168c661f3f8821b460305831538bd.jpg" alt="8fd168c661f3f8821b460305831538bd"><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/264ccd7fa229ad009487647ddbd042dd.jpg" alt="264ccd7fa229ad009487647ddbd042dd"><br></p>
-<h4 id="2018-11-05-北京的秋"><a href="#2018-11-05-北京的秋" class="headerlink" title="2018-11-05 北京的秋"></a>2018-11-05 北京的秋</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/IMG_1237.jpg" alt="IMG_1237"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/IMG_1249.jpg" alt="IMG_1249"><br><br></p>
-<h4 id="2018-09-16-香山"><a href="#2018-09-16-香山" class="headerlink" title="2018-09-16 香山"></a>2018-09-16 香山</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6611019653672075790.jpg" alt="6611019653672075790"><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6611019999043650061.jpg" alt="6611019999043650061"><br><br></p>
-<h4 id="2018-09-03-北京的蓝天"><a href="#2018-09-03-北京的蓝天" class="headerlink" title="2018-09-03 北京的蓝天"></a>2018-09-03 北京的蓝天</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6601382258798494221.jpg" alt="6601382258798494221"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6601382311244071437.jpg" alt="6601382311244071437"><br><br></p>
-<h4 id="2018-07-28-百融·团建"><a href="#2018-07-28-百融·团建" class="headerlink" title="2018-07-28 百融·团建"></a>2018-07-28 百融·团建</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427089832903182.jpg" alt="6586427089832903182"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427178567598605.jpg" alt="6586427178567598605"><br><br></p>
-<h4 id="2018-07-25-新工作"><a href="#2018-07-25-新工作" class="headerlink" title="2018-07-25 新工作"></a>2018-07-25 新工作</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427629849543181.jpg" alt="6586427629849543181"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6586427494331597325.jpg" alt="6586427494331597325"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG4.jpeg" alt="WechatIMG4"><br><br></p>
-<h4 id="2018-06-29-北漂"><a href="#2018-06-29-北漂" class="headerlink" title="2018-06-29 北漂"></a>2018-06-29 北漂</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6573434987033395725.jpg" alt="6573434987033395725"><br><br></p>
-<h4 id="2018-06-18-离开广州"><a href="#2018-06-18-离开广州" class="headerlink" title="2018-06-18 离开广州"></a>2018-06-18 离开广州</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6566773003776950798.jpg" alt="6566773003776950798"><br><br></p>
-<h4 id="2018-06-13-桂林·山水"><a href="#2018-06-13-桂林·山水" class="headerlink" title="2018-06-13 桂林·山水"></a>2018-06-13 桂林·山水</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6566772813649150477.jpg" alt="6566772813649150477"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6566772765372711437.jpg" alt="6566772765372711437"><br><br></p>
-<h4 id="2018-04-13-2018最好看的电影"><a href="#2018-04-13-2018最好看的电影" class="headerlink" title="2018-04-13 2018最好看的电影"></a>2018-04-13 2018最好看的电影</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6545345290335945229.jpg" alt="6545345290335945229"><br><br></p>
-<h4 id="2018-03-10-华农·看花"><a href="#2018-03-10-华农·看花" class="headerlink" title="2018-03-10 华农·看花"></a>2018-03-10 华农·看花</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6543751334275858957.jpg" alt="6543751334275858957"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/6543751498868720142.jpg" alt="6543751498868720142"></p>
+        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-11-13-redis1"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-11-13-redis1" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/11/13/redis1">http://www.sunjinpeng.cn/2018/11/13/redis1</a></h5><p>&nbsp;&nbsp;&nbsp;&nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 <code>Jedis</code> 的使用，废话不多说，我们直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Jedis jedis = jedisPool.getResource()</span><br><span class="line">String key = <span class="string">"xxxxxx"</span>;</span><br><span class="line">String value = jedis.get(key);</span><br><span class="line"><span class="keyword">if</span> (StringUtils.isEmpty(value)) &#123;</span><br><span class="line">    LOG.info(<span class="string">"redis 缓存未命中。。。"</span>);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    LOG.info(<span class="string">"redis 缓存命中。。。"</span>);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><br><br><a id="more"></a></p>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;下面我们开始进入正题…正在做项目时，遇到这种情况，后端程序运行一段时间之后，突然无法接收前端的任何请求，也没有任何报错，给人一种程序 “假死” 的现象。而当时又忙于开发业务逻辑代码，无从下手开始寻找原因，只得重启后端程序。。。然后突然有一天，一位经验多的’老猿人’看到这段代码：<b>“你的 jedis 连接没有关闭呀。。。”</b>，像突然浇了一盆冷水，对呀，我怎么把这个忘记了，事实证明，调用 <code>jedis.close()</code> 方法之后，这个bug就没有了。。。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面是官方建议的写法</span></span><br><span class="line"><span class="keyword">try</span> (Jedis jedis = jedisPool.getResource())&#123;</span><br><span class="line">    String key = <span class="string">"xxxxxx"</span>;</span><br><span class="line">    String value = jedis.get(key);</span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(value)) &#123;</span><br><span class="line">        LOG.info(<span class="string">"redis 缓存未命中。。。"</span>);</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        LOG.info(<span class="string">"redis 缓存命中。。。"</span>);</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h4 id="分析造成-“假死”-原因"><a href="#分析造成-“假死”-原因" class="headerlink" title="分析造成 “假死” 原因"></a>分析造成 “假死” 原因</h4><ul>
+<li>发现解决方法之后并不能达到我们的目的，我们会想：为什么 <code>jedis</code> 没有关闭会造成程序 “假死” 呢？而且没有任何报错呢？</li>
+<li><p>于是我们打开 <code>Jedis</code> 源码，我们猜想可能是由于 <code>JedisPool</code> 默认配置造成的，因为我们初始化的时候是没有任何配置的，于是找到 <code>JedisPoolConfig</code> 这个类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisPoolConfig</span> <span class="keyword">extends</span> <span class="title">GenericObjectPoolConfig</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">JedisPoolConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// defaults to make your life with connection pool easier :)</span></span><br><span class="line">    setTestWhileIdle(<span class="keyword">true</span>);</span><br><span class="line">    setMinEvictableIdleTimeMillis(<span class="number">60000</span>);</span><br><span class="line">    setTimeBetweenEvictionRunsMillis(<span class="number">30000</span>);</span><br><span class="line">    setNumTestsPerEvictionRun(-<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们继续看下这几个方法的意思</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Set the value for the &#123;<span class="doctag">@code</span> testWhileIdle&#125; configuration attribute for</span></span><br><span class="line"><span class="comment"> * pools created with this configuration instance.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> testWhileIdle The new setting of &#123;<span class="doctag">@code</span> testWhileIdle&#125;</span></span><br><span class="line"><span class="comment"> *        for this configuration instance</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericObjectPool#getTestWhileIdle()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericKeyedObjectPool#getTestWhileIdle()</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestWhileIdle</span><span class="params">(<span class="keyword">boolean</span> testWhileIdle)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.testWhileIdle = testWhileIdle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Set the value for the &#123;<span class="doctag">@code</span> minEvictableIdleTimeMillis&#125; configuration</span></span><br><span class="line"><span class="comment"> * attribute for pools created with this configuration instance.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> minEvictableIdleTimeMillis The new setting of</span></span><br><span class="line"><span class="comment"> *        &#123;<span class="doctag">@code</span> minEvictableIdleTimeMillis&#125; for this configuration instance</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericObjectPool#getMinEvictableIdleTimeMillis()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericKeyedObjectPool#getMinEvictableIdleTimeMillis()</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMinEvictableIdleTimeMillis</span><span class="params">(<span class="keyword">long</span> minEvictableIdleTimeMillis)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Set the value for the &#123;<span class="doctag">@code</span> timeBetweenEvictionRunsMillis&#125; configuration</span></span><br><span class="line"><span class="comment"> * attribute for pools created with this configuration instance.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> timeBetweenEvictionRunsMillis The new setting of</span></span><br><span class="line"><span class="comment"> *        &#123;<span class="doctag">@code</span> timeBetweenEvictionRunsMillis&#125; for this configuration</span></span><br><span class="line"><span class="comment"> *        instance</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericObjectPool#getTimeBetweenEvictionRunsMillis()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericKeyedObjectPool#getTimeBetweenEvictionRunsMillis()</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTimeBetweenEvictionRunsMillis</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        <span class="keyword">long</span> timeBetweenEvictionRunsMillis)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.timeBetweenEvictionRunsMillis = timeBetweenEvictionRunsMillis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Set the value for the &#123;<span class="doctag">@code</span> numTestsPerEvictionRun&#125; configuration</span></span><br><span class="line"><span class="comment"> * attribute for pools created with this configuration instance.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> numTestsPerEvictionRun The new setting of</span></span><br><span class="line"><span class="comment"> *        &#123;<span class="doctag">@code</span> numTestsPerEvictionRun&#125; for this configuration instance</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericObjectPool#getNumTestsPerEvictionRun()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> GenericKeyedObjectPool#getNumTestsPerEvictionRun()</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNumTestsPerEvictionRun</span><span class="params">(<span class="keyword">int</span> numTestsPerEvictionRun)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.numTestsPerEvictionRun = numTestsPerEvictionRun;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>以前自诩英语还不错的我，第一眼看到这些英文也是一脸懵逼，，，哈哈哈，后来还是找了度娘。。。推荐去看这篇: <a href="https://blog.csdn.net/lisheng19870305/article/details/84613505" target="_blank" rel="noopener">https://blog.csdn.net/lisheng19870305/article/details/84613505</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在空闲时检查有效性, 默认true</span></span><br><span class="line">config.setTestWhileIdle(<span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//逐出连接的最小空闲时间 默认60000毫秒</span></span><br><span class="line">config.setMinEvictableIdleTimeMillis(<span class="number">60000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//逐出扫描的时间间隔(毫秒) 如果为负数,则不运行逐出线程, 默认30000</span></span><br><span class="line">config.setTimeBetweenEvictionRunsMillis(<span class="number">30000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//每次逐出检查时 逐出的最大数目,默认 -1</span></span><br><span class="line">config.setNumTestsPerEvictionRun(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取连接时的最大等待毫秒数(如果设置为阻塞时BlockWhenExhausted),如果超时就抛异常, 小于零:阻塞不确定的时间,  默认-1</span></span><br><span class="line">config.setMaxWaitMillis(-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//连接耗尽时是否阻塞, false报异常,ture阻塞直到超时, 默认true</span></span><br><span class="line">config.setBlockWhenExhausted(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>所以问题就出在这了：当连接耗尽时，默认线程为阻塞状态，并且阻塞时间不确定。。。坑爹呀!!!</p>
+</li>
+<li>通过捕获JVM ThreadDump,发现有一个线程在Jedis jedis = jedisPool.getResource()这行一直waiting。这也证实了我们的猜想。。。</li>
+<li>最后我们终于弄懂了原因，但是你以为这篇文章就结束了吗？我们好像忘记了一个小问题，官方推荐的写法里，也没有调用 <code>jedis.close()</code> 方法呀，什么鬼。。。<br><br></li>
+</ul>
+<h4 id="Java-7-语法糖—-try-with-resource"><a href="#Java-7-语法糖—-try-with-resource" class="headerlink" title="Java 7 语法糖— try-with-resource"></a>Java 7 语法糖— <code>try-with-resource</code></h4><ul>
+<li><p>我们来比较一下两种写法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统关闭流方式</span></span><br><span class="line">FileInputStream inputStream = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        inputStream = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(<span class="string">"test"</span>));</span><br><span class="line">        System.out.println(inputStream.read());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e.getMessage(), e);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (inputStream != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                inputStream.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e.getMessage(), e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 使用 try-with-resource</span></span><br><span class="line"> <span class="keyword">try</span> (FileInputStream inputStream = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(<span class="string">"test"</span>))) &#123;</span><br><span class="line">        System.out.println(inputStream.read());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e.getMessage(), e);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们发现传统写法是真的不人性化，这么多代码不说，竟然在调用 <code>inputStream.close();</code> 的时候还要 <code>try catch</code> 一下，这不是明显的折磨人嘛</p>
+</li>
+<li><p>所以我们继续研究一下 <code>try-with-resource</code> 的实现原理，反编译以上的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">        FileInputStream inputStream = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(<span class="string">"test"</span>));</span><br><span class="line">        Throwable var2 = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(inputStream.read());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable var12) &#123;</span><br><span class="line">            var2 = var12;</span><br><span class="line">            <span class="keyword">throw</span> var12;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (inputStream != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (var2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        inputStream.close();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Throwable var11) &#123;</span><br><span class="line">                        var2.addSuppressed(var11);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    inputStream.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException var14) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(var14.getMessage(), var14);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们发现原来JVM在编译时候还是有做调用 <code>close()</code> 方法的操作，只不过在编写代码的时候省略了，这样一切就都说得过去了。。</p>
+</li>
+<li>最后说明一下，要使用 <code>try-with-resource</code> 语法糖，是要实现 <code>AutoCloseable</code> 接口的,并重写 <code>close()</code>方法。<br><br></li>
+</ul>
+<p>至此，从最开始的一个 <code>Jedis</code> 没有关闭的问题，一层一层解剖，我们不仅学到了 <code>Jedis</code> 默认的配置，也学到了 <code>try-with-resource</code> 语法糖,这也说明了在平时的开发中，养成任何一个小的问题都不能放过的严谨态度以及爱思考的好习惯的重要性，这样才能学得更快。</p>
+<p>部分参考:<a href="https://www.cnblogs.com/itZhy/p/7636615.html" target="_blank" rel="noopener">https://www.cnblogs.com/itZhy/p/7636615.html</a></p>
 
       
 
@@ -262,7 +264,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">相册</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
         		</li>
       		
 		</ul>
@@ -274,7 +280,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/photos//" class="article-tag-list-link color2">photos</a>
+        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
         		</li>
       		
 		</ul>
@@ -329,7 +335,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/01/01/photos_2018/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/11/13/redis1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,18 +349,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/01/05/idea-copyright/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          IntelliJ IDEA -- 配置 CopyRight
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/31/idea-test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">IntelliJ IDEA -- 输出test case coverage</div>
+    <a href="/2018/10/22/myMather-isFool/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我娘是个疯子</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -381,7 +378,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-12-25-北海公园"><span class="toc-number">1.</span> <span class="toc-text">2018-12-25 北海公园</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-11-05-北京的秋"><span class="toc-number">2.</span> <span class="toc-text">2018-11-05 北京的秋</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-09-16-香山"><span class="toc-number">3.</span> <span class="toc-text">2018-09-16 香山</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-09-03-北京的蓝天"><span class="toc-number">4.</span> <span class="toc-text">2018-09-03 北京的蓝天</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-07-28-百融·团建"><span class="toc-number">5.</span> <span class="toc-text">2018-07-28 百融·团建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-07-25-新工作"><span class="toc-number">6.</span> <span class="toc-text">2018-07-25 新工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-06-29-北漂"><span class="toc-number">7.</span> <span class="toc-text">2018-06-29 北漂</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-06-18-离开广州"><span class="toc-number">8.</span> <span class="toc-text">2018-06-18 离开广州</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-06-13-桂林·山水"><span class="toc-number">9.</span> <span class="toc-text">2018-06-13 桂林·山水</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-04-13-2018最好看的电影"><span class="toc-number">10.</span> <span class="toc-text">2018-04-13 2018最好看的电影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2018-03-10-华农·看花"><span class="toc-number">11.</span> <span class="toc-text">2018-03-10 华农·看花</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-11-13-redis1"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#背景"><span class="toc-number"></span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析造成-“假死”-原因"><span class="toc-number"></span> <span class="toc-text">分析造成 “假死” 原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-7-语法糖—-try-with-resource"><span class="toc-number"></span> <span class="toc-text">Java 7 语法糖— try-with-resource</span></a>
                     </div>
                 </span>
             </div>
@@ -397,7 +394,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="photos_2018" ></div> 
+  <div id="SOHUCS" sid="redis1" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
