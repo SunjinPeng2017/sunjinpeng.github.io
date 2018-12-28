@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="VSK小天的博客">
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-12-27T15:29:50.991Z">
+<meta property="og:updated_time" content="2018-12-28T07:36:43.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次 Jedis 采坑经历...">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>所以问题就出在这了：当连接耗尽时，默认线程为阻塞状态，并且阻塞时间不确定。。。坑爹呀!!!</p>
 </li>
-<li>通过捕获JVM ThreadDump,发现有一个线程在Jedis jedis = jedisPool.getResource()这行一直waiting。这也证实了我们的猜想。。。</li>
+<li>通过捕获JVM ThreadDump,发现有一个线程在 <code>Jedis jedis = jedisPool.getResource()</code> 这行一直waiting。这也证实了我们的猜想。。。</li>
 <li>最后我们终于弄懂了原因，但是你以为这篇文章就结束了吗？我们好像忘记了一个小问题，官方推荐的写法里，也没有调用 <code>jedis.close()</code> 方法呀，什么鬼。。。<br><br></li>
 </ul>
 <h4 id="Java-7-语法糖—-try-with-resource"><a href="#Java-7-语法糖—-try-with-resource" class="headerlink" title="Java 7 语法糖— try-with-resource"></a>Java 7 语法糖— <code>try-with-resource</code></h4><ul>
@@ -348,6 +348,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/11/26/redis2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一种简单的方法解决后端多个定时任务同时执行问题
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/22/myMather-isFool/" id="article-nav-older" class="article-nav-link-wrap">
@@ -511,7 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,15 +532,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,6 +544,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -547,11 +556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">短篇小说</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">
