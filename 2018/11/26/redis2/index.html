@@ -17,7 +17,7 @@
 <meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/redis-1.gif">
-<meta property="og:updated_time" content="2018-12-28T09:49:51.718Z">
+<meta property="og:updated_time" content="2018-12-31T11:30:37.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种简单的方法解决后端多个定时任务同时执行问题">
 <meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
 <li>这种方式的弊端就是定时任务不能在指定时间执行，会延迟一段时间，如果对时间要求的准确度比较高的话，这种方法就不适用了。<br><br></li>
 </ul>
 <h4 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h4><ul>
-<li>我们类比 <code>分布式锁</code> ，发现它们的本质相同，都是由于：多个线程同时请求某一个资源造成的。</li>
+<li>我们类比 <code>分布式锁</code> ，发现它们的本质相同，都是由于：多个进程同时请求某一个资源造成的。</li>
 <li>分布式锁解决方案：<ul>
 <li>基于数据库表   当我们要锁住某个方法或资源时，我们就在该表中增加一条记录，想要释放锁的时候就删除这条记录。</li>
 <li>基于数据库排他锁    基于MySql的InnoDB引擎，可以通过数据库的排他锁来实现分布式锁。 </li>
@@ -348,6 +348,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/12/18/myTeacher/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          我的初中音乐老师
+        
+      </div>
+    </a>
   
   
     <a href="/2018/11/13/redis1/" id="article-nav-older" class="article-nav-link-wrap">
@@ -511,22 +520,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -535,7 +528,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
