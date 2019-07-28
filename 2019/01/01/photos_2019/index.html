@@ -6,34 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
-  <title>PostgresSQL插件--搭建集群插件citus | VSK小天的博客</title>
+  <title>相册 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
-<meta name="keywords" content="原创,PgSQL,数据库">
+  <meta name="description" content="2019-07-28 夜晚的奥体">
+<meta name="keywords" content="相册">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PostgresSQL插件--搭建集群插件citus">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2018/01/06/pg-citus/index.html">
+<meta property="og:title" content="相册">
+<meta property="og:url" content="http://www.sunjinpeng.cn/2019/01/01/photos_2019/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
+<meta property="og:description" content="2019-07-28 夜晚的奥体">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-10.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-7.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-11.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-12.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-8.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-5.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-6.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-1.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-2.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-3.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-4.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-13.png">
-<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-14.png">
-<meta property="og:updated_time" content="2018-11-16T15:38:40.205Z">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907281.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907282.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907283.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905211.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905212.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905213.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905214.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905215.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905216.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201904061.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201904062.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903231.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903232.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903233.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903161.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903162.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903163.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902141.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902142.jpeg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902012.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902011.jpg">
+<meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201901251.jpg">
+<meta property="og:updated_time" content="2019-07-28T14:39:29.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PostgresSQL插件--搭建集群插件citus">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
-<meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-10.png">
+<meta name="twitter:title" content="相册">
+<meta name="twitter:description" content="2019-07-28 夜晚的奥体">
+<meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907281.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -210,92 +219,34 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pg-citus" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-photos_2019" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      PostgresSQL插件--搭建集群插件citus
+      相册
     </h1>
   
 
         
-        <a href="/2018/01/06/pg-citus/" class="archive-article-date">
-  	<time datetime="2018-01-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
+        <a href="/2019/01/01/photos_2019/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/06/pg-citus">http://www.sunjinpeng.cn/2018/01/06/pg-citus</a></h5><h5 id="官网：https-www-citusdata-com"><a href="#官网：https-www-citusdata-com" class="headerlink" title="官网：https://www.citusdata.com"></a>官网：<a href="https://www.citusdata.com" target="_blank" rel="noopener">https://www.citusdata.com</a></h5><h4 id="citus-简介"><a href="#citus-简介" class="headerlink" title="citus 简介"></a>citus 简介</h4><p>What is Citus?<br>Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its query engine parallelizes incoming SQL queries across these servers to enable human real-time (less than a second) responses on large datasets.<br>Citus extends the underlying database rather than forking it, which gives developers and enterprises the power and familiarity of a traditional relational database. As an extension, Citus supports new PostgreSQL releases, allowing users to benefit from new features while maintaining compatibility with existing PostgreSQL tools.</p>
-<a id="more"></a>
-<p>谷歌翻译:<br>Citus使用分片和复制将PostgreSQL横向扩展到多台机器上。 它的查询引擎将传入的SQL查询并行化到这些服务器上，以便在大型数据集上实现人类实时（不到一秒）的响应。<br>Citus扩展了底层数据库，而不是分叉，这给了开发人员和企业传统关系数据库的力量和熟悉。 作为一个扩展，Citus支持新的PostgreSQL版本，允许用户在保持与现有PostgreSQL工具兼容性的同时从新功能中受益。<br><br></p>
-<h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
-<li>下载源码</li>
-<li>添加环境变量</li>
-<li>编译安装</li>
-<li>更改配置</li>
-<li>测试插件</li>
-<li>使用<code>citus</code></li>
-<li>新增节点</li>
-<li>更新<code>citus</code>版本</li>
-<li>性能测试</li>
-<li><code>citus</code>工作流程<br><br></li>
-</ul>
-<h4 id="在介绍使用前，我强烈建议先去阅读官方文档-几遍"><a href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍" class="headerlink" title="在介绍使用前，我强烈建议先去阅读官方文档 几遍"></a>在介绍使用前，我<code>强烈建议</code>先去阅读<a href="https://docs.citusdata.com/en/v7.2" target="_blank" rel="noopener">官方文档</a> <code>几遍</code></h4><h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载官方最新版本</span></span><br><span class="line">https://github.com/citusdata/citus/releases</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="添加PG-CONFIG-和CC-的环境变量"><a href="#添加PG-CONFIG-和CC-的环境变量" class="headerlink" title="添加PG_CONFIG 和CC 的环境变量"></a>添加<code>PG_CONFIG</code> 和<code>CC</code> 的环境变量</h5><ul>
-<li>安装之前，需安装 <code>PG</code> 和 <code>gcc</code> ,可参考我这篇文章: <a href="http://www.sunjinpeng.cn/2017/12/15/InstallPG">生产环境离线安装、优化 PostgresSQL-9.6.2</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf citus.tar.gz</span><br><span class="line"><span class="built_in">cd</span> citus</span><br><span class="line">vi configure</span><br><span class="line"><span class="comment"># 添加 PG_CONFIG , CC 的环境变量,二者分别为 PG 和 gcc 的安装目录</span></span><br><span class="line">PG_CONFIG=/usr/<span class="built_in">local</span>/pgsql-9.6.2/bin/pg_config;</span><br><span class="line">CC=/usr/<span class="built_in">local</span>/gcc-6.3.0/bin/gcc;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-10.png" alt="citus-10"><br><br><br></p>
-<h5 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="更改配置"><a href="#更改配置" class="headerlink" title="更改配置"></a>更改配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $PGDATA 代表PG的数据目录</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$PGDATA</span></span><br><span class="line">vi postgresql.conf</span><br><span class="line"><span class="comment"># 在 shared_preload_libraries 参数中添加 'citus' 并放在第一个</span></span><br><span class="line">shared_preload_libraries = <span class="string">'citus,pg_stat_statements,pg_pathman'</span></span><br><span class="line"> </span><br><span class="line">vi pg_hba.conf</span><br><span class="line"><span class="comment"># 添加以下免密配置,使 master - worker 节点之间可免密连接</span></span><br><span class="line"><span class="comment"># "local" is for Unix domain socket connections only</span></span><br><span class="line"><span class="built_in">local</span>        all               all                                  trust</span><br><span class="line"><span class="comment"># IPv4 local connections:</span></span><br><span class="line">host         all               all             0.0.0.0/0            trust</span><br><span class="line"><span class="comment"># IPv6 local connections:</span></span><br><span class="line">host         all               all             ::1/128              trust</span><br><span class="line"><span class="comment"># Allow replication connections from localhost, by a user with the</span></span><br><span class="line"><span class="comment"># replication privilege.</span></span><br><span class="line"><span class="comment">#local    replication          postgres                             trust</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-7.png" alt="citus-7"><br></p>
-<h5 id="测试插件"><a href="#测试插件" class="headerlink" title="测试插件"></a>测试插件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su postgres</span><br><span class="line">psql</span><br><span class="line">create extension citus;</span><br><span class="line"><span class="comment"># 如无报错提示 'CREATE EXTENSION' ，并出现 'citus' schema（如下图所示）,证明该插件已经安装成功</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-11.png" alt="citus-11"><br></p>
-<h5 id="使用citus"><a href="#使用citus" class="headerlink" title="使用citus"></a>使用<code>citus</code></h5><ul>
-<li><code>citus</code> 常用的两种模式,以下将以 <code>Real-Time</code> 为例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Multi-Tenant Database</span><br><span class="line">    Most B2B applications already have the notion of a tenant, customer, or account built into their data model. In this model, the database serves many tenants, each of whose data is separate from other tenants.</span><br><span class="line">    Citus provides full SQL coverage for this workload, and enables scaling out your relational database to 100K+ tenants. Citus also adds new features for multi-tenancy. For example, Citus supports tenant isolation to provide performance guarantees for large tenants, and has the concept of reference tables to reduce data duplication across tenants.</span><br><span class="line">These capabilities allow you to scale out your tenants’ data across many machines, and easily add more CPU, memory, and disk resources. Further, sharing the same database schema across multiple tenants makes efficient use of hardware resources and simplifies database management.</span><br><span class="line"> </span><br><span class="line">Real-Time Analytics</span><br><span class="line">    Citus supports real-time queries over large datasets. Commonly these queries occur in rapidly growing event systems or systems with time series data. Example use cases include:</span><br><span class="line">        1. Analytic dashboards with subsecond response times</span><br><span class="line">        2. Exploratory queries on unfolding events</span><br><span class="line">        3. Large dataset archival and reporting</span><br><span class="line">        4. Analyzing sessions with funnel, segmentation, and cohort queries</span><br><span class="line"> </span><br><span class="line">notes：</span><br><span class="line">    Citus extends PostgreSQL with distributed functionality, but it is not a drop-in replacement that scales out all workloads. A performant Citus cluster involves thinking about the data model, tooling, and choice of SQL features used.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><br></p>
-<ul>
-<li><code>citus</code> 常用三种表类型<br>&nbsp;&nbsp;&nbsp;1. <code>Distributed Tables</code> 多节点分配表，也是最常用的类型<br> <img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-12.png" alt="citus-12"><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.建立需要分集群的表(注意:表中除了集群使用字段以外，其他字段不能有 unique key , primary key ,exclude 等约束条件)</span></span><br><span class="line">  <span class="comment">-- 经过测试，citus 并不支持先用 pg_pathman 分表，再对每个子表建立集群表</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 2.提前建立相关索引</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 3.新增worker节点(那么执行该sql的数据库即为master节点)，多个worker节点，多次调用该方法即可</span></span><br><span class="line">  <span class="comment">--param1: worker节点IP</span></span><br><span class="line">  <span class="comment">--param2: worker节点PG端口</span></span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">from</span> master_add_node(<span class="string">'xxx.xx.xxx.xxx'</span>, <span class="number">5432</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 4.设置 shared 数量，官方建议设置为worker节点总CPU数的2倍或者4倍</span></span><br><span class="line">  <span class="comment">--查询CPU核数：cat /proc/cpuinfo| grep "cpu cores"| uniq</span></span><br><span class="line">  <span class="keyword">set</span> citus.shard_count=workers * nuclears * <span class="number">2</span>(<span class="number">4</span>)</span><br><span class="line">  </span><br><span class="line"><span class="comment">-- 5.创建该表的集群</span></span><br><span class="line">  <span class="comment">--param1: 表名</span></span><br><span class="line">  <span class="comment">--param2: 依据字段</span></span><br><span class="line">  <span class="keyword">SELECT</span> create_distributed_table(<span class="string">'public.tableName'</span>, <span class="string">'column_name'</span>);</span><br><span class="line"><span class="comment">-- 执行完以上方法后，相应worker节点中会自动创建该表的子表，以此验证是否执行成功</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-8.png" alt="citus-8"><br><br></p>
-<p>&nbsp;&nbsp;&nbsp;2. <code>Reference Tables</code>  引用表，一般用于配置表<br>    <img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-5.png" alt="citus-5"><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建 reference table，在master上创建后，每个worker节点都会自动备份一个相同表，当 master 节点中该表的数据更新后，</span></span><br><span class="line">  <span class="comment">-- worker节点的数据会自动更新，对表的结构(primary key,check)没有限制</span></span><br><span class="line">  <span class="comment">-- 适用于配置表，当master出现故障后，不至于丢失配置数据</span></span><br><span class="line">  <span class="keyword">SELECT</span> create_reference_table(<span class="string">'public.table_name'</span>);</span><br></pre></td></tr></table></figure></p>
-<p><br></p>
-<p>&nbsp;&nbsp;&nbsp;3. <code>Local Tables</code> 默认表，不进行任何操作<br>    <img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-6.png" alt="citus-6"><br><br></p>
-<h5 id="新增节点"><a href="#新增节点" class="headerlink" title="新增节点"></a>新增节点</h5><ul>
-<li>社区版新增节点会比较麻烦，暂未找到相关方法,只能采取先备份数据，删除该表，再添加节点，重新建立集群表的方式</li>
-<li>企业版可以调用 <code>SELECT rebalance_table_shards(&#39;companies&#39;);</code>  很轻松的增加节点<br><br></li>
-</ul>
-<h5 id="更新citus版本"><a href="#更新citus版本" class="headerlink" title="更新citus版本"></a>更新<code>citus</code>版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 GitHub 或官网下载最新版本安装包</span></span><br><span class="line"><span class="comment"># 按以上步骤正常安装新版本</span></span><br><span class="line"><span class="comment"># 重启数据库</span></span><br><span class="line"><span class="comment"># 进入使用该插件的数据库, database 为实际项目使用的数据库</span></span><br><span class="line">psql -U postgres -d database</span><br><span class="line">alter extension citus update</span><br><span class="line"><span class="comment"># 提示 'ALTER EXTENSION' 表示升级成功</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="citus工作流程"><a href="#citus工作流程" class="headerlink" title="citus工作流程"></a><code>citus</code>工作流程</h5><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-1.png" alt="citus-1"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-2.png" alt="citus-2"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-3.png" alt="citus-3"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-4.png" alt="citus-4"><br><br><br></p>
-<h5 id="citus性能调优"><a href="#citus性能调优" class="headerlink" title="citus性能调优"></a><code>citus</code>性能调优</h5><ul>
-<li>建立集群后，瓶颈便转移到master上，可参考这篇文章，创建多个master。<a href="http://blog.chinaunix.net/xmlrpc.php?r=blog/article&amp;uid=20726500&amp;id=5761214" target="_blank" rel="noopener">http://blog.chinaunix.net/xmlrpc.php?r=blog/article&amp;uid=20726500&amp;id=5761214</a></li>
-<li>按照官方文档及根据自己数据类型修改配置参数。<a href="https://docs.citusdata.com/en/latest/reference/configuration.html" target="_blank" rel="noopener">https://docs.citusdata.com/en/latest/reference/configuration.html</a></li>
-<li>建议PG数据库内存设置为服务器内存的四分之一，因为PG在运行时会占用一部分系统内存，这点在官方文档中可以找到。<br><br></li>
-</ul>
-<h4 id="集群性能"><a href="#集群性能" class="headerlink" title="集群性能"></a>集群性能</h4><p>经过博主测试，在实际生产环境中，9台PG数据库集群，可以支持每小时约1亿三千万的数据实时查询。<br><br></p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><ul>
-<li><p>服务器配置<br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-13.png" alt="citus-13"><br></p>
-</li>
-<li><p>测试数据，共约 <code>13800000</code> 条</p>
-</li>
-<li><p>查询结果<br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-14.png" alt="citus-14"><br></p>
-</li>
-<li><p>从查询结果可以看出，使用 <code>citus</code> 集群明显提升了查询性能，而且并不是简单的是机器数量倍数的提升，对测试结果比较满意。<br><br></p>
-</li>
-</ul>
-<h5 id="苏宁-citus-集群搭建参考"><a href="#苏宁-citus-集群搭建参考" class="headerlink" title="苏宁 citus 集群搭建参考"></a>苏宁 <code>citus</code> 集群搭建参考</h5><p><a href="https://files-1258052515.cos.ap-beijing.myqcloud.com/%E8%8B%8F%E5%AE%81citus%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5_%E9%99%88%E5%8D%8E%E5%86%9B.pdf" target="_blank" rel="noopener">苏宁citus分布式数据库应用实践_陈华军</a></p>
-<p>至此，本文已经详细介绍了<code>citus</code>的安装及使用，<br>如果本篇博客中有错误的地方，欢迎大家评论指出！！！</p>
+        <h4 id="2019-07-28-夜晚的奥体"><a href="#2019-07-28-夜晚的奥体" class="headerlink" title="2019-07-28 夜晚的奥体"></a>2019-07-28 夜晚的奥体</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907281.jpeg" alt="WechatIMG_201907281"><br><a id="more"></a><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907282.jpeg" alt="WechatIMG_201907282"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201907283.jpeg" alt="WechatIMG_201907283"><br></p>
+<h4 id="2019-05-21-法国·巴黎"><a href="#2019-05-21-法国·巴黎" class="headerlink" title="2019-05-21 法国·巴黎"></a>2019-05-21 法国·巴黎</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905211.jpg" alt="WechatIMG_201905211"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905212.jpg" alt="WechatIMG_201905212"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905213.jpg" alt="WechatIMG_201905213"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905214.jpeg" alt="WechatIMG_201905214"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905215.jpeg" alt="WechatIMG_201905215"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201905216.jpeg" alt="WechatIMG_201905216"><br><br></p>
+<h4 id="2019-04-06-门前小桥"><a href="#2019-04-06-门前小桥" class="headerlink" title="2019-04-06 门前小桥"></a>2019-04-06 门前小桥</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201904061.jpg" alt="WechatIMG_201904061"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201904062.jpg" alt="WechatIMG_201904062"><br><br></p>
+<h4 id="2019-03-23-后厂村"><a href="#2019-03-23-后厂村" class="headerlink" title="2019-03-23 后厂村"></a>2019-03-23 后厂村</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903231.jpg" alt="WechatIMG_201903231"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903232.jpg" alt="WechatIMG_201903232"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903233.jpg" alt="WechatIMG_201903233"><br><br></p>
+<h4 id="2019-03-16-春天来了"><a href="#2019-03-16-春天来了" class="headerlink" title="2019-03-16 春天来了"></a>2019-03-16 春天来了</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903161.jpg" alt="WechatIMG_201903161"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903162.jpg" alt="WechatIMG_201903162"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201903163.jpg" alt="WechatIMG_201903163"><br><br></p>
+<h4 id="2019-02-14-北京初雪"><a href="#2019-02-14-北京初雪" class="headerlink" title="2019-02-14 北京初雪"></a>2019-02-14 北京初雪</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902141.jpg" alt="WechatIMG_201902141"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902142.jpeg" alt="WechatIMG_201902142"><br><br></p>
+<h4 id="2019-02-01-回家过年"><a href="#2019-02-01-回家过年" class="headerlink" title="2019-02-01 回家过年"></a>2019-02-01 回家过年</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902012.jpg" alt="WechatIMG_201902012"><br><br><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201902011.jpg" alt="WechatIMG_201902011"><br><br></p>
+<h4 id="2019-01-25-年会"><a href="#2019-01-25-年会" class="headerlink" title="2019-01-25 年会"></a>2019-01-25 年会</h4><p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/WechatIMG_201901251.jpg" alt="WechatIMG_201901251"><br></p>
 
       
 
@@ -309,15 +260,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">相册</a>
         		</li>
       		
 		</ul>
@@ -329,7 +272,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/techArticle//" class="article-tag-list-link color2">techArticle</a>
+        			<a href="/categories/photos//" class="article-tag-list-link color2">photos</a>
         		</li>
       		
 		</ul>
@@ -384,7 +327,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/01/06/pg-citus/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2019/01/01/photos_2019/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -398,18 +341,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/01/07/hardButPoor/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/23/kaoyan/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          爸爸，为什么我们这么辛苦却还是很穷？
+          博客暂停更新一年。。。
         
       </div>
     </a>
   
   
-    <a href="/2018/01/05/idea-copyright/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">IntelliJ IDEA -- 配置 CopyRight</div>
+    <a href="/2018/12/18/myTeacher/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的初中音乐老师</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -436,7 +379,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-www-citusdata-com"><span class="toc-number">2.</span> <span class="toc-text">官网：https://www.citusdata.com</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#citus-简介"><span class="toc-number"></span> <span class="toc-text">citus 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍"><span class="toc-number"></span> <span class="toc-text">在介绍使用前，我强烈建议先去阅读官方文档 几遍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加PG-CONFIG-和CC-的环境变量"><span class="toc-number">2.</span> <span class="toc-text">添加PG_CONFIG 和CC 的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">3.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改配置"><span class="toc-number">4.</span> <span class="toc-text">更改配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试插件"><span class="toc-number">5.</span> <span class="toc-text">测试插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用citus"><span class="toc-number">6.</span> <span class="toc-text">使用citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新增节点"><span class="toc-number">7.</span> <span class="toc-text">新增节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新citus版本"><span class="toc-number">8.</span> <span class="toc-text">更新citus版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus工作流程"><span class="toc-number">9.</span> <span class="toc-text">citus工作流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus性能调优"><span class="toc-number">10.</span> <span class="toc-text">citus性能调优</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试"><span class="toc-number">1.</span> <span class="toc-text">性能测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#苏宁-citus-集群搭建参考"><span class="toc-number">2.</span> <span class="toc-text">苏宁 citus 集群搭建参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-07-28-夜晚的奥体"><span class="toc-number">1.</span> <span class="toc-text">2019-07-28 夜晚的奥体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-05-21-法国·巴黎"><span class="toc-number">2.</span> <span class="toc-text">2019-05-21 法国·巴黎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-04-06-门前小桥"><span class="toc-number">3.</span> <span class="toc-text">2019-04-06 门前小桥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-03-23-后厂村"><span class="toc-number">4.</span> <span class="toc-text">2019-03-23 后厂村</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-03-16-春天来了"><span class="toc-number">5.</span> <span class="toc-text">2019-03-16 春天来了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-02-14-北京初雪"><span class="toc-number">6.</span> <span class="toc-text">2019-02-14 北京初雪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-02-01-回家过年"><span class="toc-number">7.</span> <span class="toc-text">2019-02-01 回家过年</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2019-01-25-年会"><span class="toc-number">8.</span> <span class="toc-text">2019-01-25 年会</span></a></li></ol>
                     </div>
                 </span>
             </div>
