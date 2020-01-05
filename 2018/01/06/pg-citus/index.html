@@ -5,16 +5,16 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
+  <link rel="dns-prefetch" href="http://www.springsunshine.cn">
   <title>PostgresSQL插件--搭建集群插件citus | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
-<meta name="keywords" content="PgSQL,数据库,原创">
+  <meta name="description" content="转载请注明：http://www.springsunshine.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. It">
+<meta name="keywords" content="原创,PgSQL,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgresSQL插件--搭建集群插件citus">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2018/01/06/pg-citus/index.html">
+<meta property="og:url" content="http://www.springsunshine.cn/2018/01/06/pg-citus/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
+<meta property="og:description" content="转载请注明：http://www.springsunshine.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. It">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-10.png">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-7.png">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-4.png">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-13.png">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-14.png">
-<meta property="og:updated_time" content="2018-11-16T15:38:40.205Z">
+<meta property="og:updated_time" content="2020-01-05T09:26:01.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--搭建集群插件citus">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its qu">
+<meta name="twitter:description" content="转载请注明：http://www.springsunshine.cn/2018/01/06/pg-citus官网：https://www.citusdata.comcitus 简介What is Citus?Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. It">
 <meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-10.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
@@ -129,7 +129,7 @@ var _hmt = _hmt || [];
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 		        
@@ -177,7 +177,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 			        
@@ -230,7 +230,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/06/pg-citus">http://www.sunjinpeng.cn/2018/01/06/pg-citus</a></h5><h5 id="官网：https-www-citusdata-com"><a href="#官网：https-www-citusdata-com" class="headerlink" title="官网：https://www.citusdata.com"></a>官网：<a href="https://www.citusdata.com" target="_blank" rel="noopener">https://www.citusdata.com</a></h5><h4 id="citus-简介"><a href="#citus-简介" class="headerlink" title="citus 简介"></a>citus 简介</h4><p>What is Citus?<br>Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its query engine parallelizes incoming SQL queries across these servers to enable human real-time (less than a second) responses on large datasets.<br>Citus extends the underlying database rather than forking it, which gives developers and enterprises the power and familiarity of a traditional relational database. As an extension, Citus supports new PostgreSQL releases, allowing users to benefit from new features while maintaining compatibility with existing PostgreSQL tools.</p>
+        <h5 id="转载请注明：http-www-springsunshine-cn-2018-01-06-pg-citus"><a href="#转载请注明：http-www-springsunshine-cn-2018-01-06-pg-citus" class="headerlink" title="转载请注明：http://www.springsunshine.cn/2018/01/06/pg-citus"></a>转载请注明：<a href="http://www.springsunshine.cn/2018/01/06/pg-citus">http://www.springsunshine.cn/2018/01/06/pg-citus</a></h5><h5 id="官网：https-www-citusdata-com"><a href="#官网：https-www-citusdata-com" class="headerlink" title="官网：https://www.citusdata.com"></a>官网：<a href="https://www.citusdata.com" target="_blank" rel="noopener">https://www.citusdata.com</a></h5><h4 id="citus-简介"><a href="#citus-简介" class="headerlink" title="citus 简介"></a>citus 简介</h4><p>What is Citus?<br>Citus horizontally scales PostgreSQL across multiple machines using sharding and replication. Its query engine parallelizes incoming SQL queries across these servers to enable human real-time (less than a second) responses on large datasets.<br>Citus extends the underlying database rather than forking it, which gives developers and enterprises the power and familiarity of a traditional relational database. As an extension, Citus supports new PostgreSQL releases, allowing users to benefit from new features while maintaining compatibility with existing PostgreSQL tools.</p>
 <a id="more"></a>
 <p>谷歌翻译:<br>Citus使用分片和复制将PostgreSQL横向扩展到多台机器上。 它的查询引擎将传入的SQL查询并行化到这些服务器上，以便在大型数据集上实现人类实时（不到一秒）的响应。<br>Citus扩展了底层数据库，而不是分叉，这给了开发人员和企业传统关系数据库的力量和熟悉。 作为一个扩展，Citus支持新的PostgreSQL版本，允许用户在保持与现有PostgreSQL工具兼容性的同时从新功能中受益。<br><br></p>
 <h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
@@ -248,7 +248,7 @@ var _hmt = _hmt || [];
 <h4 id="在介绍使用前，我强烈建议先去阅读官方文档-几遍"><a href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍" class="headerlink" title="在介绍使用前，我强烈建议先去阅读官方文档 几遍"></a>在介绍使用前，我<code>强烈建议</code>先去阅读<a href="https://docs.citusdata.com/en/v7.2" target="_blank" rel="noopener">官方文档</a> <code>几遍</code></h4><h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><h5 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载官方最新版本</span></span><br><span class="line">https://github.com/citusdata/citus/releases</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h5 id="添加PG-CONFIG-和CC-的环境变量"><a href="#添加PG-CONFIG-和CC-的环境变量" class="headerlink" title="添加PG_CONFIG 和CC 的环境变量"></a>添加<code>PG_CONFIG</code> 和<code>CC</code> 的环境变量</h5><ul>
-<li>安装之前，需安装 <code>PG</code> 和 <code>gcc</code> ,可参考我这篇文章: <a href="http://www.sunjinpeng.cn/2017/12/15/InstallPG">生产环境离线安装、优化 PostgresSQL-9.6.2</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf citus.tar.gz</span><br><span class="line"><span class="built_in">cd</span> citus</span><br><span class="line">vi configure</span><br><span class="line"><span class="comment"># 添加 PG_CONFIG , CC 的环境变量,二者分别为 PG 和 gcc 的安装目录</span></span><br><span class="line">PG_CONFIG=/usr/<span class="built_in">local</span>/pgsql-9.6.2/bin/pg_config;</span><br><span class="line">CC=/usr/<span class="built_in">local</span>/gcc-6.3.0/bin/gcc;</span><br></pre></td></tr></table></figure>
+<li>安装之前，需安装 <code>PG</code> 和 <code>gcc</code> ,可参考我这篇文章: <a href="http://www.springsunshine.cn/2017/12/15/InstallPG">生产环境离线安装、优化 PostgresSQL-9.6.2</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf citus.tar.gz</span><br><span class="line"><span class="built_in">cd</span> citus</span><br><span class="line">vi configure</span><br><span class="line"><span class="comment"># 添加 PG_CONFIG , CC 的环境变量,二者分别为 PG 和 gcc 的安装目录</span></span><br><span class="line">PG_CONFIG=/usr/<span class="built_in">local</span>/pgsql-9.6.2/bin/pg_config;</span><br><span class="line">CC=/usr/<span class="built_in">local</span>/gcc-6.3.0/bin/gcc;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="https://images-1258052515.cos.ap-beijing.myqcloud.com/citus-10.png" alt="citus-10"><br><br><br></p>
@@ -309,15 +309,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
         		</li>
       		
 		</ul>
@@ -384,7 +384,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/01/06/pg-citus/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.springsunshine.cn/2018/01/06/pg-citus/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -436,7 +436,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-06-pg-citus"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/06/pg-citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-www-citusdata-com"><span class="toc-number">2.</span> <span class="toc-text">官网：https://www.citusdata.com</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#citus-简介"><span class="toc-number"></span> <span class="toc-text">citus 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍"><span class="toc-number"></span> <span class="toc-text">在介绍使用前，我强烈建议先去阅读官方文档 几遍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加PG-CONFIG-和CC-的环境变量"><span class="toc-number">2.</span> <span class="toc-text">添加PG_CONFIG 和CC 的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">3.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改配置"><span class="toc-number">4.</span> <span class="toc-text">更改配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试插件"><span class="toc-number">5.</span> <span class="toc-text">测试插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用citus"><span class="toc-number">6.</span> <span class="toc-text">使用citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新增节点"><span class="toc-number">7.</span> <span class="toc-text">新增节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新citus版本"><span class="toc-number">8.</span> <span class="toc-text">更新citus版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus工作流程"><span class="toc-number">9.</span> <span class="toc-text">citus工作流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus性能调优"><span class="toc-number">10.</span> <span class="toc-text">citus性能调优</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试"><span class="toc-number">1.</span> <span class="toc-text">性能测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#苏宁-citus-集群搭建参考"><span class="toc-number">2.</span> <span class="toc-text">苏宁 citus 集群搭建参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-springsunshine-cn-2018-01-06-pg-citus"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.springsunshine.cn/2018/01/06/pg-citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-www-citusdata-com"><span class="toc-number">2.</span> <span class="toc-text">官网：https://www.citusdata.com</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#citus-简介"><span class="toc-number"></span> <span class="toc-text">citus 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在介绍使用前，我强烈建议先去阅读官方文档-几遍"><span class="toc-number"></span> <span class="toc-text">在介绍使用前，我强烈建议先去阅读官方文档 几遍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加PG-CONFIG-和CC-的环境变量"><span class="toc-number">2.</span> <span class="toc-text">添加PG_CONFIG 和CC 的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">3.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改配置"><span class="toc-number">4.</span> <span class="toc-text">更改配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试插件"><span class="toc-number">5.</span> <span class="toc-text">测试插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用citus"><span class="toc-number">6.</span> <span class="toc-text">使用citus</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新增节点"><span class="toc-number">7.</span> <span class="toc-text">新增节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新citus版本"><span class="toc-number">8.</span> <span class="toc-text">更新citus版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus工作流程"><span class="toc-number">9.</span> <span class="toc-text">citus工作流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#citus性能调优"><span class="toc-number">10.</span> <span class="toc-text">citus性能调优</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试"><span class="toc-number">1.</span> <span class="toc-text">性能测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#苏宁-citus-集群搭建参考"><span class="toc-number">2.</span> <span class="toc-text">苏宁 citus 集群搭建参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -473,7 +473,7 @@ var _hmt = _hmt || [];
             本文总阅读量<b><span id="busuanzi_value_page_pv" style="font-size: 13px"></span></b>次
             <div>
                 <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备19050269号</a>
-                &nbsp;&nbsp; &copy; 2019 VSK小天丶 All rights reserved.
+                &nbsp;&nbsp; &copy; 2020 VSK小天丶 All Rights Reserved.
             </div>
             <!--<div class="footer-right">-->
             <!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -560,15 +560,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,19 +596,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">

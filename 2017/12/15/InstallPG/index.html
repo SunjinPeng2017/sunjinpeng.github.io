@@ -5,23 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
+  <link rel="dns-prefetch" href="http://www.springsunshine.cn">
   <title>生产环境离线安装、优化 PostgresSQL-9.6.2 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装Pos">
-<meta name="keywords" content="PgSQL,数据库,原创">
+  <meta name="description" content="转载请注明：http://www.springsunshine.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安">
+<meta name="keywords" content="原创,PgSQL,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生产环境离线安装、优化 PostgresSQL-9.6.2">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/15/InstallPG/index.html">
+<meta property="og:url" content="http://www.springsunshine.cn/2017/12/15/InstallPG/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装Pos">
+<meta property="og:description" content="转载请注明：http://www.springsunshine.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/pg-files.png">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/install-error.png">
-<meta property="og:updated_time" content="2018-11-14T14:49:41.526Z">
+<meta property="og:updated_time" content="2020-01-05T09:22:19.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生产环境离线安装、优化 PostgresSQL-9.6.2">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安装Pos">
+<meta name="twitter:description" content="转载请注明：http://www.springsunshine.cn/2017/12/15/InstallPG部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md主要步骤 下载相关文件 上传文件至生产环境并解压 编译安装gcc 编译安装Python 编译安装Cmake 创建postgres用户 配置编译器 编译安">
 <meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/pg-files.png">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
@@ -118,7 +118,7 @@ var _hmt = _hmt || [];
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 		        
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 			        
@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/15/InstallPG">http://www.sunjinpeng.cn/2017/12/15/InstallPG</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="noopener">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
+        <h5 id="转载请注明：http-www-springsunshine-cn-2017-12-15-InstallPG"><a href="#转载请注明：http-www-springsunshine-cn-2017-12-15-InstallPG" class="headerlink" title="转载请注明：http://www.springsunshine.cn/2017/12/15/InstallPG"></a>转载请注明：<a href="http://www.springsunshine.cn/2017/12/15/InstallPG">http://www.springsunshine.cn/2017/12/15/InstallPG</a></h5><h5 id="部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><a href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md" class="headerlink" title="部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md"></a>部分参考：<a href="https://github.com/digoal/blog/blob/master/201611/20161121_01.md" target="_blank" rel="noopener">https://github.com/digoal/blog/blob/master/201611/20161121_01.md</a></h5><h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
 <li>下载相关文件</li>
 <li>上传文件至生产环境并解压</li>
 <li>编译安装gcc</li>
@@ -295,15 +295,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
         		</li>
       		
 		</ul>
@@ -370,7 +370,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/15/InstallPG/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.springsunshine.cn/2017/12/15/InstallPG/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -422,7 +422,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-15-InstallPG"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/15/InstallPG</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><span class="toc-number">2.</span> <span class="toc-text">部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载相关文件"><span class="toc-number">1.</span> <span class="toc-text">下载相关文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#上传文件至生产环境并解压"><span class="toc-number">2.</span> <span class="toc-text">上传文件至生产环境并解压</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装gcc"><span class="toc-number">3.</span> <span class="toc-text">编译安装gcc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装Python"><span class="toc-number">4.</span> <span class="toc-text">编译安装Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装Cmake"><span class="toc-number">5.</span> <span class="toc-text">编译安装Cmake</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建postgres用户"><span class="toc-number">6.</span> <span class="toc-text">创建postgres用户</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置编译器"><span class="toc-number">7.</span> <span class="toc-text">配置编译器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装PostgresSQL-9-6-2"><span class="toc-number">8.</span> <span class="toc-text">编译安装PostgresSQL-9.6.2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建数据库存储目录"><span class="toc-number">9.</span> <span class="toc-text">创建数据库存储目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置postgres的环境变量"><span class="toc-number">10.</span> <span class="toc-text">配置postgres的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分配文件权限"><span class="toc-number">11.</span> <span class="toc-text">分配文件权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化数据库"><span class="toc-number">12.</span> <span class="toc-text">初始化数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据库优化"><span class="toc-number">13.</span> <span class="toc-text">数据库优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#启动数据库"><span class="toc-number">14.</span> <span class="toc-text">启动数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改数据库中-postgres-用户密码"><span class="toc-number">15.</span> <span class="toc-text">更改数据库中 postgres 用户密码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-springsunshine-cn-2017-12-15-InstallPG"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.springsunshine.cn/2017/12/15/InstallPG</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#部分参考：https-github-com-digoal-blog-blob-master-201611-20161121-01-md"><span class="toc-number">2.</span> <span class="toc-text">部分参考：https://github.com/digoal/blog/blob/master/201611/20161121_01.md</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载相关文件"><span class="toc-number">1.</span> <span class="toc-text">下载相关文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#上传文件至生产环境并解压"><span class="toc-number">2.</span> <span class="toc-text">上传文件至生产环境并解压</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装gcc"><span class="toc-number">3.</span> <span class="toc-text">编译安装gcc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装Python"><span class="toc-number">4.</span> <span class="toc-text">编译安装Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装Cmake"><span class="toc-number">5.</span> <span class="toc-text">编译安装Cmake</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建postgres用户"><span class="toc-number">6.</span> <span class="toc-text">创建postgres用户</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置编译器"><span class="toc-number">7.</span> <span class="toc-text">配置编译器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装PostgresSQL-9-6-2"><span class="toc-number">8.</span> <span class="toc-text">编译安装PostgresSQL-9.6.2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建数据库存储目录"><span class="toc-number">9.</span> <span class="toc-text">创建数据库存储目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置postgres的环境变量"><span class="toc-number">10.</span> <span class="toc-text">配置postgres的环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分配文件权限"><span class="toc-number">11.</span> <span class="toc-text">分配文件权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化数据库"><span class="toc-number">12.</span> <span class="toc-text">初始化数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据库优化"><span class="toc-number">13.</span> <span class="toc-text">数据库优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#启动数据库"><span class="toc-number">14.</span> <span class="toc-text">启动数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改数据库中-postgres-用户密码"><span class="toc-number">15.</span> <span class="toc-text">更改数据库中 postgres 用户密码</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -459,7 +459,7 @@ var _hmt = _hmt || [];
             本文总阅读量<b><span id="busuanzi_value_page_pv" style="font-size: 13px"></span></b>次
             <div>
                 <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备19050269号</a>
-                &nbsp;&nbsp; &copy; 2019 VSK小天丶 All rights reserved.
+                &nbsp;&nbsp; &copy; 2020 VSK小天丶 All Rights Reserved.
             </div>
             <!--<div class="footer-right">-->
             <!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -546,15 +546,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,19 +582,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">

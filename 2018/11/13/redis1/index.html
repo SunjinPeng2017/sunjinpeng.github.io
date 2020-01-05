@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
+  <link rel="dns-prefetch" href="http://www.springsunshine.cn">
   <title>记一次 Jedis 采坑经历... | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
+  <meta name="description" content="转载请注明：http://www.springsunshine.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.">
 <meta name="keywords" content="原创,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次 Jedis 采坑经历...">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2018/11/13/redis1/index.html">
+<meta property="og:url" content="http://www.springsunshine.cn/2018/11/13/redis1/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
+<meta property="og:description" content="转载请注明：http://www.springsunshine.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-12-28T07:36:43.662Z">
+<meta property="og:updated_time" content="2020-01-05T09:28:26.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次 Jedis 采坑经历...">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.getR">
+<meta name="twitter:description" content="转载请注明：http://www.springsunshine.cn/2018/11/13/redis1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 Jedis 的使用，废话不多说，我们直接上代码：12345678910Jedis jedis = jedisPool.">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -115,7 +115,7 @@ var _hmt = _hmt || [];
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 		        
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 			        
@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-11-13-redis1"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-11-13-redis1" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/11/13/redis1">http://www.sunjinpeng.cn/2018/11/13/redis1</a></h5><p>&nbsp;&nbsp;&nbsp;&nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 <code>Jedis</code> 的使用，废话不多说，我们直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Jedis jedis = jedisPool.getResource()</span><br><span class="line">String key = <span class="string">"xxxxxx"</span>;</span><br><span class="line">String value = jedis.get(key);</span><br><span class="line"><span class="keyword">if</span> (StringUtils.isEmpty(value)) &#123;</span><br><span class="line">    LOG.info(<span class="string">"redis 缓存未命中。。。"</span>);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    LOG.info(<span class="string">"redis 缓存命中。。。"</span>);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h5 id="转载请注明：http-www-springsunshine-cn-2018-11-13-redis1"><a href="#转载请注明：http-www-springsunshine-cn-2018-11-13-redis1" class="headerlink" title="转载请注明：http://www.springsunshine.cn/2018/11/13/redis1"></a>转载请注明：<a href="http://www.springsunshine.cn/2018/11/13/redis1">http://www.springsunshine.cn/2018/11/13/redis1</a></h5><p>&nbsp;&nbsp;&nbsp;&nbsp;首先向大家看一段代码，如果你马上就能发现其中的问题，那么该篇文章可能对你作用不大；如果你有些疑惑，那么该篇文章也许能帮你更加理解 <code>Jedis</code> 的使用，废话不多说，我们直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Jedis jedis = jedisPool.getResource()</span><br><span class="line">String key = <span class="string">"xxxxxx"</span>;</span><br><span class="line">String value = jedis.get(key);</span><br><span class="line"><span class="keyword">if</span> (StringUtils.isEmpty(value)) &#123;</span><br><span class="line">    LOG.info(<span class="string">"redis 缓存未命中。。。"</span>);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    LOG.info(<span class="string">"redis 缓存命中。。。"</span>);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><br><br><a id="more"></a></p>
 <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;下面我们开始进入正题…正在做项目时，遇到这种情况，后端程序运行一段时间之后，突然无法接收前端的任何请求，也没有任何报错，给人一种程序 “假死” 的现象。而当时又忙于开发业务逻辑代码，无从下手开始寻找原因，只得重启后端程序。。。然后突然有一天，一位经验多的’老猿人’看到这段代码：<b>“你的 jedis 连接没有关闭呀。。。”</b>，像突然浇了一盆冷水，对呀，我怎么把这个忘记了，事实证明，调用 <code>jedis.close()</code> 方法之后，这个bug就没有了。。。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面是官方建议的写法</span></span><br><span class="line"><span class="keyword">try</span> (Jedis jedis = jedisPool.getResource())&#123;</span><br><span class="line">    String key = <span class="string">"xxxxxx"</span>;</span><br><span class="line">    String value = jedis.get(key);</span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(value)) &#123;</span><br><span class="line">        LOG.info(<span class="string">"redis 缓存未命中。。。"</span>);</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        LOG.info(<span class="string">"redis 缓存命中。。。"</span>);</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><br></p>
@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/11/13/redis1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.springsunshine.cn/2018/11/13/redis1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -387,7 +387,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-11-13-redis1"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/11/13/redis1</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#背景"><span class="toc-number"></span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析造成-“假死”-原因"><span class="toc-number"></span> <span class="toc-text">分析造成 “假死” 原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-7-语法糖—-try-with-resource"><span class="toc-number"></span> <span class="toc-text">Java 7 语法糖— try-with-resource</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-springsunshine-cn-2018-11-13-redis1"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.springsunshine.cn/2018/11/13/redis1</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#背景"><span class="toc-number"></span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析造成-“假死”-原因"><span class="toc-number"></span> <span class="toc-text">分析造成 “假死” 原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-7-语法糖—-try-with-resource"><span class="toc-number"></span> <span class="toc-text">Java 7 语法糖— try-with-resource</span></a>
                     </div>
                 </span>
             </div>
@@ -424,7 +424,7 @@ var _hmt = _hmt || [];
             本文总阅读量<b><span id="busuanzi_value_page_pv" style="font-size: 13px"></span></b>次
             <div>
                 <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备19050269号</a>
-                &nbsp;&nbsp; &copy; 2019 VSK小天丶 All rights reserved.
+                &nbsp;&nbsp; &copy; 2020 VSK小天丶 All Rights Reserved.
             </div>
             <!--<div class="footer-right">-->
             <!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -511,15 +511,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,19 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">

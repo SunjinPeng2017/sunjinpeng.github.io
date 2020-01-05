@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
+  <link rel="dns-prefetch" href="http://www.springsunshine.cn">
   <title>PostgresSQL插件--高效分区插件pg_pathman | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/20/pg_pathman官网：https://github.com/postgrespro/pg_pathman部分参考：https://yq.aliyun.com/articles/62314pg_pathman 简介 背景PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constraint">
-<meta name="keywords" content="PgSQL,数据库,原创">
+  <meta name="description" content="转载请注明：http://www.springsunshine.cn/2017/12/20/pg_pathman官网：https://github.com/postgrespro/pg_pathman部分参考：https://yq.aliyun.com/articles/62314pg_pathman 简介 背景PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constr">
+<meta name="keywords" content="原创,PgSQL,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgresSQL插件--高效分区插件pg_pathman">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2017/12/20/pg_pathman/index.html">
+<meta property="og:url" content="http://www.springsunshine.cn/2017/12/20/pg_pathman/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/20/pg_pathman官网：https://github.com/postgrespro/pg_pathman部分参考：https://yq.aliyun.com/articles/62314pg_pathman 简介 背景PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constraint">
+<meta property="og:description" content="转载请注明：http://www.springsunshine.cn/2017/12/20/pg_pathman官网：https://github.com/postgrespro/pg_pathman部分参考：https://yq.aliyun.com/articles/62314pg_pathman 简介 背景PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constr">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-09-20T09:44:21.043Z">
+<meta property="og:updated_time" content="2020-01-05T09:26:01.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgresSQL插件--高效分区插件pg_pathman">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2017/12/20/pg_pathman官网：https://github.com/postgrespro/pg_pathman部分参考：https://yq.aliyun.com/articles/62314pg_pathman 简介 背景PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constraint">
+<meta name="twitter:description" content="转载请注明：http://www.springsunshine.cn/2017/12/20/pg_pathman官网：https://github.com/postgrespro/pg_pathman部分参考：https://yq.aliyun.com/articles/62314pg_pathman 简介 背景PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constr">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -115,7 +115,7 @@ var _hmt = _hmt || [];
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 		        
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 			        
@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2017-12-20-pg-pathman"><a href="#转载请注明：http-www-sunjinpeng-cn-2017-12-20-pg-pathman" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2017/12/20/pg_pathman"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2017/12/20/pg_pathman">http://www.sunjinpeng.cn/2017/12/20/pg_pathman</a></h5><h5 id="官网：https-github-com-postgrespro-pg-pathman"><a href="#官网：https-github-com-postgrespro-pg-pathman" class="headerlink" title="官网：https://github.com/postgrespro/pg_pathman"></a>官网：<a href="https://github.com/postgrespro/pg_pathman" target="_blank" rel="noopener">https://github.com/postgrespro/pg_pathman</a></h5><h5 id="部分参考：https-yq-aliyun-com-articles-62314"><a href="#部分参考：https-yq-aliyun-com-articles-62314" class="headerlink" title="部分参考：https://yq.aliyun.com/articles/62314"></a>部分参考：<a href="https://yq.aliyun.com/articles/62314" target="_blank" rel="noopener">https://yq.aliyun.com/articles/62314</a></h5><h4 id="pg-pathman-简介"><a href="#pg-pathman-简介" class="headerlink" title="pg_pathman 简介"></a>pg_pathman 简介</h4><ul>
+        <h5 id="转载请注明：http-www-springsunshine-cn-2017-12-20-pg-pathman"><a href="#转载请注明：http-www-springsunshine-cn-2017-12-20-pg-pathman" class="headerlink" title="转载请注明：http://www.springsunshine.cn/2017/12/20/pg_pathman"></a>转载请注明：<a href="http://www.springsunshine.cn/2017/12/20/pg_pathman">http://www.springsunshine.cn/2017/12/20/pg_pathman</a></h5><h5 id="官网：https-github-com-postgrespro-pg-pathman"><a href="#官网：https-github-com-postgrespro-pg-pathman" class="headerlink" title="官网：https://github.com/postgrespro/pg_pathman"></a>官网：<a href="https://github.com/postgrespro/pg_pathman" target="_blank" rel="noopener">https://github.com/postgrespro/pg_pathman</a></h5><h5 id="部分参考：https-yq-aliyun-com-articles-62314"><a href="#部分参考：https-yq-aliyun-com-articles-62314" class="headerlink" title="部分参考：https://yq.aliyun.com/articles/62314"></a>部分参考：<a href="https://yq.aliyun.com/articles/62314" target="_blank" rel="noopener">https://yq.aliyun.com/articles/62314</a></h5><h4 id="pg-pathman-简介"><a href="#pg-pathman-简介" class="headerlink" title="pg_pathman 简介"></a>pg_pathman 简介</h4><ul>
 <li>背景<br>PostgreSQL传统的分区方法，使用约束来区分不同分区存放的数据(配置constraint_exclusion=partition)，执行select/delete/update时执行计划根据约束和查询条件排除不需要查询的分区表。<br>调用COPY或插入数据时使用触发器或规则，将数据插入对应的分区表。<br>传统的做法，无论是查询还是插入，对性能的影响都较大。<br><br></li>
 <li>pg_pathman 为什么高效</li>
 </ul>
@@ -271,15 +271,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PgSQL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
         		</li>
       		
 		</ul>
@@ -346,7 +346,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2017/12/20/pg_pathman/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.springsunshine.cn/2017/12/20/pg_pathman/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -398,7 +398,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2017-12-20-pg-pathman"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2017/12/20/pg_pathman</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-github-com-postgrespro-pg-pathman"><span class="toc-number">2.</span> <span class="toc-text">官网：https://github.com/postgrespro/pg_pathman</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#部分参考：https-yq-aliyun-com-articles-62314"><span class="toc-number">3.</span> <span class="toc-text">部分参考：https://yq.aliyun.com/articles/62314</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pg-pathman-简介"><span class="toc-number"></span> <span class="toc-text">pg_pathman 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">2.</span> <span class="toc-text">编译安装</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更改PG配置文件"><span class="toc-number"></span> <span class="toc-text">更改PG配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用pg-pathman"><span class="toc-number">1.</span> <span class="toc-text">使用pg_pathman</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方便分区方法"><span class="toc-number">2.</span> <span class="toc-text">常用方便分区方法</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-springsunshine-cn-2017-12-20-pg-pathman"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.springsunshine.cn/2017/12/20/pg_pathman</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#官网：https-github-com-postgrespro-pg-pathman"><span class="toc-number">2.</span> <span class="toc-text">官网：https://github.com/postgrespro/pg_pathman</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#部分参考：https-yq-aliyun-com-articles-62314"><span class="toc-number">3.</span> <span class="toc-text">部分参考：https://yq.aliyun.com/articles/62314</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pg-pathman-简介"><span class="toc-number"></span> <span class="toc-text">pg_pathman 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载源码"><span class="toc-number">1.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编译安装"><span class="toc-number">2.</span> <span class="toc-text">编译安装</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更改PG配置文件"><span class="toc-number"></span> <span class="toc-text">更改PG配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群性能"><span class="toc-number"></span> <span class="toc-text">集群性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用pg-pathman"><span class="toc-number">1.</span> <span class="toc-text">使用pg_pathman</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#常用方便分区方法"><span class="toc-number">2.</span> <span class="toc-text">常用方便分区方法</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -435,7 +435,7 @@ var _hmt = _hmt || [];
             本文总阅读量<b><span id="busuanzi_value_page_pv" style="font-size: 13px"></span></b>次
             <div>
                 <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备19050269号</a>
-                &nbsp;&nbsp; &copy; 2019 VSK小天丶 All rights reserved.
+                &nbsp;&nbsp; &copy; 2020 VSK小天丶 All Rights Reserved.
             </div>
             <!--<div class="footer-right">-->
             <!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -522,15 +522,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,19 +558,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -5,22 +5,22 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
+  <link rel="dns-prefetch" href="http://www.springsunshine.cn">
   <title>一种简单的方法解决后端多个定时任务同时执行问题 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
+  <meta name="description" content="转载请注明：http://www.springsunshine.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
 <meta name="keywords" content="原创,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一种简单的方法解决后端多个定时任务同时执行问题">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2018/11/26/redis2/index.html">
+<meta property="og:url" content="http://www.springsunshine.cn/2018/11/26/redis2/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
+<meta property="og:description" content="转载请注明：http://www.springsunshine.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
 <meta property="og:locale" content="Chinese,English">
 <meta property="og:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/redis-1.gif">
-<meta property="og:updated_time" content="2018-12-31T11:30:37.988Z">
+<meta property="og:updated_time" content="2020-01-05T09:28:26.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种简单的方法解决后端多个定时任务同时执行问题">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
+<meta name="twitter:description" content="转载请注明：http://www.springsunshine.cn/2018/11/26/redis2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 Redis解决这一问题。">
 <meta name="twitter:image" content="https://images-1258052515.cos.ap-beijing.myqcloud.com/redis-1.gif">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
@@ -117,7 +117,7 @@ var _hmt = _hmt || [];
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 		        
@@ -165,7 +165,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 			        
@@ -218,7 +218,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-11-26-redis2"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-11-26-redis2" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/11/26/redis2">http://www.sunjinpeng.cn/2018/11/26/redis2</a></h5><p>&nbsp;&nbsp;&nbsp;&nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 <code>Redis</code>解决这一问题。<br><br><br><a id="more"></a></p>
+        <h5 id="转载请注明：http-www-springsunshine-cn-2018-11-26-redis2"><a href="#转载请注明：http-www-springsunshine-cn-2018-11-26-redis2" class="headerlink" title="转载请注明：http://www.springsunshine.cn/2018/11/26/redis2"></a>转载请注明：<a href="http://www.springsunshine.cn/2018/11/26/redis2">http://www.springsunshine.cn/2018/11/26/redis2</a></h5><p>&nbsp;&nbsp;&nbsp;&nbsp;相信大家开发的时候都这种情况：为了实现后端程序的负载均衡和高可用，一般会部署多套后端代码，但是如果有定时任务的话，到了这个时间点，每个后端的定时任务都会执行。下面就介绍一种方式利用 <code>Redis</code>解决这一问题。<br><br><br><a id="more"></a></p>
 <h4 id="利用-Redis-解决问题"><a href="#利用-Redis-解决问题" class="headerlink" title="利用 Redis 解决问题"></a>利用 Redis 解决问题</h4><ul>
 <li><p>我们可以设置一条自动过期的 <code>Redis</code> 数据，让多个后端同时来拿这个key，如果没拿到，则执行定时任务；否则，就不执行定时任务。 </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check redis exist boolean.</span></span><br><span class="line"><span class="comment">     * 防止多个后端同时执行</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key the key</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the boolean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkRedisExist</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (Jedis jedis = jedisPool.getResource()) &#123;</span><br><span class="line">            String value = jedis.get(key);</span><br><span class="line">            <span class="keyword">if</span> (StringUtils.isEmpty(value)) &#123;</span><br><span class="line">                LOG.info(<span class="string">"redis 缓存未命中.开始执行定时任务。。true"</span>);</span><br><span class="line">                jedis.set(key, key, <span class="string">"NX"</span>, <span class="string">"EX"</span>, <span class="number">100</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                LOG.info(<span class="string">"redis 缓存命中.不执行定时任务,false"</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Schedule task.</span></span><br><span class="line"><span class="comment">     * 每天下午 6 点开始执行定时任务</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 定时任务启动程序</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 18 * * ?"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scheduleTask</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 防止多个后端同时执行</span></span><br><span class="line">        <span class="keyword">if</span> (!commonMoudle.checkRedisExist(REDIS_KEY)) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/11/26/redis2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.springsunshine.cn/2018/11/26/redis2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -387,7 +387,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-11-26-redis2"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/11/26/redis2</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用-Redis-解决问题"><span class="toc-number"></span> <span class="toc-text">利用 Redis 解决问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分布式锁"><span class="toc-number"></span> <span class="toc-text">分布式锁</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-springsunshine-cn-2018-11-26-redis2"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.springsunshine.cn/2018/11/26/redis2</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用-Redis-解决问题"><span class="toc-number"></span> <span class="toc-text">利用 Redis 解决问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分布式锁"><span class="toc-number"></span> <span class="toc-text">分布式锁</span></a>
                     </div>
                 </span>
             </div>
@@ -424,7 +424,7 @@ var _hmt = _hmt || [];
             本文总阅读量<b><span id="busuanzi_value_page_pv" style="font-size: 13px"></span></b>次
             <div>
                 <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备19050269号</a>
-                &nbsp;&nbsp; &copy; 2019 VSK小天丶 All rights reserved.
+                &nbsp;&nbsp; &copy; 2020 VSK小天丶 All Rights Reserved.
             </div>
             <!--<div class="footer-right">-->
             <!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -511,15 +511,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,19 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">

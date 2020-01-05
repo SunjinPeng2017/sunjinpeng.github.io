@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.sunjinpeng.cn">
+  <link rel="dns-prefetch" href="http://www.springsunshine.cn">
   <title>maven配置Tomcat自动化部署 | VSK小天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
+  <meta name="description" content="转载请注明：http://www.springsunshine.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
 <meta name="keywords" content="原创,后端,maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="maven配置Tomcat自动化部署">
-<meta property="og:url" content="http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy/index.html">
+<meta property="og:url" content="http://www.springsunshine.cn/2018/01/22/maven-autoDeploy/index.html">
 <meta property="og:site_name" content="VSK小天的博客">
-<meta property="og:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
+<meta property="og:description" content="转载请注明：http://www.springsunshine.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
 <meta property="og:locale" content="Chinese,English">
-<meta property="og:updated_time" content="2018-09-20T09:44:21.075Z">
+<meta property="og:updated_time" content="2020-01-05T09:24:46.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven配置Tomcat自动化部署">
-<meta name="twitter:description" content="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
+<meta name="twitter:description" content="转载请注明：http://www.springsunshine.cn/2018/01/22/maven-autoDeploy前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！">
   
     <link rel="alternative" href="/atom.xml" title="VSK小天的博客" type="application/atom+xml">
   
@@ -115,7 +115,7 @@ var _hmt = _hmt || [];
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 		        
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
 			        
 						<a class="twitter" target="_blank" href="https://twitter.com/Sunjinpeng2015" title="twitter"><i class="icon-twitter"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/assets/img/weChat.JPG" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="weixin" target="_blank" href="/assets/img/weChat2.jpeg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/img/qq.JPG" title="qq"><i class="icon-qq"></i></a>
 			        
@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="转载请注明：http-www-sunjinpeng-cn-2018-01-22-maven-autoDeploy"><a href="#转载请注明：http-www-sunjinpeng-cn-2018-01-22-maven-autoDeploy" class="headerlink" title="转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy"></a>转载请注明：<a href="http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy">http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！<br><br><br><a id="more"></a></p>
+        <h5 id="转载请注明：http-www-springsunshine-cn-2018-01-22-maven-autoDeploy"><a href="#转载请注明：http-www-springsunshine-cn-2018-01-22-maven-autoDeploy" class="headerlink" title="转载请注明：http://www.springsunshine.cn/2018/01/22/maven-autoDeploy"></a>转载请注明：<a href="http://www.springsunshine.cn/2018/01/22/maven-autoDeploy">http://www.springsunshine.cn/2018/01/22/maven-autoDeploy</a></h5><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;通常情况下，我们部署项目都是先在本地打包，然后上传到服务器上的Tomcat，这样稍有繁琐。接下来，我就讲一个maven自动化部署的技巧，一行命令就可以完成本地部署，是不是很厉害呢！<br><br><br><a id="more"></a></p>
 <h4 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h4><ul>
 <li>添加Tomcat用户、角色</li>
 <li>配置maven</li>
@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
 </ul>
 <p><br></p>
 <h4 id="配置maven"><a href="#配置maven" class="headerlink" title="配置maven"></a>配置maven</h4><ul>
-<li><p>我们继续在<a href="http://www.sunjinpeng.cn/2018/01/15/springBoot-multipleEnv">上篇文章</a>的基础上开发</p>
+<li><p>我们继续在<a href="http://www.springsunshine.cn/2018/01/15/springBoot-multipleEnv">上篇文章</a>的基础上开发</p>
 </li>
 <li><p>因为我们最终是要部署到 <code>tomcat</code> 中，所以直接编辑 <code>pom-war.xml</code></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">finalName</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 添加maven中的Tomcat插件 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 配置Tomcat 的用户密码--&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">path</span>&gt;</span>/$&#123;project.build.finalName&#125;<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">url</span>&gt;</span>$&#123;tomcat-url&#125;<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;tomcat-username&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;tomcat-password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">update</span>&gt;</span>true<span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 配置多环境资源 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 添加开发环境的Tomcat信息 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">activatedProperties</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">activatedProperties</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tomcat-url</span>&gt;</span>http://localhost:8080/manager/text<span class="tag">&lt;/<span class="name">tomcat-url</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tomcat-username</span>&gt;</span>tomcat<span class="tag">&lt;/<span class="name">tomcat-username</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tomcat-password</span>&gt;</span>tomcatuser<span class="tag">&lt;/<span class="name">tomcat-password</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 默认环境 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span>&gt;</span>prod<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">activatedProperties</span>&gt;</span>prod<span class="tag">&lt;/<span class="name">activatedProperties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -334,7 +334,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.springsunshine.cn/2018/01/22/maven-autoDeploy/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -386,7 +386,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-sunjinpeng-cn-2018-01-22-maven-autoDeploy"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.sunjinpeng.cn/2018/01/22/maven-autoDeploy</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加Tomcat用户、角色"><span class="toc-number"></span> <span class="toc-text">添加Tomcat用户、角色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置maven"><span class="toc-number"></span> <span class="toc-text">配置maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署测试"><span class="toc-number"></span> <span class="toc-text">部署测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#转载请注明：http-www-springsunshine-cn-2018-01-22-maven-autoDeploy"><span class="toc-number">1.</span> <span class="toc-text">转载请注明：http://www.springsunshine.cn/2018/01/22/maven-autoDeploy</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主要步骤"><span class="toc-number"></span> <span class="toc-text">主要步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#详细步骤"><span class="toc-number"></span> <span class="toc-text">详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加Tomcat用户、角色"><span class="toc-number"></span> <span class="toc-text">添加Tomcat用户、角色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置maven"><span class="toc-number"></span> <span class="toc-text">配置maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署测试"><span class="toc-number"></span> <span class="toc-text">部署测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
                     </div>
                 </span>
             </div>
@@ -423,7 +423,7 @@ var _hmt = _hmt || [];
             本文总阅读量<b><span id="busuanzi_value_page_pv" style="font-size: 13px"></span></b>次
             <div>
                 <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备19050269号</a>
-                &nbsp;&nbsp; &copy; 2019 VSK小天丶 All rights reserved.
+                &nbsp;&nbsp; &copy; 2020 VSK小天丶 All Rights Reserved.
             </div>
             <!--<div class="footer-right">-->
             <!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -510,15 +510,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">原创</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PgSQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">原创</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,19 +546,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">
